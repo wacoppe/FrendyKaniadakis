@@ -554,7 +554,7 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
   fout.setf(ios::scientific);
   fout.setf(ios::showpos);
   fout.setf(ios::showpoint);
-  fout << "Hello " << "Willian" << endl;
+  //fout << "Hello " << "Willian" << endl; //Retirei para nao poluir o .dat 20220630
 
 
   vector<double>  vec_x;
@@ -575,7 +575,7 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
   int size_chi = static_cast<int>(vec_chi.size());
 
   for(int m=0; m<size_x; m++) // "for" para poder calcular todo esse processo para diferenres valores de x
-  { fout << "m= " << m << endl;
+  { //fout << "m= " << m << endl; //Retirei para nao poluir o .dat 20220630
     for(int n=0; n<size_chi; n++) // "for" para poder calcular todo esse processo para diferenres valores de chi
     {
       x = vec_x[m];
@@ -585,19 +585,19 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
       b = 2*pow(chi,2)*pow(Kappa,2);
       complex <double> b2 (b,0);
       //c = abs(a-b);
-      fout << "n= " << n << endl;
+      //fout << "n= " << n << endl; //Retirei para nao poluir o .dat 20220630
 
       if (a>b)
       {
         
-        fout << "a maior que b" << endl;
+        //fout << "a maior que b" << endl; //Retirei para nao poluir o .dat 20220630
         c = abs(a-b);
         h = sqrt(c)/2*chi;
         Pb.real (h);
         Pb.imag (0);
-        fout << "a =" << a << endl;
-        fout << "b =" << b << endl;
-        fout << "h =" << h << endl;
+        //fout << "a =" << a << endl; //Retirei para nao poluir o .dat 20220630
+        //fout << "b =" << b << endl; //Retirei para nao poluir o .dat 20220630
+        //fout << "h =" << h << endl; //Retirei para nao poluir o .dat 20220630
         //complex<double> Pb (h,0.);
         //Pb[0]=h;
         //Pb[1]=0;
@@ -607,14 +607,14 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
       }
       else
       {
-        fout << "b maior que a" << endl;
+        //fout << "b maior que a" << endl; //Retirei para nao poluir o .dat 20220630
         c = abs(a-b);
         h = sqrt(c)/2*chi;
         Pb.real (0);
         Pb.imag (h);
-        fout << "a =" << a << endl;
-        fout << "b =" << b << endl;
-        fout << "h =" << h << endl;
+       // fout << "a =" << a << endl; //Retirei para nao poluir o .dat 20220630
+       // fout << "b =" << b << endl; //Retirei para nao poluir o .dat 20220630
+       // fout << "h =" << h << endl; //Retirei para nao poluir o .dat 20220630
         //Pb[0]=0;
         //Pb[1]=h;
         //complex<double> Pb (0.,h);
@@ -623,21 +623,77 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
         //fout << "Pb =" << Pb << endl;
       }
       //Pb[0] = 1.;
-      fout << "Pb =" << Pb << endl;
+      //fout << "Pb =" << Pb << endl;
 
       
       Real8  Kappa, Bk, f1, f2, pi, x1, chi; // Willian
 
-      chi = 0.5;
-      x1 = 40;
+      chi = 0.45;
+      x1 = 20;
       Kappa = 0.1;
       pi = M_PI;
-      complex <double> i (0.,1.);
+      complex <double> i {0.,1.};
       complex <double> aa, d1, d2, d3, d4, d5, p1, p2, p3, theta, D, om1, om2, f3, omg, Sg, z, p11;
 
+      //FORZINHO PARA EU CONSEGUIR GERAR A TABELA 
 
+      double x1_array[] = {0, 0.5, 1, 2, 4, 6, 8, 10, 20, 40};
+      double num = 0.5;
 
+      for (double x2: x1_array){
 
+        fout << "\nX = " << x2 << "\n" << endl ;
+
+        for (double chi1 = 0.05; chi1<= num; chi1+=0.05){
+
+                Bk=(1)*(pow(2*Kappa,1.5))*(1+3*Kappa/2)*tgamma(1/(2*Kappa)+0.75)/tgamma(1/(2*Kappa)-0.75);  //Bk que vou tentar imprimir
+      
+                f1 = (chi1*(sqrt(pi)*Bk))/4; //parte mais à esquerda da função
+                
+                f2 = exp((pow(chi1,2)-pow(chi1,2)*pow(x2,2))/4); //#Exponencial mais externa da solução
+                
+                aa=(-1.*i*pow(chi1,2)*x2);  //#Termos presentes em p1, p2 e p3
+                
+                d1= pow(chi1,4); //#Termos presentes em p1, p2 e p3
+                
+                d2 = (2*pow(chi1,2)*pow(Kappa,2));
+                
+                d3 = sqrt(d1 - d2);
+
+                d4 = aa + d3;
+
+                d5 = aa - d3;
+                
+                p1 = (d4)/(2.0*chi1); //#Eq. 3.92 da tese
+                
+                p2 = (d5)/(2.0*chi1);  //#Eq. 3.93 da tese
+
+                p3 = (d3)/(2.0*chi1);  //#Eq. 3.93 da tese
+
+                theta = (x2/2)*d3; //#definição de theta da tese (Eq. 3.95)
+
+                D = ((2-(2*erf(chi1/2)))/(1-pow(Kappa,2)))*cos(theta); //# D(Eq. 3.99 da tese)
+
+                om1 = (sin(theta))*((Faddeeva::erf(p1)*(pow(Kappa,2)))-Faddeeva::erf(p1)+(Faddeeva::erf(p2)*(pow(Kappa,2)))-Faddeeva::erf(p2)); //# Omega 1(Eq. 3.90 da tese)
+
+                om2 = (cos(theta))*((2.0*Faddeeva::erf(p3)*(pow(Kappa,2)))-2.0*Faddeeva::erf(p3)-(Faddeeva::erf(p1)*(pow(Kappa,2)))+Faddeeva::erf(p1)+(Faddeeva::erf(p2)*(pow(Kappa,2)))-Faddeeva::erf(p2)); //# Omega 1(Eq. 3.90 da tese)
+
+                f3 = d3/((-pow(chi1,2))+(2*pow(Kappa,2))); //#primeiro trecho dentro de omega g
+
+                omg =  f3*(exp(pow(-Kappa,2)/2))*((i*om1)+(om2));   //# Omega geral(Eq. 3.100 da tese)
+
+                Sg = (f1*f2)*(D+omg); //# Solução geral (Eq. 3.9
+
+                fout << real(Sg) << endl;
+
+          }
+         
+         fout <<"\n";
+      }
+
+      // FIM DE FORZINHO PARA EU CONSEGUIR GERAR A TABELA 
+
+      /* //Retirei para nao poluir o .dat 20220630
 
       //ay = sqrt( pow(qsi,4.0) - 2*pow(qsi,2)*pow(Kappa,2) )/(2*qsi);
 
@@ -669,15 +725,34 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
 
       D = ((2-(2*erf(chi/2)))/(1-pow(Kappa,2)))*cos(theta); //# D(Eq. 3.99 da tese)
 
-      om1 = (sin(theta))*((erf(real(p1))*(pow(Kappa,2)))-erf(real(p1))+(erf(real(p2))*(pow(Kappa,2)))-erf(real(p2))); //# Omega 1(Eq. 3.90 da tese)
+      om1 = (sin(theta))*((Faddeeva::erf(p1)*(pow(Kappa,2)))-Faddeeva::erf(p1)+(Faddeeva::erf(p2)*(pow(Kappa,2)))-Faddeeva::erf(p2)); //# Omega 1(Eq. 3.90 da tese)
 
-      om2 = (cos(theta))*((2*erf(real(p3))*(pow(Kappa,2)))-2*erf(real(p3))-(erf(real(p1))*(pow(Kappa,2)))+erf(real(p1))+(erf(real(p2))*(pow(Kappa,2)))-erf(real(p2))); //# Omega 1(Eq. 3.90 da tese)
+      om2 = (cos(theta))*((2.0*Faddeeva::erf(p3)*(pow(Kappa,2)))-2.0*Faddeeva::erf(p3)-(Faddeeva::erf(p1)*(pow(Kappa,2)))+Faddeeva::erf(p1)+(Faddeeva::erf(p2)*(pow(Kappa,2)))-Faddeeva::erf(p2)); //# Omega 1(Eq. 3.90 da tese)
 
       f3 = d3/((-pow(chi,2))+(2*pow(Kappa,2))); //#primeiro trecho dentro de omega g
 
       omg =  f3*(exp(pow(-Kappa,2)/2))*((i*om1)+(om2));   //# Omega geral(Eq. 3.100 da tese)
 
       Sg = (f1*f2)*(D+omg); //# Solução geral (Eq. 3.9
+
+      complex <double> z11 = {2.397915761656360e-01,-10}; //USE CHAVES SEU ANIMAL!!!!!
+
+      fout << "Fadeeva = " << Faddeeva::erf(p1)<< endl;
+
+      complex<double> olar;
+
+      olar = Faddeeva::erf(p2);
+
+      fout << "Fadeeva2 = " << olar << endl;
+
+      fout << "om1 = " << om1 << endl;
+
+      fout << "om2 = " << om2 << endl;
+
+      fout << "Psi Kappa = " << Sg << endl;
+      */
+
+
       /*
 
       om1 = (sin(theta))*((erf(p1)*(pow(Kappa,2)))-erf(p1)+(erf(p2)*(pow(Kappa,2)))-erf(p2)); //# Omega 1(Eq. 3.90 da tese)
@@ -711,8 +786,11 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
       
 
       // FIM DO MODULO DE CALCULO DA FUNCAO ERRO
+
+
+      /* //Retirei para nao poluir o .dat 20220630
       
-      double g1,g2;
+      complex<double> g1,g2;
 
       g1 = erf(real(p1));
       g2 = erf(imag(p1));
@@ -720,8 +798,7 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
 
 
       //fout << "d4 = " << d4 << endl;
-      fout << "p1 = " << real(p1) << endl;
-      fout << "p1 todo = " << p1 << endl;
+      fout << "p1 = " << p1 << endl;
       fout << "p2 = " << p2 << endl;
       fout << "p3 = " << p3 << endl;
       fout << "theta = " << theta << endl;
@@ -733,6 +810,7 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
       fout << "g1 = " << g1 << endl;
       fout << "g2 = " << g2 << endl;
 
+      */
     }
   }
 
