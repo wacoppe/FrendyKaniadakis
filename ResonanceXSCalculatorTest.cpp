@@ -8,11 +8,7 @@
 #include "EndfUtils/Endf6Converter/Endf6Converter.hpp"
 #include "ReconResonance/ResonanceXSCalculator.hpp"
 #include "ReconResonance/ResonanceEnergyGridLinearizer.hpp"
-#include <math.h>  //Inserido 20220313
-#include <complex>
-#include <complex.h>  
-#include <cmath>
-#include "Faddeeva.cc" //adicionei para tentar usar a funcao erro complexa do pacote do MIT 20220622
+
 using namespace frendy;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -268,20 +264,33 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check02)
 BOOST_AUTO_TEST_CASE(BreitWigner_check03)
 {
   vector<string> file_name;  // CHAMA DADOS NUCLEARES PARA SEREM UTILIZADOS E ARMAZENA NO VETOR file_name
+  
   file_name.push_back("./for_test/test_mf02mt151_lru01lrf01.dat");                          // n=0
-  //file_name.push_back("./for_test/n_4331_43-Tc-099(teste).dat");                            // teste  // PosInac_FRENDY-V7
   file_name.push_back("../EndfUtils/MFxxMTyyyParser/for_test/n_4331_43-Tc-099.dat");        // n=1
-  //file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_Pu238.dat");                    // n=2
-  //file_name.push_back("./for_test/n_9434_94-Pu-238.dat");                                   // teste  // PosInac_FRENDY-V7
-  //file_name.push_back("../EndfUtils/MFxxMTyyyParser/for_test/n_9434_94-Pu-238.dat");        // n=3
-  file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_U235.dat");                       // teste  // PosInac_FRENDY-V7
-  file_name.push_back("../EndfUtils/MFxxMTyyyParser/for_test/n_9228_92-U-235.dat");           // teste  // PosInac_FRENDY-V7
+  file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_Pu238.dat");                    // n=2
+  file_name.push_back("../EndfUtils/MFxxMTyyyParser/for_test/n_9434_94-Pu-238.dat");        // n=3
+  file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_U235.dat");                     // n=4  // PosInac_FRENDY-V6
+  file_name.push_back("../EndfUtils/MFxxMTyyyParser/for_test/n_9228_92-U-235.dat");         // n=5  // PosInac_FRENDY-V6
+  file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_Pu239.dat");                    // n=6  // PosInac_FRENDY-V9
+  file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_Xe135.dat");                    // n=7  // PosInac_FRENDY-V9
+  file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_Fe056.dat");                    // n=8  // PosInac_FRENDY-V9
+  file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_Gd155.dat");                    // n=9  // PosInac_FRENDY-V9
+  file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_Gd157.dat");                    // n=10  // PosInac_FRENDY-V9
+  
+  
+  //file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_H001.dat");                     // n=11  // PosInac_FRENDY-V9
+  //file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_U238.dat");                     // n=7  // PosInac_FRENDY-V7
+  //file_name.push_back("../EndfUtils/MFxxMTyyyParser/for_test/n_9237_92-U-238.dat.dat");     // n=8  // PosInac_FRENDY-V7
+  
+  //file_name.push_back("./for_test/test_mf02mt151_lru01lrf01_O016.dat");                     // n=11  // PosInac_FRENDY-V9
+
+  
   
   vector<string> ref_file;  // APENAS PARA REFERÊNCIA
   ref_file.push_back("./comp_njoy/calc_result_bw.dat");
   ref_file.push_back("./comp_njoy/calc_result_bw.dat");
   ref_file.push_back("./comp_njoy/calc_result_bw_Pu238.dat");
-  ref_file.push_back("./comp_njoy/calc_result_bw_Pu238.dat");
+  //ref_file.push_back("./comp_njoy/calc_result_bw_Pu238.dat");
   
   ofstream fout;
   ifstream fin;
@@ -303,23 +312,58 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
 
 
 
-    //int h_max = 1000;       // h_max e o numero de pontos              // PosInac_FRENDY-V1
-    int h_max = 10000;
+    int h_max = 1000;       // h_max e o numero de pontos              // PosInac_FRENDY-V1
+    //int h_max = 300000;                                             //     PosInac_FRENDY-V7
     ene_data.resize(h_max); // define o numero de vetores de ene_data  // PosInac_FRENDY-V1
     sig_data.resize(h_max); // define o numero de vetores de sig_data  // PosInac_FRENDY-V1
     
 
-    ene_data[0] = 2.05;     // primeiro valor de ene_data // PosInac_FRENDY-V1
-    //ene_data[0] = 30;          
-    ene_data[h_max] = 3.71; // ultimo valor de ene_data   // PosInac_FRENDY-V1
+    //ene_data[0] = 2.05;     // primeiro valor de ene_data // PosInac_FRENDY-V1
+    //ene_data[h_max] = 3.71; // ultimo valor de ene_data   // PosInac_FRENDY-V1
+    //ene_data[0] = 0.0005;
+    //ene_data[h_max] = 400; 
+    //ene_data[0] = 331.5902-0.8;            //       PosInac_FRENDY-V7 
+    //ene_data[h_max] = 331.5902+0.8;        //     PosInac_FRENDY-V7
+    //ene_data[0] = pow(10,0);            //       PosInac_FRENDY-V9
+    //ene_data[h_max] = 5*pow(10,3);        //     PosInac_FRENDY-V9
+    //ene_data[0] = 54.85246;
+    //ene_data[h_max] = 61.66754;
+    ene_data[0] = 9.0;
+    ene_data[h_max] = 11.0; 
 
+  
+    
     for ( int h=1 ; h < h_max ; h++ ) // define os outros valores de ene_val // PosInac_FRENDY-V1
     {
       ene_data[h] = ene_data[h-1] + ((ene_data[h_max] - ene_data[0]) / h_max);
     }
+    
+    //Definição para range de pontos de energias máximo e mínimo muito grande //     PosInac_FRENDY-V10
+    /*
+    ene_data[0] = pow(10,-2);                                                //       PosInac_FRENDY-V10
+    ene_data[1000] = pow(10,-1);                                             //     PosInac_FRENDY-V10
+    ene_data[2000] = pow(10,0);                                              //     PosInac_FRENDY-V10
+    ene_data[3000] = pow(10,1);                                              //     PosInac_FRENDY-V10
+    ene_data[4000] = pow(10,2);                                              //     PosInac_FRENDY-V10    
+    ene_data[5000] = pow(10,3);                                              //     PosInac_FRENDY-V10    
+    ene_data[6000] = pow(10,4);                                              //     PosInac_FRENDY-V10    
+    ene_data[7000] = pow(10,5);                                              //     PosInac_FRENDY-V10
+    ene_data[8000] = pow(10,6);                                              //     PosInac_FRENDY-V10
+    ene_data[9000] = pow(10,7);                                              //     PosInac_FRENDY-V10    
+    ene_data[10000] = pow(10,8);                                             //     PosInac_FRENDY-V10    
+    for ( int p=0 ; p<10 ; p++ ) // qual a casa decimal                      //     PosInac_FRENDY-V10
+    {
+      int k = h_max/10;
+      for (int g= 1; g < k; g++) // qual a posição em cada casa decimal
+      {
+        int h = k*p+g;
+        ene_data[h] = ene_data[h-1] + ((ene_data[(p+1)*k] - ene_data[p*k]) / k);
+      }
+    }
+    */
 
 
-/* não serão necessários
+  /* não serão necessários
   
     ene_data.resize(5);
     sig_data.resize(5);   
@@ -328,9 +372,12 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
     ene_data[2] = 1.0e+1;
     ene_data[3] = 5.0e+1;
     ene_data[4] = 1.0e+2;
-*/  
+  */  
     
-    //*
+    //*   
+
+    // OUTPUT
+
     if( n==0 )
     {
       fout.open("./comp_njoy/calc_result_bw_Tc99_frendy.dat");
@@ -339,6 +386,51 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
     {
       fout.open("./comp_njoy/calc_result_bw_Pu238_frendy.dat");
     }
+    else if( n==4 )        // PosInac_FRENDY-V7
+    {
+      fout.open("./comp_njoy/calc_result_bw_u235_frendy.dat");
+    }
+    else if( n==6 )        // PosInac_FRENDY-V9
+    {
+      fout.open("./comp_njoy/calc_result_bw_Pu239_frendy.dat");
+    }
+    else if( n==7 )        // PosInac_FRENDY-V9
+    {
+      fout.open("./comp_njoy/calc_result_bw_Xe135_frendy.dat");
+    }
+    else if( n==8 )        // PosInac_FRENDY-V9
+    {
+      fout.open("./comp_njoy/calc_result_bw_Fe056_frendy.dat");
+    }
+    else if( n==9 )        // PosInac_FRENDY-V9
+    {
+      fout.open("./comp_njoy/calc_result_bw_Gd155_frendy.dat");
+    }
+    else if( n==10 )        // PosInac_FRENDY-V9
+    {
+      fout.open("./comp_njoy/calc_result_bw_Gd157_frendy.dat");
+    }
+
+       
+    
+    /*
+
+    else if( n==11 )        // PosInac_FRENDY-V9
+    {
+      fout.open("./comp_njoy/calc_result_bw_O016_frendy.dat");
+    }
+
+    else if( n==6 )        // PosInac_FRENDY-V7
+    {
+      fout.open("./comp_njoy/calc_result_bw_u238_frendy.dat");
+    }
+
+    else if( n==11 )        // PosInac_FRENDY-V9
+    {
+      fout.open("./comp_njoy/calc_result_bw_H001_frendy.dat");
+    } 
+    */
+
     fout.precision(15);
     fout.setf(ios::scientific);
     fout.setf(ios::showpos);
@@ -358,78 +450,120 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
         if( i==0 && j==0 )
         {
           int k_max = static_cast<int>(ene_data.size());     // k_max e o tamanho do ene_data
-          if( n==0 || n==2 )
+          //
+          if( n==2 || n==6 || n==9 || n==10)                   //PosINAC_FRENDY - V9
+          //if( n==0 || n==2 || n==4 || n==6 || n==7 || n==8 || n==9 || n==10 || n==11 || n==12 )                   //PosINAC_FRENDY - V9
+          //if( n==2 )        // Fará apenas os calculos para U238    //PosINAC_FRENDY - V8
           {
-            fout << "Single-Level Breit Wigner" << endl;
-            for(int t=0; t<6; t++)                           // t define qnts temepraturas serao
+            fout << "Single-Level_Breite_Wigner" << endl;
+            //for(int t=0; t<6; t++)                           // t define qnts temepraturas serao
+            //for(int t=1; t<11; t++)                             // PosINAC_FRENDY - V7
+            for(int t=3; t<6; t++)
             {
+              /*
+              if(n==40785623)           // definindo valores de T partindo de qsi //PosINAC_FRENDY - V10
+              {                   // n==10 --> Gd157
+                Real8 Gamma = 0.1712328222612969;
+                Real8 Kb    = 8.6173324*(pow(10,-5));
+                Real8 A     = 1.55576*(pow(10,2));
+                Real8 E0    = 58.26; 
+
+                Real8 Numerador = pow(Gamma,2)*A/(4*Kb*E0);
+
+                temp_val = Numerador/pow((0.05*static_cast<Real8>(t)),2);
+              }
+              else */
+              
               Real8 temp_val = static_cast<Real8>(t)*500.0;  // define o range entre as temperaturas
-              //Real8 Bk = rxs_obj.get_Bk();                   // Tentativa Willian de imprimir Bk uma vez somente
-              fout << "Temperatura do meio : " << temp_val << "[K]"   << endl;  
-              fout << "Massa do isotopo    : " <<  reso_data_obj.get_mass_isotope()[i][j][0] << endl;  // PosINAC_FRENDY - V4
-              fout << "Valor de Bk         : " << rxs_obj.get_Bk() << endl;         // Willian
-              fout << "Valor de f1         : " << rxs_obj.get_f1() << endl;         // Willian
-              //fout << "Valor de Bk    : " <<  reso_data_obj.get_mass_isotope()[i][j][0] << endl;  // PosINAC_FRENDY - V4
+              //temp_val = static_cast<Real8>(t)*100.0;
+              
+              
+              fout << "Temp do meio:       " << temp_val << "[K]"   << endl;
+              fout << "Massa do isotopo:   " <<  reso_data_obj.get_mass_isotope()[i][j][0] << endl;      // PosINAC_FRENDY - V4
               //fout << "Valores de i e j    : " <<  i  << " , " <<  j  << endl;                         // PosINAC_FRENDY - V4
+              //fout << "l_max: " << rxs_obj.get_l_max() << endl; // PosINAC_FRENDY - V6
+              //fout << "m_max: " << rxs_obj.get_m_max() << endl; // PosINAC_FRENDY - V6
+
 
                           
               rxs_obj.set_temp(temp_val);
-              //rxs_obj.get_Bk(); Perguntar ao João como faz isso, caso tenha dado errado 
               for(int k=0; k<k_max; k++)
               {
                 rxs_obj.calc_reso_xs_each_case(i, j, ene_data[k], sig_data[k]);  // sig_data entra como sig_val
 
                 if (k==0)                                   // PosINAC_FRENDY - V3
                 {
-                  
+                  //fout << "Gamma: " << rxs_obj.get_gtt() << endl; // PosINAC_FRENDY - V6
+                  //fout << "E0: " << rxs_obj.get_E0() << endl; // PosINAC_FRENDY - V6
+                  //fout << "qsi: " << rxs_obj.get_qsi() << endl; // PosINAC_FRENDY - V10
                   fout << endl;
-                  fout << "       ene_val         ";         // PosINAC_FRENDY - V3
+                  fout << "ene_val                ";         // PosINAC_FRENDY - V3
                   //fout << "   sig_val[total_xs]   ";         // PosINAC_FRENDY - V3
                   //fout << "  sig_val[scatter_xs]  ";         // PosINAC_FRENDY - V3
                   //fout << "  sig_val[fission_xs]  ";         // PosINAC_FRENDY - V3
-                  //fout << " sig_val[radiation_xs] ";         // PosINAC_FRENDY - V3
+                  fout << " sig_val[radiation_xs] ";         // PosINAC_FRENDY - V3
                   fout << "          psi          ";         // PosINAC_FRENDY - V3
                   //fout << "        w_x (im)       ";         // PosINAC_FRENDY - V5
                   //fout << "       w_y (real)      ";         // PosINAC_FRENDY - V5
-                  fout << "      w (real+im)      ";         // PosINAC_FRENDY - V5
-                  fout << "           x           ";         // PosINAC_FRENDY - V6
-                  fout << "           Bk           ";         // Willian
-                  fout << "           f1           ";         // Willian
+                  //fout << "      w (real+im)      ";         // PosINAC_FRENDY - V5
+                  
+                  //fout << "           m           ";         // PosINAC_FRENDY - V6
+                  //fout << "          E0           ";         // PosINAC_FRENDY - V6
+                  //fout << "         qsi           ";         // PosINAC_FRENDY - V8
+                  //fout << "        fxqsi          ";         // PosINAC_FRENDY - V8
+                  //fout << "    (qsi-fxqsi)/qsi    ";         // PosINAC_FRENDY - V8
+                  //fout << "           x           ";         // PosINAC_FRENDY - V6
+                  
+                  fout << "        smr*gg         ";
+                  
+
+                  
 
                   fout << endl << endl;
                 }
 
                 fout << ene_data[k] << " ";
-
-                // Só comentei para não imprimir as seções de choque - Willian
-                /*for(int l=0; l<4; l++)                   // l define qual dos xs ele vai pegar
+                //fout << sig_data[k][0] << " ";           //plota os valores de sig_val[total_xs] // PosINAC_FRENDY - V7
+                //fout << sig_data[k][1] << " ";           //plota os valores de sig_val[scatter_xs] // PosINAC_FRENDY - V7
+                //fout << sig_data[k][2] << " ";           //plota os valores de sig_val[fission_xs] // PosINAC_FRENDY - V7
+                fout << sig_data[k][3] << " ";           //plota os valores de sig_val[radiation_xs] // PosINAC_FRENDY - V7
+                
+                /*
+                for(int l=0; l<4; l++)                   // l define qual dos xs ele vai pegar
                 {
                   fout << sig_data[k][l] << " ";         //plota os valores de XS
-                }*/
+                }
+                */
 
                 fout << rxs_obj.get_psi() << " ";        // PosINAC_FRENDY - V3
                 //fout << rxs_obj.get_w_x() << " ";        // PosINAC_FRENDY - V5
                 //fout << rxs_obj.get_w_y() << " ";        // PosINAC_FRENDY - V5
-                fout << rxs_obj.get_w()   << " ";        // PosINAC_FRENDY - V5
-                fout << rxs_obj.get_x()   << " ";        // PosINAC_FRENDY - V5
-                fout << rxs_obj.get_Bk()   << " ";        // Willian
-                fout << rxs_obj.get_f1()   << " ";        // Willian
+                //fout << rxs_obj.get_w()   << " ";        // PosINAC_FRENDY - V5
+                
+                //fout << rxs_obj.get_m()   << " ";        // PosINAC_FRENDY - V6
+                //fout << rxs_obj.get_E0()  << " ";          // PosINAC_FRENDY - V7
+                //fout << rxs_obj.get_qsi() << " ";          // PosINAC_FRENDY - V8
+                //fout << rxs_obj.get_fxqsi() << " ";        // PosINAC_FRENDY - V8
+                //fout << (rxs_obj.get_qsi() - rxs_obj.get_fxqsi())/rxs_obj.get_qsi() << " "; // PosINAC_FRENDY - V8
+                //fout << rxs_obj.get_x()   << " ";          // PosINAC_FRENDY - V5
+                fout << rxs_obj.get_smr_gg() << " ";
+                
                
 
                 if (k == (k_max-1))                      // PosINAC_FRENDY - V3
                 {
                   fout << endl << endl;                  // PosINAC_FRENDY - V3
                   
-                  fout << "_______________________";     // PosINAC_FRENDY - V3
-                  fout << "_______________________";     // PosINAC_FRENDY - V3
-                  fout << "_______________________";     // PosINAC_FRENDY - V3
-                  fout << "_______________________";     // PosINAC_FRENDY - V3
-                  //fout << "_______________________";     // PosINAC_FRENDY - V3
-                  //fout << "_______________________";     // PosINAC_FRENDY - V3
+                  fout << "______________________ ";     // PosINAC_FRENDY - V3
+                  fout << "______________________ ";     // PosINAC_FRENDY - V3
+                  fout << "______________________ ";     // PosINAC_FRENDY - V3
+                  fout << "______________________ ";     // PosINAC_FRENDY - V3
+                  //fout << "______________________ ";     // PosINAC_FRENDY - V3
+                  //fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "_______________________";     // PosINAC_FRENDY - V5
                   //fout << "_______________________";     // PosINAC_FRENDY - V5
                   //fout << "_______________________";     // PosINAC_FRENDY - V5
-                  fout << "_______________________";     // PosINAC_FRENDY - V6
+                  //fout << "_______________________";     // PosINAC_FRENDY - V6
 
                   fout << endl << endl;                  // PosINAC_FRENDY - V3
                 }
@@ -438,8 +572,8 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
               }
               fout << endl;
             }
-          }
-          else if( n==1 || n==3 )
+          } /*  não trabalharemos com multi-level
+          else if( n==1 || n==3 || n==5 || n==7 )
           {
             fout << "Multi-Level Breite Wigner" << endl;
             rxs_obj.set_temp(0.0);
@@ -452,18 +586,24 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                 fout << sig_data[k][l] << " ";
               }
               fout << endl;
-            }
-            fout << endl;
-          }
+            } 
+            fout << endl; 
+          } 
+          */
         }
       }
     }
 
-    if( n==1 || n==3 )
+
+     fout.close(); // PosINAC_FRENDY - V9   o fout.close precisa ser efetuado para todos os n's
+
+    /* // PosINAC_FRENDY - V9 
+
+    if( n==1 || n==3 || n==5 || n==7 )
     {
       fout.close();
     }
-    // */ 
+    */ 
     
     Real8         tmp_real;
     vector<Real8> sig_ref;
@@ -483,7 +623,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
         if( i==0 && j==0 )
         {
           int k_max = static_cast<int>(ene_data.size());
-          if( n==0 || n==2 )
+          if( n==0 || n==2 || n==4 || n==6)
           {
             string line_data;
             while(!fin.eof())
@@ -514,7 +654,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
               getline(fin, line_data);
             }                              */
           }
-          else if( n==1 || n==3 )
+          else if( n==1 || n==3 || n==5 || n==7 )
           {
             string line_data;
             while(!fin.eof())
@@ -548,648 +688,6 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
 
 BOOST_AUTO_TEST_CASE(Coef_check01)
 {
-  ofstream fout;
-  fout.open("./comp_njoy/HelloWorld.dat");
-  fout.precision(15);
-  fout.setf(ios::scientific);
-  fout.setf(ios::showpos);
-  fout.setf(ios::showpoint);
-  //fout << "Hello " << "Willian" << endl; //Retirei para nao poluir o .dat 20220630
-
-
-  vector<double>  vec_x;
-  vector<double>  vec_chi;
-
-  double u, h, w_r, w_i, x, chi, Kappa, a, b, c, d; // Real8 x, chi;
-  complex<double> Pb;
-  //complex<double> *Pb = new complex<double>;
-  vec_x.resize(1);
-  vec_chi.resize(1);
-
-  vec_x[0] = 1.;
-  //vec_x[1] = 2.;
-  vec_chi[0] = 1.;
-  //vec_chi[1] = 2.;
-
-  int size_x =   static_cast<int>(vec_x.size());
-  int size_chi = static_cast<int>(vec_chi.size());
-
-  for(int m=0; m<size_x; m++) // "for" para poder calcular todo esse processo para diferenres valores de x
-  { //fout << "m= " << m << endl; //Retirei para nao poluir o .dat 20220630
-    for(int n=0; n<size_chi; n++) // "for" para poder calcular todo esse processo para diferenres valores de chi
-    {
-      x = vec_x[m];
-      chi = vec_chi[n];
-      a = pow(chi,4);
-      complex <double> a2 (a,0);
-      b = 2*pow(chi,2)*pow(Kappa,2);
-      complex <double> b2 (b,0);
-      //c = abs(a-b);
-      //fout << "n= " << n << endl; //Retirei para nao poluir o .dat 20220630
-
-      if (a>b)
-      {
-        
-        //fout << "a maior que b" << endl; //Retirei para nao poluir o .dat 20220630
-        c = abs(a-b);
-        h = sqrt(c)/2*chi;
-        Pb.real (h);
-        Pb.imag (0);
-        //fout << "a =" << a << endl; //Retirei para nao poluir o .dat 20220630
-        //fout << "b =" << b << endl; //Retirei para nao poluir o .dat 20220630
-        //fout << "h =" << h << endl; //Retirei para nao poluir o .dat 20220630
-        //complex<double> Pb (h,0.);
-        //Pb[0]=h;
-        //Pb[1]=0;
-        //fout << "Pb =" << Pb << endl;
-        //Pb = Pb1;
-        //fout << "Pb =" << Pb << endl;
-      }
-      else
-      {
-        //fout << "b maior que a" << endl; //Retirei para nao poluir o .dat 20220630
-        c = abs(a-b);
-        h = sqrt(c)/2*chi;
-        Pb.real (0);
-        Pb.imag (h);
-       // fout << "a =" << a << endl; //Retirei para nao poluir o .dat 20220630
-       // fout << "b =" << b << endl; //Retirei para nao poluir o .dat 20220630
-       // fout << "h =" << h << endl; //Retirei para nao poluir o .dat 20220630
-        //Pb[0]=0;
-        //Pb[1]=h;
-        //complex<double> Pb (0.,h);
-        //fout << "Pb =" << Pb << endl;
-        //Pb = Pb2;
-        //fout << "Pb =" << Pb << endl;
-      }
-      //Pb[0] = 1.;
-      //fout << "Pb =" << Pb << endl;
-
-      
-      Real8  Kappa, Bk, f1, f2, pi, x1, chi; // Willian
-
-      chi = 0.45;
-      x1 = 20;
-      Kappa = 0.1;
-      pi = M_PI;
-      complex <double> i {0.,1.};
-      complex <double> aa, d1, d2, d3, d4, d5, p1, p2, p3, theta, D, om1, om2, f3, omg, Sg, z, p11;
-
-      //FORZINHO PARA EU CONSEGUIR GERAR A TABELA 
-
-      double x1_array[] = {0, 0.5, 1, 2, 4, 6, 8, 10, 20, 40};
-      double num = 0.5;
-
-      for (double x2: x1_array){
-
-        fout << "\nX = " << x2 << "\n" << endl ;
-
-        for (double chi1 = 0.05; chi1<= num; chi1+=0.05){
-
-                Bk=(1)*(pow(2*Kappa,1.5))*(1+3*Kappa/2)*tgamma(1/(2*Kappa)+0.75)/tgamma(1/(2*Kappa)-0.75);  //Bk que vou tentar imprimir
-      
-                f1 = (chi1*(sqrt(pi)*Bk))/4; //parte mais à esquerda da função
-                
-                f2 = exp((pow(chi1,2)-pow(chi1,2)*pow(x2,2))/4); //#Exponencial mais externa da solução
-                
-                aa=(-1.*i*pow(chi1,2)*x2);  //#Termos presentes em p1, p2 e p3
-                
-                d1= pow(chi1,4); //#Termos presentes em p1, p2 e p3
-                
-                d2 = (2*pow(chi1,2)*pow(Kappa,2));
-                
-                d3 = sqrt(d1 - d2);
-
-                d4 = aa + d3;
-
-                d5 = aa - d3;
-                
-                p1 = (d4)/(2.0*chi1); //#Eq. 3.92 da tese
-                
-                p2 = (d5)/(2.0*chi1);  //#Eq. 3.93 da tese
-
-                p3 = (d3)/(2.0*chi1);  //#Eq. 3.93 da tese
-
-                theta = (x2/2)*d3; //#definição de theta da tese (Eq. 3.95)
-
-                D = ((2-(2*erf(chi1/2)))/(1-pow(Kappa,2)))*cos(theta); //# D(Eq. 3.99 da tese)
-
-                om1 = (sin(theta))*((Faddeeva::erf(p1)*(pow(Kappa,2)))-Faddeeva::erf(p1)+(Faddeeva::erf(p2)*(pow(Kappa,2)))-Faddeeva::erf(p2)); //# Omega 1(Eq. 3.90 da tese)
-
-                om2 = (cos(theta))*((2.0*Faddeeva::erf(p3)*(pow(Kappa,2)))-2.0*Faddeeva::erf(p3)-(Faddeeva::erf(p1)*(pow(Kappa,2)))+Faddeeva::erf(p1)+(Faddeeva::erf(p2)*(pow(Kappa,2)))-Faddeeva::erf(p2)); //# Omega 1(Eq. 3.90 da tese)
-
-                f3 = d3/((-pow(chi1,2))+(2*pow(Kappa,2))); //#primeiro trecho dentro de omega g
-
-                omg =  f3*(exp(pow(-Kappa,2)/2))*((i*om1)+(om2));   //# Omega geral(Eq. 3.100 da tese)
-
-                Sg = (f1*f2)*(D+omg); //# Solução geral (Eq. 3.9
-
-                fout << real(Sg) << endl;
-
-          }
-         
-         fout <<"\n";
-      }
-
-      // FIM DE FORZINHO PARA EU CONSEGUIR GERAR A TABELA 
-
-      /* //Retirei para nao poluir o .dat 20220630
-
-      //ay = sqrt( pow(qsi,4.0) - 2*pow(qsi,2)*pow(Kappa,2) )/(2*qsi);
-
-      Bk=(1)*(pow(2*Kappa,1.5))*(1+3*Kappa/2)*tgamma(1/(2*Kappa)+0.75)/tgamma(1/(2*Kappa)-0.75);  //Bk que vou tentar imprimir
-      
-      f1 = (chi*(sqrt(pi)*Bk))/4; //parte mais à esquerda da função
-      
-      f2 = exp((pow(chi,2)-pow(chi,2)*pow(x1,2))/4); //#Exponencial mais externa da solução
-      
-      aa=(-1.*i*pow(chi,2)*x1);  //#Termos presentes em p1, p2 e p3
-      
-      d1= pow(chi,4); //#Termos presentes em p1, p2 e p3
-      
-      d2 = (2*pow(chi,2)*pow(Kappa,2));
-      
-      d3 = sqrt(d1 - d2);
-
-      d4 = aa + d3;
-
-      d5 = aa - d3;
-      
-      p1 = (d4)/(2.0*chi); //#Eq. 3.92 da tese
-      
-      p2 = (d5)/(2.0*chi);  //#Eq. 3.93 da tese
-
-      p3 = (d3)/(2.0*chi);  //#Eq. 3.93 da tese
-
-      theta = (x1/2)*d3; //#definição de theta da tese (Eq. 3.95)
-
-      D = ((2-(2*erf(chi/2)))/(1-pow(Kappa,2)))*cos(theta); //# D(Eq. 3.99 da tese)
-
-      om1 = (sin(theta))*((Faddeeva::erf(p1)*(pow(Kappa,2)))-Faddeeva::erf(p1)+(Faddeeva::erf(p2)*(pow(Kappa,2)))-Faddeeva::erf(p2)); //# Omega 1(Eq. 3.90 da tese)
-
-      om2 = (cos(theta))*((2.0*Faddeeva::erf(p3)*(pow(Kappa,2)))-2.0*Faddeeva::erf(p3)-(Faddeeva::erf(p1)*(pow(Kappa,2)))+Faddeeva::erf(p1)+(Faddeeva::erf(p2)*(pow(Kappa,2)))-Faddeeva::erf(p2)); //# Omega 1(Eq. 3.90 da tese)
-
-      f3 = d3/((-pow(chi,2))+(2*pow(Kappa,2))); //#primeiro trecho dentro de omega g
-
-      omg =  f3*(exp(pow(-Kappa,2)/2))*((i*om1)+(om2));   //# Omega geral(Eq. 3.100 da tese)
-
-      Sg = (f1*f2)*(D+omg); //# Solução geral (Eq. 3.9
-
-      complex <double> z11 = {2.397915761656360e-01,-10}; //USE CHAVES SEU ANIMAL!!!!!
-
-      fout << "Fadeeva = " << Faddeeva::erf(p1)<< endl;
-
-      complex<double> olar;
-
-      olar = Faddeeva::erf(p2);
-
-      fout << "Fadeeva2 = " << olar << endl;
-
-      fout << "om1 = " << om1 << endl;
-
-      fout << "om2 = " << om2 << endl;
-
-      fout << "Psi Kappa = " << Sg << endl;
-      */
-
-
-      /*
-
-      om1 = (sin(theta))*((erf(p1)*(pow(Kappa,2)))-erf(p1)+(erf(p2)*(pow(Kappa,2)))-erf(p2)); //# Omega 1(Eq. 3.90 da tese)
-
-      om2 = (cos(theta))*((2*erf(p3)*(pow(Kappa,2)))-2*erf(p3)-(erf(p1)*(pow(Kappa,2)))+erf(p1)+(erf(p2)*(pow(Kappa,2)))-erf(p2)); //# Omega 1(Eq. 3.90 da tese)
-
-      f3 = b3/((-pow(chi,2))+(2*pow(Kappa,2))); //#primeiro trecho dentro de omega g
-
-      omg =  f3*(exp(pow(-Kappa,2)/2))*((i*om1)+(om2));   //# Omega geral(Eq. 3.100 da tese)
-
-      Sg = (f1*f2)*(D+omg); //# Solução geral (Eq. 3.9
-      */
-
-     // MODULO PARA TENTAR CALCULAR A FUNCAO ERRO POR MEIO DE W(Z)
-      /*
-      MathUtils math_obj;
-      //complex <double> u(0,0); //nova tentativa 20220622
-      //complex <double> h(0,0); //nova tentativa 20220622
-      math_obj.calc_cerfc(u, h, w_r, w_i);
-      complex <double> w (w_r,w_i);
-      complex <double> erro(0,0);
-      complex <double> z2(0,0);
-      complex <double> e1(0,0);
-      complex <double> e2(0,0);
-      complex <double> one(1,0);
-      z2 = z*z;
-      e1 = exp(-z2);
-      e2 = w / e1;
-      erro = one - e2;
-      */
-      
-
-      // FIM DO MODULO DE CALCULO DA FUNCAO ERRO
-
-
-      /* //Retirei para nao poluir o .dat 20220630
-      
-      complex<double> g1,g2;
-
-      g1 = erf(real(p1));
-      g2 = erf(imag(p1));
-
-
-
-      //fout << "d4 = " << d4 << endl;
-      fout << "p1 = " << p1 << endl;
-      fout << "p2 = " << p2 << endl;
-      fout << "p3 = " << p3 << endl;
-      fout << "theta = " << theta << endl;
-      fout << "D = " << D << endl;
-      //fout << "parte real de p1 = " << p1.real << endl;
-      fout << "Sg = " << Sg << endl;
-
-
-      fout << "g1 = " << g1 << endl;
-      fout << "g2 = " << g2 << endl;
-
-      */
-    }
-  }
-
- 
-  
-
-
-  
-
-
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////
-//////////////////////////////////////////////////////////////////////////////////////////
-//          
-  //MathUtils math_obj; 
-  //erro = math_obj.calcerf(x, chi);
-  //fout << erro;
-  
-  //Real8 x, chi, erro;
-  //x = 0;
-  //chi = 0.05;
-  
-  //fout << math_obj.get_erro();
-
-/* comentado 20220504
-
-  int px;
-  double u, h, w_r, w_i, x, chi, Kappa, a, b, c, d;
-  Kappa = 0.1;
-  x = 40.0;
-  chi = 0.15;
-  u = (chi*x) / 2;
-  complex <double> u2 (u,0);
-  a = pow(chi,4);
-  complex <double> a2 (a,0);
-  b = 2*pow(chi,2)*pow(Kappa,2);
-  complex <double> b2 (b,0);
-
-  px = 3;
-
-  if (px == 1) 
-  {
-
-    if (a>b) 
-    {
-
-      c = abs(a - b);
-      u = (chi*x) / 2;
-      h = sqrt(c)/(2*chi);
-      complex <double> z (u,h);
-      MathUtils math_obj;
-      math_obj.calc_cerfc(u, h, w_r, w_i);
-      complex <double> w (w_r,w_i);
-      complex <double> erro(0,0);
-      complex <double> z2(0,0);
-      complex <double> e1(0,0);
-      complex <double> e2(0,0);
-      complex <double> one(1,0);
-      z2 = z*z;
-      e1 = exp(-z2);
-      e2 = w / e1;
-      erro = one - e2;
-      fout << "'a' maior que 'b' " <<  endl;
-      fout << "Erro real = " << erro << endl;
-      fout << "w = " << w_r << " + " << w_i << " i" << endl ;
-      fout << "u= " << u << endl << "h = " << h << endl << " a = " << a << endl;
-      fout << "b = " << b << endl << "c = " << c << endl;
-      fout << "z2 = " << z2 << endl;
-      fout << "exp z2 = " << e1 << endl;
-      fout << "exp w/exp = " << e2 << endl;
-
-    } 
-    
-    else 
-    
-    {
-
-      c = abs(a - b);
-      d = sqrt(c);
-      u = (chi*x) / 2;
-      h = sqrt(c)/(2*chi);
-      complex <double> z (u,h);
-      complex <double> ii (0,1); //20220330
-      complex <double> zef(0,0); //20220330
-      zef = z*ii;                //20220330
-      MathUtils math_obj;
-      math_obj.calc_cerfc(u, h, w_r, w_i);
-      complex <double> w (w_r,w_i);
-      complex <double> erro(0,0);
-      complex <double> z2(0,0);
-      complex <double> e1(0,0);
-      complex <double> e2(0,0);
-      complex <double> one(1,0);
-      z2 = z*z;   //tirei para testar a multiplicação do i por fora 20220330
-      //z2 = zef*zef;
-      e1 = exp(-z2);
-      e2 = w / e1;
-      erro = one - e2;
-      fout << "'b' maior ou igual a 'a' " <<  endl;
-      fout << "Erro real = " << erro << endl;
-      fout << "w = " << w_r << " + " << w_i << " i" << endl ;
-      fout << "u= " << u << endl << "h = " << h << endl << "aaa = " << a << endl;
-      fout << "b = " << b << endl << "c = " << c << endl << "raiz de c = " << d << endl;
-      fout << "z = " << z << endl; 
-      fout << "z2 = " << real(z2) << endl;
-      fout << "exp z2 = " << real(e1) << endl;
-      fout << "exp w/exp = " << e2 << endl;
-    }
-  
-  }
-  
-  else if (px == 2) // P2 
-  {
-
-    if (a>b) 
-    {
-
-      c = abs(a - b);
-      u = (chi*x) / 2;
-      h = - sqrt(c)/(2*chi);
-      complex <double> z (u,h);
-      MathUtils  ;
-      math_obj.calc_cerfc(u, h, w_r, w_i);
-      complex <double> w (w_r,w_i);
-      complex <double> erro(0,0);
-      complex <double> z2(0,0);
-      complex <double> e1(0,0);
-      complex <double> e2(0,0);
-      complex <double> one(1,0);
-      z2 = z*z;
-      e1 = exp(-z2);
-      e2 = w / e1;
-      erro = one - e2;
-      fout << "'a' maior que 'b' " <<  endl;
-      fout << "Erro real = " << erro << endl;
-      fout << "w = " << w_r << " + " << w_i << " i" << endl ;
-      fout << "u= " << u << endl << "h = " << h << endl << " a = " << a << endl;
-      fout << "b = " << b << endl << "c = " << c << endl;
-      fout << "z2 = " << z2 << endl;
-      fout << "exp z2 = " << e1 << endl;
-      fout << "exp w/exp = " << e2 << endl;
-
-    } 
-    
-    else 
-    
-    {
-
-      c = abs(a - b);
-      d = sqrt(c);
-      u = (chi*x) / 2;
-      h = - sqrt(c)/(2*chi);
-      complex <double> z (u,h);
-      complex <double> ii (0,1); //20220330
-      complex <double> zef(0,0); //20220330
-      zef = z*ii;                //20220330
-      MathUtils math_obj;
-      math_obj.calc_cerfc(u, h, w_r, w_i);
-      complex <double> w (w_r,w_i);
-      complex <double> erro(0,0);
-      complex <double> z2(0,0);
-      complex <double> e1(0,0);
-      complex <double> e2(0,0);
-      complex <double> one(1,0);
-      z2 = z*z;   //tirei para testar a multiplicação do i por fora 20220330
-      //z2 = zef*zef;
-      e1 = exp(-z2);
-      e2 = w / e1;
-      erro = one - e2;
-      fout << "'b' maior ou igual a 'a' " <<  endl;
-      fout << "Erro real = " << erro << endl;
-      fout << "w = " << w_r << " + " << w_i << " i" << endl ;
-      fout << "u= " << u << endl << "h = " << h << endl << "aaa = " << a << endl;
-      fout << "b = " << b << endl << "c = " << c << endl << "raiz de c = " << d << endl;
-      fout << "z = " << z << endl; 
-      fout << "z2 = " << real(z2) << endl;
-      fout << "exp z2 = " << real(e1) << endl;
-      fout << "exp w/exp = " << e2 << endl;
-    }
-
-  }
-
-  else // P3
-  {
-
-    if (a>b) 
-    {
-
-      c = abs(a - b);
-      u = 0;
-      h = sqrt(c)/(2*chi);
-      complex <double> z (u,h);
-      MathUtils math_obj;
-      math_obj.calc_cerfc(u, h, w_r, w_i);
-      complex <double> w (w_r,w_i);
-      complex <double> erro(0,0);
-      complex <double> z2(0,0);
-      complex <double> e1(0,0);
-      complex <double> e2(0,0);
-      complex <double> one(1,0);
-      z2 = z*z;
-      e1 = exp(-z2);
-      e2 = w / e1;
-      erro = one - e2;
-      fout << "'a' maior que 'b' " <<  endl;
-      fout << "Erro real = " << erro << endl;
-      fout << "w = " << w_r << " + " << w_i << " i" << endl ;
-      fout << "u= " << u << endl << "h = " << h << endl << " a = " << a << endl;
-      fout << "b = " << b << endl << "c = " << c << endl;
-      fout << "z2 = " << z2 << endl;
-      fout << "exp z2 = " << e1 << endl;
-      fout << "exp w/exp = " << e2 << endl;
-
-    } 
-    
-    else 
-    
-    {
-
-      c = abs(a - b);
-      d = sqrt(c);
-      u = 0;
-      h = sqrt(c)/(2*chi);
-      complex <double> z (u,h);
-      complex <double> ii (0,1); //20220330
-      complex <double> zef(0,0); //20220330
-      zef = z*ii;                //20220330
-      MathUtils math_obj;
-      math_obj.calc_cerfc(u, h, w_r, w_i);
-      complex <double> w (w_r,w_i);
-      complex <double> erro(0,0);
-      complex <double> z2(0,0);
-      complex <double> e1(0,0);
-      complex <double> e2(0,0);
-      complex <double> one(1,0);
-      z2 = z*z;   //tirei para testar a multiplicação do i por fora 20220330
-      //z2 = zef*zef;
-      e1 = exp(-z2);
-      e2 = w / e1;
-      erro = one - e2;
-      fout << "'b' maior ou igual a 'a' " <<  endl;
-      fout << "Erro real = " << erro << endl;
-      fout << "w = " << w_r << " + " << w_i << " i" << endl ;
-      fout << "u= " << u << endl << "h = " << h << endl << "aaa = " << a << endl;
-      fout << "b = " << b << endl << "c = " << c << endl << "raiz de c = " << d << endl;
-      fout << "z = " << z << endl; 
-      fout << "z2 = " << real(z2) << endl;
-      fout << "exp z2 = " << real(e1) << endl;
-      fout << "exp w/exp = " << e2 << endl;
-    }
-  }
-  
-
-
-
-
-  //complex <double> j(0,1);
-  //complex <double> z(0,0);
-
-
-  if (a>b) 
-  {
-
-    c = abs(a - b);
-    u = (chi*x) / 2;
-    h = sqrt(c)/(2*chi);
-    complex <double> z (u,h);
-    MathUtils math_obj;
-    math_obj.calc_cerfc(u, h, w_r, w_i);
-    complex <double> w (w_r,w_i);
-    complex <double> erro(0,0);
-    complex <double> z2(0,0);
-    complex <double> e1(0,0);
-    complex <double> e2(0,0);
-    complex <double> one(1,0);
-    z2 = z*z;
-    e1 = exp(-z2);
-    e2 = w / e1;
-    erro = one - e2;
-    fout << endl << "outra parada" << endl <<  endl;
-    fout << "'a' maior que 'b' " <<  endl;
-    fout << "Erro real = " << erro << endl;
-    fout << "w = " << w_r << " + " << w_i << " i" << endl ;
-    fout << "u= " << u << endl << "h = " << h << endl << " a = " << a << endl;
-    fout << "b = " << b << endl << "c = " << c << endl;
-    fout << "z2 = " << z2 << endl;
-    fout << "exp z2 = " << e1 << endl;
-    fout << "exp w/exp = " << e2 << endl;
-
-  } 
-  
-  else 
-  {
-
-    c = abs(a - b);
-    d = sqrt(c);
-    u = (chi*x) / 2;
-    h = sqrt(c)/(2*chi);
-    complex <double> z (u,h);
-    complex <double> ii (0,1); //20220330
-    complex <double> zef(0,0); //20220330
-    zef = z*ii;                //20220330
-    MathUtils math_obj;
-    math_obj.calc_cerfc(u, h, w_r, w_i);
-    complex <double> w (w_r,w_i);
-    complex <double> erro(0,0);
-    complex <double> z2(0,0);
-    complex <double> e1(0,0);
-    complex <double> e2(0,0);
-    complex <double> one(1,0);
-    z2 = z*z;   //tirei para testar a multiplicação do i por fora 20220330
-    //z2 = zef*zef;
-    e1 = exp(-z2);
-    e2 = w / e1;
-    erro = one - e2;
-    fout << "'b' maior ou igual a 'a' " <<  endl;
-    fout << "Erro real = " << erro << endl;
-    fout << "w = " << w_r << " + " << w_i << " i" << endl ;
-    fout << "u= " << u << endl << "h = " << h << endl << "aaa = " << a << endl;
-    fout << "b = " << b << endl << "c = " << c << endl << "raiz de c = " << d << endl;
-    fout << "z = " << z << endl; 
-    fout << "z2 = " << real(z2) << endl;
-    fout << "exp z2 = " << real(e1) << endl;
-    fout << "exp w/exp = " << e2 << endl;
-
-
-
-  }
-  
-*/
-
-
-   //double erro;
-   //MathUtils math_obj;
-   
-   //ComplexErrorFunctionCalculatorWithPadeApproximation cef_obj;
-   
-   //math_obj.calcerf(erro);
-
-  /*
-  c = abs(a - b);
-  complex <double> c2 (c,0);
-  h = sqrt(c)/(2*chi);
-  complex <double> h2 (0,h);
-  complex <double> z (u,h);
-  //complex <double> z = c2 + h2;
-  MathUtils math_obj;
-  math_obj.calc_cerfc(u, h, w_r, w_i);
-  complex <double> w (w_r,w_i);
-  complex <double> one(1,0);
-  complex <double> two(2,0);
-  complex <double> t(0,0);
-  complex <double> test(0,0);
-  complex <double> erro(0,0);
-  complex <double> z2(0,0);
-  complex <double> e1(0,0);
-  complex <double> e2(0,0);
-  t = sqrt(one-two);
-  z2 = z*z;
-  test = two - one;
-  e1 = exp(-z2);
-  e2 = w / e1;
-  erro = one - e2;  
-  fout << "w = " << w_r << " + " << w_i << " i" << endl ;
-  fout << "u= " << u << endl << "h = " << h << endl << " a = " << a << endl;
-  fout << " b = " << b << endl << " c = " << c << endl;
-  fout << " Erro real = " << erro << endl;
-  fout << " teste = " << real(test) << endl;
-  fout << " z2 = " << z2 << endl;
-  fout << " exp z2 = " << e1 << endl;
-  fout << " exp w/exp = " << e2 << endl;
-  fout << " t = " << t << endl;  
-  fout.close();  
- */
-
-  /*
   vector<Real8> real_vec;
   real_vec.resize(33);
   real_vec[ 0] = 1.0e-5;
@@ -1322,7 +820,7 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
   }
   fout.close();
   // */ 
-  /*
+  
   ifstream fin;
   string   line_data;
   fin.open("./comp_njoy/coef_check.dat");
@@ -1384,8 +882,8 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
       BOOST_CHECK_LE(fabs(w_i[i][j] - w_i_ref[i][j]),fabs(1.0e-2*w_i_ref[i][j]+1.0e-10));
     }
   }
-}*/
 }
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 BOOST_AUTO_TEST_CASE(Reich_Moore_check01)

@@ -1,7 +1,6 @@
 #include "ReconResonance/ResonanceXSCalculator.hpp"
 #include <math.h>                                      // PosINAC_FRENDY - V3
-#include <stdio.h>                                     // Mod Willian 20220304
-#include <iomanip>                                     // Mod Willian 20220305
+#include "Faddeeva.cc" //adicionei para tentar usar a funcao erro complexa do pacote do MIT 20220622
 
 using namespace frendy;
 
@@ -353,7 +352,7 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
   //Single Level Breit Wigner
 
   Real8   x, x2, x3, x4, x5, qsi, qsi2, qsi3, qsi4, qsi5, fxqsi;   //Declaração de variáveis para cálculo de Tempo_eff
-  Real8  Kappa, Bk; // Willian
+
   
   Real8   tbk_coef, spifac, pifac;
   Real8   wave_no,    rho,    rho_h,    sl,    pl, phi;
@@ -413,6 +412,7 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
     }
     
     int m_max = nrs_multi[l];
+
     for(int m=0; m<m_max; m++)
     {
       er        = er_multi[l][m];
@@ -437,9 +437,7 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
         ///////////////////////////////////////////////////////////////////////////
         //// p/ gerar dados s/ Kaniadakis, deixe essa parte do codigo comentada ///
         ///////////////////////////////////////////////////////////////////////////
-
         /*
-
         qsi = ay / 0.5 ;
         x = fabs(ex) ;
 
@@ -460,99 +458,18 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
         + (-9.4704)*qsi5;
 
         ay = fxqsi * 0.5;
-
-
+        */
         /////////////////////////////////////////////////////////////////////////
         ////////// FIM DAS MODIFICAÇÕES SUGERIDAS PELO AQUILINO /////////////////
         /////////////////////////////////////////////////////////////////////////
-
-        */ //O CALCULO DA FUNCAO ALARG DOPPLER C KANIADAKIS ESTA NO ARQUIVO TESTE //20220630
-
-        ///////////////////////////////////////////////////////////////////////////
-        ////////////////// MODIFICAÇÕES Willian ///////////////////
-        ///////////////////////////////////////////////////////////////////////////
-        //// p/ gerar dados s/ Kaniadakis, deixe essa parte do codigo comentada ///
-        ///////////////////////////////////////////////////////////////////////////
-
-        //Como são muitas variáveis, vou declarar aqui mesmo. Peço perdão pelo vacilo.
-
-        //using namespace std;
-        //#include <complex> 
-        //#include <complex.h>// Era pra ter colocado isso lá em cima. Depois movo.
-        //#ifndef DCOMPLEX_H_
-        //#define DCOMPLEX_H_
-        //#define J dcomplex(0.0,1.0)
-        //typedef std::complex<double> dcomplex;
-        //#endif /* DCOMPLEX_H_ */
-        //#include "dcomplex.h"
-        //Fonte dessa manipulação complexa: https://stackoverflow.com/questions/17925904/how-to-use-complex-number-i-in-c
-
-        /* 
-        Real8  Kappa, Bk, f1, f2, a, b1, b2, b3, p1, p2, p3, theta, D, om1, om2, f3, omg, Sg, pi, x1, chi; // Willian
-
-        chi = 0.05;
-        x1 = 0;
-        Kappa = 0.01;
-        pi = M_PI;
-        i = sqrt(-1);
-
-        //ay = sqrt( pow(qsi,4.0) - 2*pow(qsi,2)*pow(Kappa,2) )/(2*qsi);
-
-        Bk=(1)*(pow(2*Kappa,1.5))*(1+3*Kappa/2)*tgamma(1/(2*Kappa)+0.75)/tgamma(1/(2*Kappa)-0.75);  //Bk que vou tentar imprimir
-        
-        f1 = (chi*(sqrt(pi)*Bk))/4; //parte mais à esquerda da função
-        
-        f2 = exp((pow(chi,2)-pow(chi,2)*pow(x1,2))/4); //#Exponencial mais externa da solução
-        
-        a=(-1*i*pow(chi,2)*x1);  //#Termos presentes em p1, p2 e p3
-        
-        b1= pow(chi,4); //#Termos presentes em p1, p2 e p3
-       
-        b2 = (2*pow(chi,2)*pow(Kappa,2));
-        
-        b3 = sqrt(b1 - b2);
-        
-        p1 = (a+b3)/(2*chi); //#Eq. 3.92 da tese
-        
-        p2 = (a-b3)/(2*chi); //#Eq. 3.93 da tese
-
-        p3 = (b3)/(2*chi);   //#Eq. 3.94 da tese
-
-        theta = (x1/2)*b3; //#definição de theta da tese (Eq. 3.95)
-
-        D = ((2-(2*erf(chi/2)))/(1-pow(Kappa,2)))*cos(theta); //# D(Eq. 3.99 da tese)
-
-        om1 = (sin(theta))*((erf(p1)*(pow(Kappa,2)))-erf(p1)+(erf(p2)*(pow(Kappa,2)))-erf(p2)); //# Omega 1(Eq. 3.90 da tese)
-
-        om2 = (cos(theta))*((2*erf(p3)*(pow(Kappa,2)))-2*erf(p3)-(erf(p1)*(pow(Kappa,2)))+erf(p1)+(erf(p2)*(pow(Kappa,2)))-erf(p2)); //# Omega 1(Eq. 3.90 da tese)
-
-        f3 = b3/((-pow(chi,2))+(2*pow(Kappa,2))); //#primeiro trecho dentro de omega g
-
-        omg =  f3*(exp(pow(-Kappa,2)/2))*((i*om1)+(om2));   //# Omega geral(Eq. 3.100 da tese)
-
-        Sg = (f1*f2)*(D+omg); //# Solução geral (Eq. 3.98)
-
-
-        /////////////////////////////////////////////////////////////////////////
-        ////////// FIM DAS MODIFICAÇÕES Willian /////////////////
-        /////////////////////////////////////////////////////////////////////////
-
-
-        */
-
-
-
-
-
-
         
 
         ax = ay*ex;                                 //ax é igual a U da eq (5.2.24)
-        
-        math_obj.calc_cerfc(ax, ay, psi, chi);      // Cálculo da função erro
+
+        math_obj.calc_cerfc(ax, ay, psi, chi);
         Real8 cerfc_coef = rpi*ay;
 
-        if (m==1)                 // quando m=1 entao trata-se da segunda regiao de ressonancia
+        if (m==641)                 // quando m=1 entao trata-se da segunda regiao de ressonancia
         {
           set_w_x(psi);           // PosINAC_FRENDY - V5          
                                   // psi e chi antes de multiplicar por cerfc_coef 
@@ -561,13 +478,75 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
           set_w(psi+chi);         // Soma da parte imaginaria e real da funcao w (omega)
                                   // PosINAC_FRENDY - V5
 
-          set_x(ex);              // PosINAC_FRENDY - V6
-
-          set_Bk(Bk);             // Tentativa Willian de imprimir
-          //set_f1(f1);             // Tentativa Willian de imprimir
+          //set_x(ex);              // PosINAC_FRENDY - V6
+          
         }
 
-        psi *= cerfc_coef;
+        
+
+        //////////////////////////////////////////////////////
+        ///////////IMPLEMENTAÇÃO DE KANI ANALÍTICO////////////
+        //////////////////////////////////////////////////////
+        /*
+          
+        
+          Real8  Kappa, Bk, f1, f2, x1, chi1;
+
+          chi1 = ay / 0.5 ;
+          x1 = ex * 1.0 ;
+          Kappa = 0.1  ;
+          complex <double> i {0.,1.};
+          complex <double> aa, d1, d2, d3, d4, d5, p1, p2, p3, theta, D, om1, om2, f3, omg, Sg, z, p11;
+          
+                   
+          Bk=(1)*(pow(2*Kappa,1.5))*(1+3*Kappa/2)*tgamma(1/(2*Kappa)+0.75)/tgamma(1/(2*Kappa)-0.75);  //Bk que vou tentar imprimir
+          
+          f1 = (chi1*(sqrt(M_PI))*Bk)/4; //parte mais à esquerda da função
+          
+          f2 = exp((pow(chi1,2)-pow(chi1,2)*pow(x1,2))/4); //#Exponencial mais externa da solução
+              
+          aa=(-1.*i*pow(chi1,2)*x2);  //#Termos presentes em p1, p2 e p3
+          
+          d1= pow(chi1,4); //#Termos presentes em p1, p2 e p3
+                  
+          d2 = (2*pow(chi1,2)*pow(Kappa,2));
+                
+          d3 = sqrt(d1 - d2);
+
+          d4 = aa + d3;
+
+          d5 = aa - d3;
+                  
+          p1 = (d4)/(2.0*chi1); //#Eq. 3.92 da tese
+                
+          p2 = (d5)/(2.0*chi1);  //#Eq. 3.93 da tese
+
+          p3 = (d3)/(2.0*chi1);  //#Eq. 3.93 da tese
+          
+          theta = (x1/2)*d3; //#definição de theta da tese (Eq. 3.95)
+          
+          D = ((2-(2*erf(chi1/2)))/(1-pow(Kappa,2)))*cos(theta); //# D(Eq. 3.99 da tese)
+          
+          om1 = (sin(theta))*((Faddeeva::erf(p1)*(pow(Kappa,2)))-Faddeeva::erf(p1)+(Faddeeva::erf(p2)*(pow(Kappa,2)))-Faddeeva::erf(p2)); //# Omega 1(Eq. 3.90 da tese)
+          
+          om2 = (cos(theta))*((2.0*Faddeeva::erf(p3)*(pow(Kappa,2)))-2.0*Faddeeva::erf(p3)-(Faddeeva::erf(p1)*(pow(Kappa,2)))+Faddeeva::erf(p1)+(Faddeeva::erf(p2)*(pow(Kappa,2)))-Faddeeva::erf(p2)); //# Omega 1(Eq. 3.90 da tese)
+          
+          f3 = d3/((-pow(chi1,2))+(2*pow(Kappa,2))); //#primeiro trecho dentro de omega g
+
+          omg =  f3*(exp(pow(-Kappa,2)/2))*((i*om1)+(om2));   //# Omega geral(Eq. 3.100 da tese)
+          
+          Sg = (f1*f2)*(D+omg); //# Solução geral (Eq. 3.98)
+          
+          //cerfc_coef = real(Sg);
+
+          psi = real(Sg);
+
+        */
+        //////////////////////////////////////////////////////
+        ////////FIM DA IMPLEMENTAÇÃO DE KANI ANALÍTICO////////
+        //////////////////////////////////////////////////////
+
+        psi *= cerfc_coef;       // deve ser comentado para implementação de KANI ANALITICO
         chi *= cerfc_coef;
         smr  = pifac*gj*gne/(gtt*gtt);
         
@@ -581,15 +560,34 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
         
         /////////////////////// Armazenamento de variaveis /////////////////////
 
-        if (m==1)                 // quando m=1 entao trata-se da segunda regiao de ressonancia
+        if (m==2)
         {
-          set_psi(psi);           // PosINAC_FRENDY - V3      
+          set_psi(psi);                                           // PosINAC_FRENDY - V3
+          set_qsi(qsi);                                           // PosINAC_FRENDY - V8
+          set_fxqsi(fxqsi);                                       // PosINAC_FRENDY - V8
+          set_E0((er + 0.5*gn*(sl_er_multi[l][m]-sl)*pl_er_inv));  // PosINAC_FRENDY - V8
+          set_x(ex);              // PosINAC_FRENDY - V
+          set_gtt(gtt);
+          set_smr_gg(smr * gg);
         }
+
+        set_l_max(l_max*1.0);     // PosINAC_FRENDY - V6 
+        set_m_max(m_max*1.0);     // PosINAC_FRENDY - V6 
+
+        /*
+        // Para plotar variáveis com diferentes valores de m (vairias ressonancias)        
+        int m_ref = int( ( ene_val - 55.5    )/         0.000275        );    // PosINAC_FRENDY - V7
+        /////                     ene_data[0])/(ene_data[1]-ene_data[0]);
+
+        if (m<=m_ref)         //Define em qual iteração as variáveis serão salvas para plot   //  
+        {
+          set_m(m*1.0);
+          set_E0((er + 0.5*gn*(sl_er_multi[l][m]-sl)*pl_er_inv));
+        }
+        */
     
-         
-
-
-        ////////////////////////////////////////////////////////////////////////
+        ////////////////// Fim do Armazenamento de Variaveis //////////////////
+      
       }
       else
       {
@@ -3442,25 +3440,62 @@ void ResonanceXSCalculator::set_w(Real8 real_val)    // define o objeto que seta
   w_eff           = real_val;                              
 }
 
-// PosINAC_FRENDY - V5
-
 void ResonanceXSCalculator::set_x(Real8 real_val)    // define o objeto que seta o valor de x_eff    
 {                                                                               
   x_eff           = real_val;                              
 }
 
-//Willian
+// PosINAC_FRENDY - V6
 
-void ResonanceXSCalculator::set_Bk(Real8 real_val)    // define o objeto que seta o valor de Bk_eff    
+void ResonanceXSCalculator::set_l_max(Real8 real_val)    // define o objeto que seta o valor de l_max_eff    
 {                                                                               
-  Bk_eff           = real_val;                              
+  l_max_eff           = real_val;                              
+}
+
+void ResonanceXSCalculator::set_m_max(Real8 real_val)    // define o objeto que seta o valor de m_max_eff    
+{                                                                               
+  m_max_eff           = real_val;                              
+}
+
+void ResonanceXSCalculator::set_m(Real8 real_val)    // define o objeto que seta o valor de m_max_eff    
+{                                                                               
+  m_eff           = real_val;                              
+}
+
+void ResonanceXSCalculator::set_E0(Real8 real_val)    // define o objeto que seta o valor de m_max_eff    
+{                                                                               
+  E0_eff           = real_val;                              
+}
+
+// PosINAC_FRENDY - V8
+
+void ResonanceXSCalculator::set_qsi(Real8 real_val)    // define o objeto que seta o valor de qsi_eff    
+{                                                                               
+  qsi_eff           = real_val;                              
+}
+
+void ResonanceXSCalculator::set_fxqsi(Real8 real_val)    // define o objeto que seta o valor de fxqsi_eff    
+{                                                                               
+  fxqsi_eff           = real_val;                              
+}
+
+// PosINAC_FRENDY - V10
+
+void ResonanceXSCalculator::set_gtt(Real8 real_val)    // define o objeto que seta o valor de qsi_eff    
+{                                                                               
+  gtt_eff           = real_val;                              
+}
+
+void ResonanceXSCalculator::set_smr_gg(Real8 real_val)    // define o objeto que seta o valor de smr*gg   
+{                                                                               
+  smr_gg_eff           = real_val;                              
 }
 
 
-void ResonanceXSCalculator::set_f1(Real8 real_val)    // define o objeto que seta o valor de Bk_eff    
-{                                                                               
-  f1_eff          = real_val;                              
-}
+
+
+
+
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3562,17 +3597,53 @@ Real8 ResonanceXSCalculator::get_x()       // definição do objeto que retorna 
   return x_eff;                                        
 }
 
-// Willian
+// PosINAC_FRENDY - V6
 
-Real8 ResonanceXSCalculator::get_Bk()       // definição do objeto que retorna Bk_eff          
+Real8 ResonanceXSCalculator::get_l_max()       // definição do objeto que retorna l_max_eff          
 {                                                          
-  return Bk_eff;                                        
+  return l_max_eff;                                        
 }
 
-Real8 ResonanceXSCalculator::get_f1()       // definição do objeto que retorna Bk_eff          
+Real8 ResonanceXSCalculator::get_m_max()       // definição do objeto que retorna m_max_eff          
 {                                                          
-  return f1_eff;                                        
+  return m_max_eff;                                        
 }
+
+Real8 ResonanceXSCalculator::get_m()       // definição do objeto que retorna m_eff          
+{                                                          
+  return m_eff;                                        
+}
+
+Real8 ResonanceXSCalculator::get_E0()       // definição do objeto que retorna E0_eff          
+{                                                          
+  return E0_eff;                                        
+}
+
+// PosINAC_FRENDY - V8
+
+Real8 ResonanceXSCalculator::get_qsi()       // definição do objeto que retorna qsi_eff          
+{                                                          
+  return qsi_eff;                                        
+}
+
+Real8 ResonanceXSCalculator::get_fxqsi()       // definição do objeto que retorna fxqsi_eff          
+{                                                          
+  return fxqsi_eff;                                        
+}
+
+// PosINAC_FRENDY - V10
+
+Real8 ResonanceXSCalculator::get_gtt()       // definição do objeto que retorna gtt_eff          
+{                                                          
+  return gtt_eff;                                        
+}
+
+
+Real8 ResonanceXSCalculator::get_smr_gg()       // definição do objeto que retorna smr_gg_eff          
+{                                                          
+  return smr_gg_eff;                                        
+}
+
 
 
 //////////////////////////////////////////////////////////////////////////
