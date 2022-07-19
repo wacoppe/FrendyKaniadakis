@@ -1,0 +1,1640 @@
+   JENDL-4.0  Pu-238                                                 0 0  0    0
+ 9.423800+4 2.360050+2          1          1          6          19434 1451    1
+ 0.000000+0 1.000000+0          0          0          0          69434 1451    2
+ 1.000000+0 2.000000+7          0          0         10          49434 1451    3
+ 0.000000+0 0.000000+0          0          0        452        1159434 1451    4
+ 94-Pu-238 JAEA+      EVAL-JAN10 O.Iwamoto,T.Nakagawa +           9434 1451    5
+                      DIST-MAY10                       20100303   9434 1451    6
+----JENDL-4.0         MATERIAL 9434                               9434 1451    7
+-----INCIDENT NEUTRON DATA                                        9434 1451    8
+------ENDF-6 FORMAT                                               9434 1451    9
+                                                                  9434 1451   10
+History                                                           9434 1451   11
+06-02 Fission cross section was revised.                          9434 1451   12
+06-07 Resolved resonance parameters were revised.                 9434 1451   13
+07-05 Theoretical calculation was made with CCONE code.           9434 1451   14
+      Data were compiled as JENDL/AC-2008/1/.                     9434 1451   15
+09-08 (MF1,MT458) was evaluated.                                  9434 1451   16
+09-12 New theoretical calculation was made with CCONE code.       9434 1451   17
+10-01 Data of prompt gamma rays due to fission were given.        9434 1451   18
+10-03 Covariance data were given.                                 9434 1451   19
+                                                                  9434 1451   20
+                                                                  9434 1451   21
+MF= 1 General information                                         9434 1451   22
+  MT=452 Number of Neutrons per fission                           9434 1451   23
+    Sum of MT's = 455 and 456.                                    9434 1451   24
+                                                                  9434 1451   25
+  MT=455 Delayed neutron data                                     9434 1451   26
+    Determined from nu-d of the following three nuclides and      9434 1451   27
+    partial fission cross sections calculated with CCONE code/2/. 9434 1451   28
+                                                                  9434 1451   29
+      Pu-239 = 0.004710                                           9434 1451   30
+      Pu-238 = 0.0026                                             9434 1451   31
+      Pu-237 = 0.0018                                             9434 1451   32
+                The value of Pu-239 are averages of systematics   9434 1451   33
+                by Tuttle/3/, Benedetti et al./4/ and             9434 1451   34
+                Waldo et al./5/ Other two are 20% decreased       9434 1451   35
+                from the systematics.                             9434 1451   36
+                                                                  9434 1451   37
+    Decay constants calculated by Brady and England./6/ were      9434 1451   38
+    adopted.                                                      9434 1451   39
+                                                                  9434 1451   40
+  MT=456 Number of prompt neutrons per fission                    9434 1451   41
+    Based on the systematics recommended by Ohsawa/7/.            9434 1451   42
+    The result is in very good agreement with experimental data   9434 1451   43
+    of Kroshin and Zamjatnin/8/, and Jaffy and Lerner/9/.         9434 1451   44
+                                                                  9434 1451   45
+  MT=458 Components of energy release due to fission              9434 1451   46
+    Total energy and prompt energy were calculated from mass      9434 1451   47
+    balance using JENDL-4 fission yields data and mass excess     9434 1451   48
+    evaluation. Mass excess values were from Audi's 2009          9434 1451   49
+    evaluation/10/. Delayed energy values were calculated from    9434 1451   50
+    the energy release for infinite irradiation using JENDL FP    9434 1451   51
+    Decay Data File 2000 and JENDL-4 yields data. For delayed     9434 1451   52
+    neutron energy, as the JENDL FP Decay Data File 2000/11/ does 9434 1451   53
+    not include average neutron energy values, the average values 9434 1451   54
+    were calculated using the formula shown in the report by      9434 1451   55
+    T.R. England/12/. The fractions of prompt energy were         9434 1451   56
+    calculated using the fractions of Sher's evaluation/13/ when  9434 1451   57
+    they were provided. When the fractions were not given by Sher,9434 1451   58
+    averaged fractions were used.                                 9434 1451   59
+                                                                  9434 1451   60
+                                                                  9434 1451   61
+MF= 2 Resonance parameters                                        9434 1451   62
+  MT=151                                                          9434 1451   63
+  Resolved resonance parameters (below 500 eV)                    9434 1451   64
+    Based on the resonance parameters reported by Young et        9434 1451   65
+    al./14/, Silbert et al. /15/ and Alam et al./16/.             9434 1451   66
+    These parameters were adjusted to the thermal cross           9434 1451   67
+    sections:                                                     9434 1451   68
+      Total     = 588 b /14/                                      9434 1451   69
+      Fission   = 17.7 b /17,18,19,20/                            9434 1451   70
+      Capture   = 412 b /21/                                      9434 1451   71
+                                                                  9434 1451   72
+  Unresolved resonance parameters (500 eV - 60 keV)               9434 1451   73
+    Parameters were determined with ASREP code /22/ to reproduce  9434 1451   74
+    the total, fission and capture cross sections described below 9434 1451   75
+    Since the fission cross section in this energy region had     9434 1451   76
+    resonance structure, average cross sections were used in the  9434 1451   77
+    fitting. The parameters are used only for self-shielding      9434 1451   78
+    calculations.                                                 9434 1451   79
+                                                                  9434 1451   80
+                                                                  9434 1451   81
+     Thermal cross sections and resonance integrals (at 300K)     9434 1451   82
+    -------------------------------------------------------       9434 1451   83
+                    0.0253 eV    reson. integ.(*)                 9434 1451   84
+                     (barns)       (barns)                        9434 1451   85
+    -------------------------------------------------------       9434 1451   86
+    total           585.18                                        9434 1451   87
+    elastic         154.56                                        9434 1451   88
+    fission          17.77           27.6                         9434 1451   89
+    capture         412.85          146                           9434 1451   90
+   -------------------------------------------------------        9434 1451   91
+         (*) In the energy range from 0.5 eV to 10 MeV.           9434 1451   92
+                                                                  9434 1451   93
+                                                                  9434 1451   94
+MF= 3 Neutron cross sections                                      9434 1451   95
+  Cross sections above the resolved resonance region except for   9434 1451   96
+  the total (MT=1), elastic scattering (MT=2) and fission cross   9434 1451   97
+  sections (MT=18, 19, 20, 21, 38) were calculated with CCONE     9434 1451   98
+  code/2/.                                                        9434 1451   99
+                                                                  9434 1451  100
+  MT=1 Total cross section                                        9434 1451  101
+    Below 10 keV, total cross section was calculated as a sum of  9434 1451  102
+    elastic scattering and capture cross sections calculated with 9434 1451  103
+    CCONE code /2/ and fission cross section determined from      9434 1451  104
+    expeimental data (see MT=18). Above 10 keV, the cross-section 9434 1451  105
+    data calculated with CCONE code were adopted. The calculation 9434 1451  106
+    was made with CC OMP of Soukhovitskii et al./23/.             9434 1451  107
+                                                                  9434 1451  108
+  MT=2 Elastic scattering cross section                           9434 1451  109
+    Below 10 keV, the elastic scattering cross section was calcu- 9434 1451  110
+    lated with CCONE code. Above 10 keV, it was obtained as (total9434 1451  111
+    cross section) - (partial cross sections).                    9434 1451  112
+                                                                  9434 1451  113
+  MT=18 Fission cross section                                     9434 1451  114
+    The following experimental data were analyzed in the energy   9434 1451  115
+    range above 450 eV with the GMA code/24/:                     9434 1451  116
+                                                                  9434 1451  117
+       Authors        Energy range     Data points  Reference     9434 1451  118
+       Fumushkin+     0.44 - 3.62 MeV        14      /25/(*1)     9434 1451  119
+       Drake+         450 eV - 2.58 MeV     774      /26/         9434 1451  120
+       Silbert+       451 eV - 2.97 MeV    4228      /15/         9434 1451  121
+       Knitter+       0.146 - 9.94 MeV       89      /27/(*1)     9434 1451  122
+       Budtz-Jorgensen+                                           9434 1451  123
+                      0.45 - 265 keV        602      /28/         9434 1451  124
+       Aleksandrov+   2.9 MeV                 1      /29/         9434 1451  125
+       Fursov+        0.149 - 14.7 MeV       71      /30/(*2)     9434 1451  126
+                                                                  9434 1451  127
+        (*1) Ratio to U-235 fission, (*2) Ratio to Pu-239 fission.9434 1451  128
+        JENDL-3.3 data was used to convert them to cross sections.9434 1451  129
+                                                                  9434 1451  130
+    The results of GMA were used to determine the parameters in   9434 1451  131
+    the CCONE calculation.                                        9434 1451  132
+                                                                  9434 1451  133
+    Above 10 MeV, the cross section was determined with eye-      9434 1451  134
+    guiding.                                                      9434 1451  135
+                                                                  9434 1451  136
+  MT=19, 20, 21, 38 Multi-chance fission cross sections           9434 1451  137
+    Calculated with CCONE code, and renormalized to the total     9434 1451  138
+    fission cross section (MT=18).                                9434 1451  139
+                                                                  9434 1451  140
+  MT=102 Capture cross section                                    9434 1451  141
+    Calculated with CCONE code. The experimental data of Silbert  9434 1451  142
+    et al./15/ were used to determine the model parameters of     9434 1451  143
+    CCONE code.                                                   9434 1451  144
+                                                                  9434 1451  145
+                                                                  9434 1451  146
+MF= 4 Angular distributions of secondary neutrons                 9434 1451  147
+  MT=2 Elastic scattering                                         9434 1451  148
+    Calculated with CCONE code.                                   9434 1451  149
+                                                                  9434 1451  150
+  MT=18 Fission                                                   9434 1451  151
+    Isotropic distributions in the laboratory system were assumed.9434 1451  152
+                                                                  9434 1451  153
+                                                                  9434 1451  154
+MF= 5 Energy distributions of secondary neutrons                  9434 1451  155
+  MT=18 Prompt fission neutrons                                   9434 1451  156
+    Calculated with CCONE code.                                   9434 1451  157
+                                                                  9434 1451  158
+  MT=455 Delayed neutron spectra                                  9434 1451  159
+    Summation calculation by Brady and England /6/ was adopted.   9434 1451  160
+                                                                  9434 1451  161
+MF= 6 Energy-angle distributions                                  9434 1451  162
+    Calculated with CCONE code.                                   9434 1451  163
+    Distributions from fission (MT=18) are not included.          9434 1451  164
+                                                                  9434 1451  165
+                                                                  9434 1451  166
+MF=12 Photon production multiplicities                            9434 1451  167
+  MT=18 Fission                                                   9434 1451  168
+    Calculated from the total energy released by the prompt       9434 1451  169
+    gamma-rays due to fission given in MF=1/MT=458 and the        9434 1451  170
+    average energy of gamma-rays.                                 9434 1451  171
+                                                                  9434 1451  172
+                                                                  9434 1451  173
+MF=14 Photon angular distributions                                9434 1451  174
+  MT=18 Fission                                                   9434 1451  175
+    Isotoropic distributions were assumed.                        9434 1451  176
+                                                                  9434 1451  177
+                                                                  9434 1451  178
+MF=15 Continuous photon energy spectra                            9434 1451  179
+  MT=18 Fission                                                   9434 1451  180
+    Experimental data measured by Verbinski et al./31/ for        9434 1451  181
+    Pu-239 thermal fission were adopted.                          9434 1451  182
+                                                                  9434 1451  183
+                                                                  9434 1451  184
+MF=31 Covariances of average number of neutrons per fission       9434 1451  185
+  MT=452 Number of neutrons per fission                           9434 1451  186
+    Combination of covariances for MT=455 and MT=456.             9434 1451  187
+                                                                  9434 1451  188
+  MT=455                                                          9434 1451  189
+    Error of 15% was assumed below 5 MeV and above 5 MeV,         9434 1451  190
+    respectively.                                                 9434 1451  191
+                                                                  9434 1451  192
+  MT=456                                                          9434 1451  193
+    Covariance was obtained by fitting a linear function to the   9434 1451  194
+    data at the thermal energy and 5 MeV assuming errors of 3%    9434 1451  195
+    and 5%, respectively. The error at the thermal energy was     9434 1451  196
+    estimated from experimental data/8,9/                         9434 1451  197
+                                                                  9434 1451  198
+                                                                  9434 1451  199
+MF=32 Covariances of resonance parameters                         9434 1451  200
+    Format of LCOMP=0 was adopted.                                9434 1451  201
+                                                                  9434 1451  202
+    Standard deviations were adopted from the data of Silbert et  9434 1451  203
+    al./15/ Error of the capture width was assumed to be 18%.     9434 1451  204
+    Error of 0.1% was given to the resonance energies.            9434 1451  205
+                                                                  9434 1451  206
+                                                                  9434 1451  207
+MF=33 Covariances of neutron cross sections                       9434 1451  208
+  Covariances were given to all the cross sections by using       9434 1451  209
+  KALMAN code/32/ and the covariances of model parameters         9434 1451  210
+  used in the theoretical calculations.                           9434 1451  211
+                                                                  9434 1451  212
+  For the following cross sections, covariances were determined   9434 1451  213
+  by different methods.                                           9434 1451  214
+                                                                  9434 1451  215
+  MT=1 Total cross section                                        9434 1451  216
+    In the energy region from 1 to 500eV, uncertainty of 10 %     9434 1451  217
+    was added.                                                    9434 1451  218
+                                                                  9434 1451  219
+  MT=2 Elastic scattering cross sections                          9434 1451  220
+    In the resonance region (below 500eV), uncertainty of 10 %    9434 1451  221
+    was added.                                                    9434 1451  222
+                                                                  9434 1451  223
+  MT=18 Fission cross section                                     9434 1451  224
+    Above the resonance region, cross section was evaluated with  9434 1451  225
+    GMA code/24/. Standard deviations obtained were multiplied    9434 1451  226
+    by a factor of 2.0. Above 12 MeV, they were assumed to be 20%.9434 1451  227
+                                                                  9434 1451  228
+  MT=102 Capture cross section                                    9434 1451  229
+    In the resonance region, addtional error of 10 % was given.   9434 1451  230
+                                                                  9434 1451  231
+    Above 400 eV, covariance matrix was obtained with CCONE and   9434 1451  232
+    KALMAN codes/32/.                                             9434 1451  233
+                                                                  9434 1451  234
+                                                                  9434 1451  235
+MF=34 Covariances for Angular Distributions                       9434 1451  236
+  MT=2 Elastic scattering                                         9434 1451  237
+    Covariances were given only to P1 components.                 9434 1451  238
+                                                                  9434 1451  239
+                                                                  9434 1451  240
+MF=35 Covariances for Energy Distributions                        9434 1451  241
+  MT=18 Fission spectra                                           9434 1451  242
+    Estimated with CCONE and KALMAN codes.                        9434 1451  243
+                                                                  9434 1451  244
+                                                                  9434 1451  245
+***************************************************************** 9434 1451  246
+  Calculation with CCONE code                                     9434 1451  247
+***************************************************************** 9434 1451  248
+                                                                  9434 1451  249
+  Models and parameters used in the CCONE/2/ calculation          9434 1451  250
+  1) Coupled channel optical model                                9434 1451  251
+     Levels in the rotational band were included. Optical model   9434 1451  252
+     potential and coupled levels are shown in Table 1.           9434 1451  253
+                                                                  9434 1451  254
+  2) Two-component exciton model/33/                              9434 1451  255
+    * Global parametrization of Koning-Duijvestijn/34/            9434 1451  256
+      was used.                                                   9434 1451  257
+    * Gamma emission channel/35/ was added to simulate direct     9434 1451  258
+      and semi-direct capture reaction.                           9434 1451  259
+                                                                  9434 1451  260
+  3) Hauser-Feshbach statistical model                            9434 1451  261
+    * Moldauer width fluctuation correction/36/ was included.     9434 1451  262
+    * Neutron, gamma and fission decay channel were included.     9434 1451  263
+    * Transmission coefficients of neutrons were taken from       9434 1451  264
+      coupled channel calculation in Table 1.                     9434 1451  265
+    * The level scheme of the target is shown in Table 2.         9434 1451  266
+    * Level density formula of constant temperature and Fermi-gas 9434 1451  267
+      model were used with shell energy correction and collective 9434 1451  268
+      enhancement factor. Parameters are shown in Table 3.        9434 1451  269
+    * Fission channel:                                            9434 1451  270
+      Double humped fission barriers were assumed.                9434 1451  271
+      Fission barrier penetrabilities were calculated with        9434 1451  272
+      Hill-Wheler formula/37/. Fission barrier parameters were    9434 1451  273
+      shown in Table 4. Transition state model was used and       9434 1451  274
+      continuum levels are assumed above the saddles. The level   9434 1451  275
+      density parameters for inner and outer saddles are shown in 9434 1451  276
+      Tables 5 and 6, respectively.                               9434 1451  277
+    * Gamma-ray strength function of Kopecky et al/38/,/39/       9434 1451  278
+      was used. The prameters are shown in Table 7.               9434 1451  279
+                                                                  9434 1451  280
+                                                                  9434 1451  281
+------------------------------------------------------------------9434 1451  282
+                              Tables                              9434 1451  283
+------------------------------------------------------------------9434 1451  284
+                                                                  9434 1451  285
+Table 1. Coupled channel calculation                              9434 1451  286
+  --------------------------------------------------              9434 1451  287
+  * rigid rotor model was applied                                 9434 1451  288
+  * coupled levels = 0,1,2,3,4 (see Table 2)                      9434 1451  289
+  * optical potential parameters /23/                             9434 1451  290
+    Volume:                                                       9434 1451  291
+      V_0       = 49.97    MeV                                    9434 1451  292
+      lambda_HF = 0.01004  1/MeV                                  9434 1451  293
+      C_viso    = 15.9     MeV                                    9434 1451  294
+      A_v       = 12.04    MeV                                    9434 1451  295
+      B_v       = 81.36    MeV                                    9434 1451  296
+      E_a       = 385      MeV                                    9434 1451  297
+      r_v       = 1.2568   fm                                     9434 1451  298
+      a_v       = 0.633    fm                                     9434 1451  299
+    Surface:                                                      9434 1451  300
+      W_0       = 17.2     MeV                                    9434 1451  301
+      B_s       = 11.19    MeV                                    9434 1451  302
+      C_s       = 0.01361  1/MeV                                  9434 1451  303
+      C_wiso    = 23.5     MeV                                    9434 1451  304
+      r_s       = 1.1803   fm                                     9434 1451  305
+      a_s       = 0.601    fm                                     9434 1451  306
+    Spin-orbit:                                                   9434 1451  307
+      V_so      = 5.75     MeV                                    9434 1451  308
+      lambda_so = 0.005    1/MeV                                  9434 1451  309
+      W_so      = -3.1     MeV                                    9434 1451  310
+      B_so      = 160      MeV                                    9434 1451  311
+      r_so      = 1.1214   fm                                     9434 1451  312
+      a_so      = 0.59     fm                                     9434 1451  313
+    Coulomb:                                                      9434 1451  314
+      C_coul    = 1.3                                             9434 1451  315
+      r_c       = 1.2452   fm                                     9434 1451  316
+      a_c       = 0.545    fm                                     9434 1451  317
+    Deformation:                                                  9434 1451  318
+      beta_2    = 0.22495                                         9434 1451  319
+      beta_4    = 0.07282                                         9434 1451  320
+      beta_6    = -0.01518                                        9434 1451  321
+                                                                  9434 1451  322
+  * Calculated strength function                                  9434 1451  323
+    S0= 1.11e-4 S1= 2.54e-4 R'=  9.40 fm (En=1 keV)               9434 1451  324
+  --------------------------------------------------              9434 1451  325
+                                                                  9434 1451  326
+Table 2. Level Scheme of Pu-238                                   9434 1451  327
+  -------------------                                             9434 1451  328
+  No.  Ex(MeV)   J PI                                             9434 1451  329
+  -------------------                                             9434 1451  330
+   0  0.00000   0  +  *                                           9434 1451  331
+   1  0.04408   2  +  *                                           9434 1451  332
+   2  0.14595   4  +  *                                           9434 1451  333
+   3  0.30338   6  +  *                                           9434 1451  334
+   4  0.51358   8  +  *                                           9434 1451  335
+   5  0.60514   1  -                                              9434 1451  336
+   6  0.66140   3  -                                              9434 1451  337
+   7  0.76324   5  -                                              9434 1451  338
+   8  0.77348  10  +                                              9434 1451  339
+   9  0.94146   0  +                                              9434 1451  340
+  10  0.96278   1  -                                              9434 1451  341
+  11  0.96820   2  -                                              9434 1451  342
+  12  0.98309   2  +                                              9434 1451  343
+  13  0.98545   2  -                                              9434 1451  344
+  14  1.01860   3  +                                              9434 1451  345
+  15  1.02854   2  +                                              9434 1451  346
+  16  1.06994   3  +                                              9434 1451  347
+  17  1.08010  12  +                                              9434 1451  348
+  18  1.08256   4  -                                              9434 1451  349
+  19  1.12576   4  +                                              9434 1451  350
+  20  1.13400   0  +                                              9434 1451  351
+  21  1.17440   2  +                                              9434 1451  352
+  22  1.20246   3  -                                              9434 1451  353
+  23  1.22865   0  +                                              9434 1451  354
+  24  1.25200   7  -                                              9434 1451  355
+  -------------------                                             9434 1451  356
+  *) Coupled levels in CC calculation                             9434 1451  357
+                                                                  9434 1451  358
+Table 3. Level density parameters                                 9434 1451  359
+  --------------------------------------------------------        9434 1451  360
+  Nuclide      a*    Pair  Eshell       T      E0  Ematch         9434 1451  361
+            1/MeV     MeV     MeV     MeV     MeV     MeV         9434 1451  362
+  --------------------------------------------------------        9434 1451  363
+   Pu-239 18.4349  0.7762  1.8503  0.3560 -0.5001  2.5655         9434 1451  364
+   Pu-238 18.3685  1.5557  1.9652  0.3804  0.0287  3.6608         9434 1451  365
+   Pu-237 18.3022  0.7795  1.8799  0.3586 -0.5090  2.5865         9434 1451  366
+   Pu-236 18.2358  1.5623  1.9752  0.3737  0.1216  3.5619         9434 1451  367
+  --------------------------------------------------------        9434 1451  368
+                                                                  9434 1451  369
+Table 4. Fission barrier parameters                               9434 1451  370
+  ----------------------------------------                        9434 1451  371
+  Nuclide     V_A    hw_A     V_B    hw_B                         9434 1451  372
+              MeV     MeV     MeV     MeV                         9434 1451  373
+  ----------------------------------------                        9434 1451  374
+   Pu-239   6.050   0.700   5.700   0.600                         9434 1451  375
+   Pu-238   5.500   0.600   4.800   0.600                         9434 1451  376
+   Pu-237   5.800   0.800   5.800   0.520                         9434 1451  377
+   Pu-236   6.000   1.040   5.000   0.600                         9434 1451  378
+  ----------------------------------------                        9434 1451  379
+                                                                  9434 1451  380
+Table 5. Level density above inner saddle                         9434 1451  381
+  --------------------------------------------------------        9434 1451  382
+  Nuclide      a*    Pair  Eshell       T      E0  Ematch         9434 1451  383
+            1/MeV     MeV     MeV     MeV     MeV     MeV         9434 1451  384
+  --------------------------------------------------------        9434 1451  385
+   Pu-239 20.2784  0.9056  2.6000  0.3523 -1.8394  3.2056         9434 1451  386
+   Pu-238 20.2054  1.8150  2.6000  0.3668 -1.1448  4.3150         9434 1451  387
+   Pu-237 20.1324  0.9094  2.6000  0.3320 -1.5137  2.9094         9434 1451  388
+   Pu-236 20.0594  1.8226  2.6000  0.3326 -0.6004  3.8226         9434 1451  389
+  --------------------------------------------------------        9434 1451  390
+                                                                  9434 1451  391
+Table 6. Level density above outer saddle                         9434 1451  392
+  --------------------------------------------------------        9434 1451  393
+  Nuclide      a*    Pair  Eshell       T      E0  Ematch         9434 1451  394
+            1/MeV     MeV     MeV     MeV     MeV     MeV         9434 1451  395
+  --------------------------------------------------------        9434 1451  396
+   Pu-239 20.2784  0.9056  0.3800  0.3901 -1.0534  3.2056         9434 1451  397
+   Pu-238 20.2054  1.8150  0.3400  0.4053 -0.3124  4.3150         9434 1451  398
+   Pu-237 20.1324  0.9094  0.3000  0.3706 -0.7963  2.9094         9434 1451  399
+   Pu-236 20.0594  1.8226  0.2600  0.3719  0.1175  3.8226         9434 1451  400
+  --------------------------------------------------------        9434 1451  401
+                                                                  9434 1451  402
+Table 7. Gamma-ray strength function for Pu-239                   9434 1451  403
+  --------------------------------------------------------        9434 1451  404
+  K0 = 1.800   E0 = 4.500 (MeV)                                   9434 1451  405
+  * E1: ER = 10.90 (MeV) EG = 2.50 (MeV) SIG = 300.00 (mb)        9434 1451  406
+        ER = 13.80 (MeV) EG = 4.70 (MeV) SIG = 450.00 (mb)        9434 1451  407
+  * M1: ER =  6.61 (MeV) EG = 4.00 (MeV) SIG =   3.04 (mb)        9434 1451  408
+  * E2: ER = 10.15 (MeV) EG = 3.24 (MeV) SIG =   6.79 (mb)        9434 1451  409
+  --------------------------------------------------------        9434 1451  410
+                                                                  9434 1451  411
+References                                                        9434 1451  412
+ 1) O.Iwamoto et al.: J. Nucl. Sci. Technol., 46, 510 (2009).     9434 1451  413
+ 2) O.Iwamoto: J. Nucl. Sci. Technol., 44, 687 (2007).            9434 1451  414
+ 3) R.J.Tuttld: INDC(NDS)-107/G+Special, p.29 (1979).             9434 1451  415
+ 4) G.Benedetti et al.: Nucl. Sci. Eng., 80, 379 (1982).          9434 1451  416
+ 5) R.Waldo et al.: Phys. Rev., C23, 1113 (1981).                 9434 1451  417
+ 6) M.C.Brady, T.R.England: Nucl. Sci. Eng., 103, 129 (1989).     9434 1451  418
+ 7) T.Ohsawa: J. Nucl. Radiochem. Sci., 9, 19 (2008)              9434 1451  419
+ 8) N.I.Kroshin, Ju.S.Zamjatnin: Atomic Energy, 29, 95 (1970).    9434 1451  420
+ 9) A.H.Jaffy, J.L.Lerner: Nucl. Phys. A145, 1 (1970).            9434 1451  421
+10) G.Audi: Private communication (April 2009).                   9434 1451  422
+11) J.Katakura et al.: JAERI 1343 (2001).                         9434 1451  423
+12) T.R.England et al.: LA-11151-MS (1988).                       9434 1451  424
+13) R.Sher, C.Beck: EPRI NP-1771 (1981).                          9434 1451  425
+14) T.E.Young et al.: Nucl. Sci. Eng., 30, 355 (1967).            9434 1451  426
+15) M.G.Silbert, J.R.Berreth: Nucl. Sci. Eng., 52, 187 (1973).    9434 1451  427
+16) B.Alam et al.: Nucl. Sci. Eng., 99, 267 (1988).               9434 1451  428
+17) G.C.Hanna et al.: Phys. Rev., 81, 893 (1951).                 9434 1451  429
+18) E.K.Hulet et al.: Pys. Rev., 107, 1294 (1957)                 9434 1451  430
+19) T.A.Eastwood et al.: 1958 Geneva, Vol.16, p.54, (1958)        9434 1451  431
+20) Zenkevich et al.: Yadernye Konstanty, (4), 6 (1990)           9434 1451  432
+21) J.P.Butler et al.: Canadian J. Phys., 35, 147 (1957).         9434 1451  433
+22) Y.Kikuchi et al.: JAERI-Data/Code 99-025 (1999) in Japanese.  9434 1451  434
+23) E.Sh.Soukhovitskii et al.: Phys. Rev. C72, 024604 (2005).     9434 1451  435
+24) W.P.Poenitz: BNL-NCS-51363, Vol.I, p.249 (1981).              9434 1451  436
+    S.Chiba, D.L.Smith: ANL/NDM-121 (1991).                       9434 1451  437
+25) E.F.Fomushkin, E.K.Gutnikova: Sov. J. Nucl. Phys., 10, 529    9434 1451  438
+    (1970).                                                       9434 1451  439
+26) D.M.Drake et al.: LA-4420, p.101 (1970).                      9434 1451  440
+27) H.-H.Knitter et al.: private communication to EXFOR (1981),   9434 1451  441
+28) C.Budtz-Jorgensen et al.: 1982 Antwerp, p.206 (1982).         9434 1451  442
+29) B.M.Aleksandrov et al.: Yadernye Konstanty, 1/50, p.3         9434 1451  443
+    (1983).                                                       9434 1451  444
+30) B.I.Fursov et al.: 1997 Trieste, Vol.1, p.488 (1997).         9434 1451  445
+31) V.V.Verbinski et al.: Phys. Rev., C7, 1173 (1973).            9434 1451  446
+32) T.Kawano, K.Shibata, JAERI-Data/Code 97-037 (1997) in         9434 1451  447
+    Japanese.                                                     9434 1451  448
+33) C.Kalbach: Phys. Rev. C33, 818 (1986).                        9434 1451  449
+34) A.J.Koning, M.C.Duijvestijn: Nucl. Phys. A744, 15 (2004).     9434 1451  450
+35) J.M.Akkermans, H.Gruppelaar: Phys. Lett. 157B, 95 (1985).     9434 1451  451
+36) P.A.Moldauer: Nucl. Phys. A344, 185 (1980).                   9434 1451  452
+37) D.L.Hill, J.A.Wheeler: Phys. Rev. 89, 1102 (1953).            9434 1451  453
+38) J.Kopecky, M.Uhl: Phys. Rev. C41, 1941 (1990).                9434 1451  454
+39) J.Kopecky, M.Uhl, R.E.Chrien: Phys. Rev. C47, 312 (1990).     9434 1451  455
+                                                                  9434 1451  456
+                                1        451        571          19434 1451  457
+                                1        452          9          09434 1451  458
+                                1        455         11          09434 1451  459
+                                1        456          4          09434 1451  460
+                                1        458          5          19434 1451  461
+                                2        151        118          19434 1451  462
+                                3          1         58          19434 1451  463
+                                3          2         44          19434 1451  464
+                                3          4         31          19434 1451  465
+                                3         16         12          19434 1451  466
+                                3         17          8          19434 1451  467
+                                3         18         48          19434 1451  468
+                                3         19         43          19434 1451  469
+                                3         20         23          19434 1451  470
+                                3         21         11          19434 1451  471
+                                3         38          7          19434 1451  472
+                                3         51         30          19434 1451  473
+                                3         52         28          19434 1451  474
+                                3         53         27          19434 1451  475
+                                3         54         26          19434 1451  476
+                                3         55         25          19434 1451  477
+                                3         56         25          19434 1451  478
+                                3         57         24          19434 1451  479
+                                3         58         24          19434 1451  480
+                                3         59         23          19434 1451  481
+                                3         60         22          19434 1451  482
+                                3         61         22          19434 1451  483
+                                3         62         22          19434 1451  484
+                                3         63         21          19434 1451  485
+                                3         64         21          19434 1451  486
+                                3         65         20          19434 1451  487
+                                3         66         20          19434 1451  488
+                                3         67         20          19434 1451  489
+                                3         68         19          19434 1451  490
+                                3         69         19          19434 1451  491
+                                3         70         19          19434 1451  492
+                                3         71         18          19434 1451  493
+                                3         72         18          19434 1451  494
+                                3         73         18          19434 1451  495
+                                3         74         17          19434 1451  496
+                                3         91         29          19434 1451  497
+                                3        102         34          19434 1451  498
+                                4          2        433          19434 1451  499
+                                4         18          2          19434 1451  500
+                                5         18       3922          19434 1451  501
+                                5        455        579          19434 1451  502
+                                6         16       1387          19434 1451  503
+                                6         17        295          19434 1451  504
+                                6         51        298          19434 1451  505
+                                6         52        289          19434 1451  506
+                                6         53        270          19434 1451  507
+                                6         54        258          19434 1451  508
+                                6         55        164          19434 1451  509
+                                6         56        164          19434 1451  510
+                                6         57        158          19434 1451  511
+                                6         58        172          19434 1451  512
+                                6         59        152          19434 1451  513
+                                6         60        153          19434 1451  514
+                                6         61        148          19434 1451  515
+                                6         62        151          19434 1451  516
+                                6         63        147          19434 1451  517
+                                6         64        136          19434 1451  518
+                                6         65        137          19434 1451  519
+                                6         66        132          19434 1451  520
+                                6         67        128          19434 1451  521
+                                6         68        134          19434 1451  522
+                                6         69        128          19434 1451  523
+                                6         70        126          19434 1451  524
+                                6         71        121          19434 1451  525
+                                6         72        129          19434 1451  526
+                                6         73        119          19434 1451  527
+                                6         74        116          19434 1451  528
+                                6         91       3929          19434 1451  529
+                                6        102       7307          19434 1451  530
+                               12         18          4          19434 1451  531
+                               14         18          1          19434 1451  532
+                               15         18         20          19434 1451  533
+                               31        452          5          19434 1451  534
+                               31        455          4          19434 1451  535
+                               31        456         32          19434 1451  536
+                               32        151        164          19434 1451  537
+                               33          1        124          19434 1451  538
+                               33          2        123          19434 1451  539
+                               33          4         13          19434 1451  540
+                               33         16         13          19434 1451  541
+                               33         17          7          19434 1451  542
+                               33         18        308          19434 1451  543
+                               33         51         76          19434 1451  544
+                               33         52         62          19434 1451  545
+                               33         53         53          19434 1451  546
+                               33         54         49          19434 1451  547
+                               33         55         46          19434 1451  548
+                               33         56         46          19434 1451  549
+                               33         57         46          19434 1451  550
+                               33         58         46          19434 1451  551
+                               33         59         42          19434 1451  552
+                               33         60         42          19434 1451  553
+                               33         61         42          19434 1451  554
+                               33         62         42          19434 1451  555
+                               33         63         42          19434 1451  556
+                               33         64         38          19434 1451  557
+                               33         65         38          19434 1451  558
+                               33         66         38          19434 1451  559
+                               33         67         38          19434 1451  560
+                               33         68         38          19434 1451  561
+                               33         69         38          19434 1451  562
+                               33         70         38          19434 1451  563
+                               33         71         38          19434 1451  564
+                               33         72         35          19434 1451  565
+                               33         73         35          19434 1451  566
+                               33         74         35          19434 1451  567
+                               33         91         62          19434 1451  568
+                               33        102        123          19434 1451  569
+                               34          2        122          19434 1451  570
+                               35         18       5859          19434 1451  571
+                                                                  9434 1  099999
+ 9.423800+4 2.360050+2          0          2          0          09434 1452    1
+ 0.000000+0 0.000000+0          0          0          1         179434 1452    2
+         17          2          0          0          0          09434 1452    3
+ 1.000000-5 2.910210+0 5.000000+5 2.982420+0 1.000000+6 3.054630+09434 1452    4
+ 2.000000+6 3.199050+0 3.000000+6 3.343470+0 4.000000+6 3.487890+09434 1452    5
+ 5.000000+6 3.632290+0 6.000000+6 3.776270+0 7.000000+6 3.920290+09434 1452    6
+ 8.000000+6 4.064550+0 9.000000+6 4.208880+0 1.000000+7 4.353240+09434 1452    7
+ 1.200000+7 4.642000+0 1.400000+7 4.930780+0 1.600000+7 5.219500+09434 1452    8
+ 1.800000+7 5.508250+0 2.000000+7 5.797040+0                      9434 1452    9
+                                                                  9434 1  099999
+ 9.423800+4 2.360050+2          0          2          0          09434 1455    1
+ 0.000000+0 0.000000+0          0          0          6          09434 1455    2
+ 1.330000-2 3.120000-2 1.162000-1 2.888000-1 8.561000-1 2.713800+09434 1455    3
+ 0.000000+0 0.000000+0          0          0          1         179434 1455    4
+         17          2          0          0          0          09434 1455    5
+ 1.000000-5 4.710000-3 5.000000+5 4.710000-3 1.000000+6 4.710000-39434 1455    6
+ 2.000000+6 4.710000-3 3.000000+6 4.710000-3 4.000000+6 4.709990-39434 1455    7
+ 5.000000+6 4.693720-3 6.000000+6 4.247050-3 7.000000+6 3.853920-39434 1455    8
+ 8.000000+6 3.688800-3 9.000000+6 3.600720-3 1.000000+7 3.540240-39434 1455    9
+ 1.200000+7 3.461760-3 1.400000+7 3.403840-3 1.600000+7 3.284560-39434 1455   10
+ 1.800000+7 3.188250-3 2.000000+7 3.136650-3                      9434 1455   11
+                                                                  9434 1  099999
+ 9.423800+4 2.360050+2          0          2          0          09434 1456    1
+ 0.000000+0 0.000000+0          0          0          1          29434 1456    2
+          2          2          0          0          0          09434 1456    3
+ 1.000000-5 2.905500+0 2.000000+7 5.793900+0                      9434 1456    4
+                                                                  9434 1  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 1458    1
+ 0.000000+0 0.000000+0          0          0         18          99434 1458    2
+ 1.739390+8 0.000000+0 5.932000+6 0.000000+0 3.000000+3 0.000000+09434 1458    3
+ 6.973000+6 0.000000+0 5.325000+6 0.000000+0 5.295000+6 0.000000+09434 1458    4
+ 7.203000+6 0.000000+0 1.974670+8 0.000000+0 2.046700+8 0.000000+09434 1458    5
+                                                                  9434 1  099999
+                                                                  9434 0  0    0
+ 9.423800+4 2.360050+2          0          0          1          09434 2151    1
+ 9.423800+4 1.000000+0          0          0          2          09434 2151    2
+ 1.000000-5 5.000000+2          1          2          0          09434 2151    3
+ 0.000000+0 1.150000+0          0          0          1          09434 2151    4
+ 2.360050+2 0.000000+0          0          0        312         529434 2151    5
+-2.100000-1 5.000000-1 3.443000-3 1.150000-3 2.200000-3 9.300000-59434 2151    6
+ 2.885000+0 5.000000-1 3.859970-2 7.470000-5 3.800000-2 5.250000-49434 2151    7
+ 9.975000+0 5.000000-1 4.142800-2 2.080000-4 3.700000-2 4.220000-39434 2151    8
+ 1.860000+1 5.000000-1 3.897100-2 4.140000-3 3.400000-2 8.310000-49434 2151    9
+ 3.220000+1 5.000000-1 3.886800-2 6.800000-5 3.400000-2 4.800000-39434 2151   10
+ 3.660000+1 5.000000-1 3.992400-2 2.400000-5 3.400000-2 5.900000-39434 2151   11
+ 5.980000+1 5.000000-1 3.598000-2 1.310000-3 3.400000-2 6.700000-49434 2151   12
+ 7.010000+1 5.000000-1 4.391000-2 2.510000-3 3.400000-2 7.400000-39434 2151   13
+ 7.770000+1 5.000000-1 4.342640-2 2.640000-5 3.400000-2 9.400000-39434 2151   14
+ 8.310000+1 5.000000-1 5.810000-2 2.060000-2 3.400000-2 3.500000-39434 2151   15
+ 9.620000+1 5.000000-1 3.885880-2 5.880000-5 3.400000-2 4.800000-39434 2151   16
+ 9.960000+1 5.000000-1 3.935900-2 2.590000-4 3.400000-2 5.100000-39434 2151   17
+ 1.101000+2 5.000000-1 4.377000-2 5.670000-3 3.400000-2 4.100000-39434 2151   18
+ 1.112000+2 5.000000-1 3.722700-2 1.270000-4 3.400000-2 3.100000-39434 2151   19
+ 1.136000+2 5.000000-1 5.170000-2 1.230000-2 3.400000-2 5.400000-39434 2151   20
+ 1.186000+2 5.000000-1 6.640000-2 3.080000-2 3.400000-2 1.600000-39434 2151   21
+ 1.224000+2 5.000000-1 7.250000-2 3.000000-2 3.400000-2 8.500000-39434 2151   22
+ 1.290000+2 5.000000-1 3.521600-2 2.160000-4 3.400000-2 1.000000-39434 2151   23
+ 1.324000+2 5.000000-1 4.015100-2 8.510000-4 3.400000-2 5.300000-39434 2151   24
+ 1.397000+2 5.000000-1 4.314000-2 2.840000-3 3.400000-2 6.300000-39434 2151   25
+ 1.511000+2 5.000000-1 7.260000-2 2.940000-2 3.400000-2 9.200000-39434 2151   26
+ 1.650000+2 5.000000-1 4.491800-2 2.180000-4 3.400000-2 1.070000-29434 2151   27
+ 1.710000+2 5.000000-1 8.152000-2 4.680000-2 3.400000-2 7.200000-49434 2151   28
+ 1.768000+2 5.000000-1 8.066000-2 2.660000-3 3.400000-2 4.400000-29434 2151   29
+ 1.829000+2 5.000000-1 6.960000-2 2.850000-2 3.400000-2 7.100000-39434 2151   30
+ 1.925000+2 5.000000-1 1.795000-1 1.550000-2 3.400000-2 1.300000-19434 2151   31
+ 2.030000+2 5.000000-1 4.119000-2 4.990000-3 3.400000-2 2.200000-39434 2151   32
+ 2.160000+2 5.000000-1 7.460000-2 1.760000-2 3.400000-2 2.300000-29434 2151   33
+ 2.210000+2 5.000000-1 9.420000-2 5.900000-2 3.400000-2 1.200000-39434 2151   34
+ 2.320000+2 5.000000-1 3.555600-2 7.160000-4 3.400000-2 8.400000-49434 2151   35
+ 2.450000+2 5.000000-1 6.573000-2 6.730000-3 3.400000-2 2.500000-29434 2151   36
+ 2.520000+2 5.000000-1 1.066000-1 1.560000-2 3.400000-2 5.700000-29434 2151   37
+ 2.610000+2 5.000000-1 4.125800-2 2.580000-4 3.400000-2 7.000000-39434 2151   38
+ 2.850000+2 5.000000-1 3.560000+0 2.600000-2 3.400000-2 3.500000+09434 2151   39
+ 2.890000+2 5.000000-1 9.560000-2 3.760000-2 3.400000-2 2.400000-29434 2151   40
+ 3.000000+2 5.000000-1 1.914000-1 5.540000-2 3.400000-2 1.020000-19434 2151   41
+ 3.050000+2 5.000000-1 1.100300-1 8.030000-3 3.400000-2 6.800000-29434 2151   42
+ 3.200000+2 5.000000-1 2.185000-1 1.790000-1 3.400000-2 5.500000-39434 2151   43
+ 3.270000+2 5.000000-1 7.670000-2 2.770000-2 3.400000-2 1.500000-29434 2151   44
+ 3.370000+2 5.000000-1 5.780000-2 1.540000-2 3.400000-2 8.400000-39434 2151   45
+ 3.610000+2 5.000000-1 4.179800-2 7.980000-4 3.400000-2 7.000000-39434 2151   46
+ 3.680000+2 5.000000-1 5.570000-2 1.730000-2 3.400000-2 4.400000-39434 2151   47
+ 3.820000+2 5.000000-1 5.139000-2 3.900000-4 3.400000-2 1.700000-29434 2151   48
+ 3.910000+2 5.000000-1 4.990000-2 1.310000-2 3.400000-2 2.800000-39434 2151   49
+ 4.080000+2 5.000000-1 5.510000-2 1.860000-2 3.400000-2 2.500000-39434 2151   50
+ 4.190000+2 5.000000-1 1.162000-1 5.320000-2 3.400000-2 2.900000-29434 2151   51
+ 4.260000+2 5.000000-1 9.300000-2 4.770000-2 3.400000-2 1.130000-29434 2151   52
+ 4.480000+2 5.000000-1 1.115600-1 6.560000-3 3.400000-2 7.100000-29434 2151   53
+ 4.610000+2 5.000000-1 9.030000-2 4.960000-2 3.400000-2 6.700000-39434 2151   54
+ 4.650000+2 5.000000-1 1.263000-1 8.560000-2 3.400000-2 6.700000-39434 2151   55
+ 4.730000+2 5.000000-1 5.940000-2 2.310000-2 3.400000-2 2.300000-39434 2151   56
+ 4.960000+2 5.000000-1 5.015000-2 9.350000-3 3.400000-2 6.800000-39434 2151   57
+ 5.000000+2 6.000000+4          2          2          0          09434 2151   58
+ 0.000000+0 9.238700-1          1          0          2          09434 2151   59
+ 2.360050+2 0.000000+0          0          0          1          09434 2151   60
+ 5.000000-1 0.000000+0          5          0        108         179434 2151   61
+ 0.000000+0 0.000000+0 0.000000+0 1.000000+0 0.000000+0 2.000000+09434 2151   62
+ 5.000000+2 8.990800+0 0.000000+0 1.033600-3 3.400000-2 1.223800-29434 2151   63
+ 7.000000+2 8.987100+0 0.000000+0 1.040200-3 3.400000-2 1.296500-29434 2151   64
+ 1.000000+3 8.981600+0 0.000000+0 1.041200-3 3.400000-2 1.279800-29434 2151   65
+ 1.500000+3 8.972500+0 0.000000+0 1.042400-3 3.400000-2 1.266000-29434 2151   66
+ 2.000000+3 8.963300+0 0.000000+0 1.037200-3 3.400000-2 1.383800-29434 2151   67
+ 2.500000+3 8.954200+0 0.000000+0 1.042900-3 3.400000-2 1.540700-29434 2151   68
+ 3.000000+3 8.945000+0 0.000000+0 1.044400-3 3.400000-2 1.704800-29434 2151   69
+ 5.000000+3 8.908600+0 0.000000+0 1.036600-3 3.400000-2 2.268200-29434 2151   70
+ 7.000000+3 8.872300+0 0.000000+0 1.014600-3 3.400000-2 2.644500-29434 2151   71
+ 1.000000+4 8.818100+0 0.000000+0 9.727900-4 3.400000-2 2.998700-29434 2151   72
+ 1.500000+4 8.728600+0 0.000000+0 9.373500-4 3.400000-2 3.387200-29434 2151   73
+ 2.000000+4 8.640100+0 0.000000+0 8.888700-4 3.400000-2 3.787900-29434 2151   74
+ 2.500000+4 8.552400+0 0.000000+0 8.871900-4 3.400000-2 4.083900-29434 2151   75
+ 3.000000+4 8.465700+0 0.000000+0 8.829900-4 3.400000-2 4.311800-29434 2151   76
+ 4.430000+4 8.222800+0 0.000000+0 8.477600-4 3.400000-2 4.532400-29434 2151   77
+ 5.000000+4 8.128000+0 0.000000+0 8.771300-4 3.400000-2 4.647100-29434 2151   78
+ 6.000000+4 7.964400+0 0.000000+0 9.520300-4 3.400000-2 4.697300-29434 2151   79
+ 2.360050+2 0.000000+0          1          0          2          09434 2151   80
+ 5.000000-1 0.000000+0          5          0        108         179434 2151   81
+ 0.000000+0 0.000000+0 1.000000+0 1.000000+0 0.000000+0 2.000000+09434 2151   82
+ 5.000000+2 8.990800+0 0.000000+0 2.194600-3 3.400000-2 1.223800-29434 2151   83
+ 7.000000+2 8.987100+0 0.000000+0 2.193700-3 3.400000-2 1.296500-29434 2151   84
+ 1.000000+3 8.981600+0 0.000000+0 2.192400-3 3.400000-2 1.279800-29434 2151   85
+ 1.500000+3 8.972500+0 0.000000+0 2.190100-3 3.400000-2 1.266000-29434 2151   86
+ 2.000000+3 8.963300+0 0.000000+0 2.187900-3 3.400000-2 1.383800-29434 2151   87
+ 2.500000+3 8.954200+0 0.000000+0 2.185600-3 3.400000-2 1.540700-29434 2151   88
+ 3.000000+3 8.945000+0 0.000000+0 2.183400-3 3.400000-2 1.704800-29434 2151   89
+ 5.000000+3 8.908600+0 0.000000+0 2.174500-3 3.400000-2 2.268200-29434 2151   90
+ 7.000000+3 8.872300+0 0.000000+0 2.165700-3 3.400000-2 2.644500-29434 2151   91
+ 1.000000+4 8.818100+0 0.000000+0 2.152400-3 3.400000-2 2.998700-29434 2151   92
+ 1.500000+4 8.728600+0 0.000000+0 2.130600-3 3.400000-2 3.387200-29434 2151   93
+ 2.000000+4 8.640100+0 0.000000+0 2.109000-3 3.400000-2 3.787900-29434 2151   94
+ 2.500000+4 8.552400+0 0.000000+0 2.087600-3 3.400000-2 4.083900-29434 2151   95
+ 3.000000+4 8.465700+0 0.000000+0 2.066400-3 3.400000-2 4.311800-29434 2151   96
+ 4.430000+4 8.222800+0 0.000000+0 2.007100-3 3.400000-2 4.532400-29434 2151   97
+ 5.000000+4 8.128000+0 2.719100-3 1.984000-3 3.400000-2 4.647100-29434 2151   98
+ 6.000000+4 7.964400+0 1.209500-2 1.944100-3 3.400000-2 4.697300-29434 2151   99
+ 1.500000+0 0.000000+0          5          0        108         179434 2151  100
+ 0.000000+0 0.000000+0 2.000000+0 1.000000+0 0.000000+0 2.000000+09434 2151  101
+ 5.000000+2 4.495400+0 0.000000+0 1.097300-3 3.400000-2 1.223800-29434 2151  102
+ 7.000000+2 4.493600+0 0.000000+0 1.096800-3 3.400000-2 1.296500-29434 2151  103
+ 1.000000+3 4.490800+0 0.000000+0 1.096200-3 3.400000-2 1.279800-29434 2151  104
+ 1.500000+3 4.486200+0 0.000000+0 1.095100-3 3.400000-2 1.266000-29434 2151  105
+ 2.000000+3 4.481700+0 0.000000+0 1.093900-3 3.400000-2 1.383800-29434 2151  106
+ 2.500000+3 4.477100+0 0.000000+0 1.092800-3 3.400000-2 1.540700-29434 2151  107
+ 3.000000+3 4.472500+0 0.000000+0 1.091700-3 3.400000-2 1.704800-29434 2151  108
+ 5.000000+3 4.454300+0 0.000000+0 1.087300-3 3.400000-2 2.268200-29434 2151  109
+ 7.000000+3 4.436100+0 0.000000+0 1.082800-3 3.400000-2 2.644500-29434 2151  110
+ 1.000000+4 4.409100+0 0.000000+0 1.076200-3 3.400000-2 2.998700-29434 2151  111
+ 1.500000+4 4.364300+0 0.000000+0 1.065300-3 3.400000-2 3.387200-29434 2151  112
+ 2.000000+4 4.320000+0 0.000000+0 1.054500-3 3.400000-2 3.787900-29434 2151  113
+ 2.500000+4 4.276200+0 0.000000+0 1.043800-3 3.400000-2 4.083900-29434 2151  114
+ 3.000000+4 4.232900+0 0.000000+0 1.033200-3 3.400000-2 4.311800-29434 2151  115
+ 4.430000+4 4.111400+0 0.000000+0 1.003600-3 3.400000-2 4.532400-29434 2151  116
+ 5.000000+4 4.064000+0 2.719100-3 9.919900-4 3.400000-2 4.647100-29434 2151  117
+ 6.000000+4 3.982200+0 1.209500-2 9.720300-4 3.400000-2 4.697300-29434 2151  118
+                                                                  9434 2  099999
+                                                                  9434 0  0    0
+ 9.423800+4 2.360050+2          0          0          0          09434 3  1    1
+ 0.000000+0 0.000000+0          0          0          2        1649434 3  1    2
+          4          2        164          5          0          09434 3  1    3
+ 1.000000-5 0.000000+0 2.530000-2 0.000000+0 5.000000+2 0.000000+09434 3  1    4
+ 5.000000+2 2.996484+1 6.000000+2 2.807695+1 6.235740+2 2.829747+19434 3  1    5
+ 6.480740+2 2.878026+1 6.735370+2 2.965584+1 7.000000+2 3.112114+19434 3  1    6
+ 7.483310+2 2.852120+1 8.000000+2 2.682699+1 9.000000+2 2.711640+19434 3  1    7
+ 9.486830+2 2.590090+1 1.000000+3 2.497888+1 1.250000+3 2.376534+19434 3  1    8
+ 1.500000+3 2.247138+1 1.750000+3 2.217202+1 2.000000+3 2.139381+19434 3  1    9
+ 2.350000+3 2.008976+1 2.459590+3 2.016041+1 2.574300+3 2.034356+19434 3  1   10
+ 2.694350+3 2.068681+1 2.820000+3 2.125856+1 3.000000+3 2.048170+19434 3  1   11
+ 3.300000+3 1.954000+1 3.395750+3 1.907214+1 3.494280+3 1.871260+19434 3  1   12
+ 3.700000+3 1.820321+1 3.796180+3 1.828039+1 3.894870+3 1.843652+19434 3  1   13
+ 3.996120+3 1.870978+1 4.100000+3 1.915697+1 4.242410+3 1.849205+19434 3  1   14
+ 4.389760+3 1.802155+1 4.542230+3 1.767848+1 4.700000+3 1.741908+19434 3  1   15
+ 4.847680+3 1.744754+1 5.000000+3 1.752696+1 5.139090+3 1.766116+19434 3  1   16
+ 5.282050+3 1.787137+1 5.428980+3 1.818461+1 5.580000+3 1.863762+19434 3  1   17
+ 6.500000+3 1.736205+1 6.745370+3 1.695657+1 7.000000+3 1.663705+19434 3  1   18
+ 7.389180+3 1.631950+1 7.800000+3 1.608632+1 7.985760+3 1.615891+19434 3  1   19
+ 8.175940+3 1.628682+1 8.370650+3 1.649685+1 8.570000+3 1.682887+19434 3  1   20
+ 9.257430+3 1.637758+1 1.000000+4 1.601990+1 1.500000+4 1.523413+19434 3  1   21
+ 2.000000+4 1.470010+1 2.500000+4 1.435519+1 3.000000+4 1.407940+19434 3  1   22
+ 3.500000+4 1.385981+1 4.000000+4 1.367236+1 4.426280+4 1.353190+19434 3  1   23
+ 5.000000+4 1.336480+1 7.000000+4 1.289050+1 7.500000+4 1.278341+19434 3  1   24
+ 1.000000+5 1.234640+1 1.150000+5 1.207232+1 1.300000+5 1.183690+19434 3  1   25
+ 1.465700+5 1.161100+1 1.500000+5 1.156794+1 1.700000+5 1.133770+19434 3  1   26
+ 2.000000+5 1.104560+1 2.500000+5 1.051045+1 3.000000+5 1.009250+19434 3  1   27
+ 3.046650+5 1.004861+1 3.046660+5 1.004860+1 4.000000+5 9.304930+09434 3  1   28
+ 5.000000+5 8.736630+0 5.157560+5 8.651340+0 6.000000+5 8.247230+09434 3  1   29
+ 6.077040+5 8.214030+0 6.642020+5 7.986370+0 7.000000+5 7.854910+09434 3  1   30
+ 7.664740+5 7.667820+0 7.767570+5 7.640710+0 8.000000+5 7.581090+09434 3  1   31
+ 8.500000+5 7.459940+0 9.000000+5 7.347490+0 9.454490+5 7.251930+09434 3  1   32
+ 9.668590+5 7.208912+0 9.668600+5 7.208910+0 9.723020+5 7.198170+09434 3  1   33
+ 9.872560+5 7.169030+0 9.896260+5 7.164470+0 1.000000+6 7.144640+09434 3  1   34
+ 1.022920+6 7.118090+0 1.032900+6 7.106730+0 1.074480+6 7.060800+09434 3  1   35
+ 1.084680+6 7.049840+0 1.087150+6 7.047210+0 1.130530+6 7.013850+09434 3  1   36
+ 1.138800+6 7.008590+0 1.179380+6 6.983420+0 1.207560+6 6.970420+09434 3  1   37
+ 1.233860+6 6.968450+0 1.257300+6 6.966720+0 1.300000+6 6.963670+09434 3  1   38
+ 1.337500+6 6.974052+0 1.375000+6 6.984161+0 1.450000+6 7.003620+09434 3  1   39
+ 1.500000+6 7.016069+0 1.600000+6 7.039830+0 1.700000+6 7.107267+09434 3  1   40
+ 1.800000+6 7.171440+0 2.000000+6 7.319920+0 2.150000+6 7.430738+09434 3  1   41
+ 2.300000+6 7.535590+0 2.500000+6 7.658290+0 2.700000+6 7.760450+09434 3  1   42
+ 3.000000+6 7.883950+0 3.250000+6 7.897611+0 3.500000+6 7.910280+09434 3  1   43
+ 3.750000+6 7.922093+0 4.000000+6 7.933160+0 4.125000+6 7.884908+09434 3  1   44
+ 4.250000+6 7.838377+0 4.500000+6 7.750050+0 4.625000+6 7.708062+09434 3  1   45
+ 4.750000+6 7.667413+0 5.000000+6 7.589830+0 5.125000+6 7.520532+09434 3  1   46
+ 5.250000+6 7.453513+0 5.500000+6 7.325820+0 5.750000+6 7.205851+09434 3  1   47
+ 6.000000+6 7.092830+0 6.250000+6 6.967903+0 6.500000+6 6.849950+09434 3  1   48
+ 7.000000+6 6.632510+0 7.029540+6 6.620911+0 7.500000+6 6.445020+09434 3  1   49
+ 8.000000+6 6.274440+0 8.500000+6 6.144180+0 9.000000+6 6.023840+09434 3  1   50
+ 9.500000+6 5.944990+0 1.000000+7 5.871130+0 1.050000+7 5.835960+09434 3  1   51
+ 1.100000+7 5.802630+0 1.150000+7 5.801840+0 1.200000+7 5.801080+09434 3  1   52
+ 1.250000+7 5.824470+0 1.293520+7 5.844160+0 1.300000+7 5.847040+09434 3  1   53
+ 1.350000+7 5.884710+0 1.400000+7 5.921230+0 1.450000+7 5.964650+09434 3  1   54
+ 1.500000+7 6.006900+0 1.550000+7 6.049500+0 1.600000+7 6.091040+09434 3  1   55
+ 1.650000+7 6.128170+0 1.700000+7 6.164410+0 1.750000+7 6.193040+09434 3  1   56
+ 1.800000+7 6.221000+0 1.850000+7 6.239360+0 1.900000+7 6.252103+09434 3  1   57
+ 1.950000+7 6.264540+0 2.000000+7 6.271620+0                      9434 3  1   58
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3  2    1
+ 0.000000+0 0.000000+0          0          0          2        1229434 3  2    2
+          4          2        122          5          0          09434 3  2    3
+ 1.000000-5 0.000000+0 2.530000-2 0.000000+0 5.000000+2 0.000000+09434 3  2    4
+ 5.000000+2 2.055190+1 7.000000+2 1.966530+1 1.000000+3 1.876060+19434 3  2    5
+ 2.000000+3 1.712790+1 3.000000+3 1.625810+1 5.000000+3 1.525640+19434 3  2    6
+ 7.000000+3 1.465470+1 1.000000+4 1.427890+1 1.500000+4 1.341349+19434 3  2    7
+ 2.000000+4 1.300288+1 2.500000+4 1.289715+1 3.000000+4 1.259289+19434 3  2    8
+ 3.500000+4 1.237464+1 4.000000+4 1.230798+1 4.426280+4 1.220695+19434 3  2    9
+ 5.000000+4 1.206259+1 7.000000+4 1.164475+1 7.500000+4 1.154411+19434 3  2   10
+ 1.000000+5 1.095009+1 1.150000+5 1.062079+1 1.300000+5 1.032921+19434 3  2   11
+ 1.465700+5 1.004222+1 1.500000+5 9.987335+0 1.700000+5 9.692712+09434 3  2   12
+ 2.000000+5 9.300620+0 2.500000+5 8.598325+0 3.000000+5 8.099183+09434 3  2   13
+ 3.046650+5 8.048981+0 3.046660+5 8.048970+0 4.000000+5 7.167900+09434 3  2   14
+ 5.000000+5 6.365187+0 5.157560+5 6.231013+0 6.000000+5 5.551741+09434 3  2   15
+ 6.077040+5 5.508575+0 6.642020+5 5.134280+0 7.000000+5 4.919426+09434 3  2   16
+ 7.664740+5 4.586557+0 7.767570+5 4.538774+0 8.000000+5 4.433141+09434 3  2   17
+ 8.500000+5 4.220312+0 9.000000+5 4.090720+0 9.454490+5 3.985553+09434 3  2   18
+ 9.668590+5 3.931595+0 9.668600+5 3.931591+0 9.723020+5 3.912451+09434 3  2   19
+ 9.872560+5 3.863833+0 9.896260+5 3.854685+0 1.000000+6 3.815523+09434 3  2   20
+ 1.022920+6 3.756015+0 1.032900+6 3.729175+0 1.074480+6 3.619045+09434 3  2   21
+ 1.084680+6 3.592782+0 1.087150+6 3.586735+0 1.130530+6 3.498166+09434 3  2   22
+ 1.138800+6 3.483693+0 1.179380+6 3.414409+0 1.207560+6 3.372626+09434 3  2   23
+ 1.233860+6 3.344411+0 1.257300+6 3.321447+0 1.300000+6 3.290268+09434 3  2   24
+ 1.337500+6 3.287015+0 1.375000+6 3.283602+0 1.450000+6 3.276339+09434 3  2   25
+ 1.500000+6 3.271201+0 1.600000+6 3.257006+0 1.700000+6 3.302192+09434 3  2   26
+ 1.800000+6 3.344497+0 2.000000+6 3.460856+0 2.150000+6 3.573606+09434 3  2   27
+ 2.300000+6 3.679050+0 2.500000+6 3.809003+0 2.700000+6 3.934756+09434 3  2   28
+ 3.000000+6 4.053861+0 3.250000+6 4.113491+0 3.500000+6 4.166441+09434 3  2   29
+ 3.750000+6 4.200821+0 4.000000+6 4.230766+0 4.125000+6 4.183092+09434 3  2   30
+ 4.250000+6 4.136506+0 4.500000+6 4.046431+0 4.625000+6 4.002881+09434 3  2   31
+ 4.750000+6 3.960036+0 5.000000+6 3.876342+0 5.125000+6 3.872275+09434 3  2   32
+ 5.250000+6 3.866809+0 5.500000+6 3.852504+0 5.750000+6 3.779150+09434 3  2   33
+ 6.000000+6 3.711228+0 6.250000+6 3.546060+0 6.500000+6 3.379776+09434 3  2   34
+ 7.000000+6 2.959297+0 7.029540+6 2.954358+0 7.500000+6 2.875814+09434 3  2   35
+ 8.000000+6 2.749707+0 8.500000+6 2.660865+0 9.000000+6 2.571882+09434 3  2   36
+ 9.500000+6 2.528967+0 1.000000+7 2.475190+0 1.050000+7 2.478697+09434 3  2   37
+ 1.100000+7 2.469185+0 1.150000+7 2.486246+0 1.200000+7 2.501636+09434 3  2   38
+ 1.250000+7 2.534593+0 1.293520+7 2.561387+0 1.300000+7 2.565303+09434 3  2   39
+ 1.350000+7 2.609703+0 1.400000+7 2.667670+0 1.450000+7 2.737309+09434 3  2   40
+ 1.500000+7 2.814676+0 1.550000+7 2.889200+0 1.600000+7 2.960788+09434 3  2   41
+ 1.650000+7 3.023533+0 1.700000+7 3.085148+0 1.750000+7 3.130106+09434 3  2   42
+ 1.800000+7 3.171250+0 1.850000+7 3.197455+0 1.900000+7 3.212608+09434 3  2   43
+ 1.950000+7 3.225865+0 2.000000+7 3.230491+0                      9434 3  2   44
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3  4    1
+ 0.000000+0-4.407600+4          0          0          1         829434 3  4    2
+         82          2          0          0          0          09434 3  4    3
+ 4.426280+4 0.000000+0 5.000000+4 3.118890-2 7.000000+4 1.752300-19434 3  4    4
+ 1.000000+5 3.641600-1 1.150000+5 4.267235-1 1.300000+5 4.892954-19434 3  4    5
+ 1.465700+5 5.477955-1 1.700000+5 6.182833-1 2.000000+5 7.057452-19434 3  4    6
+ 3.000000+5 8.452024-1 3.046650+5 8.462104-1 3.046660+5 8.462106-19434 3  4    7
+ 4.000000+5 8.660776-1 5.000000+5 9.096008-1 5.157560+5 9.081543-19434 3  4    8
+ 6.000000+5 9.008980-1 6.077040+5 9.007334-1 6.642020+5 9.779602-19434 3  4    9
+ 7.000000+5 1.017521+0 7.664740+5 1.052670+0 7.767570+5 1.056208+09434 3  4   10
+ 8.000000+5 1.063555+0 9.000000+5 1.080742+0 9.454490+5 1.082024+09434 3  4   11
+ 9.668590+5 1.089796+0 9.668600+5 1.089798+0 9.723020+5 1.097675+09434 3  4   12
+ 9.872560+5 1.115565+0 9.896260+5 1.120028+0 1.000000+6 1.138692+09434 3  4   13
+ 1.022920+6 1.167204+0 1.032900+6 1.180878+0 1.074480+6 1.238071+09434 3  4   14
+ 1.084680+6 1.251632+0 1.087150+6 1.254608+0 1.130530+6 1.302013+09434 3  4   15
+ 1.138800+6 1.309692+0 1.179380+6 1.346771+0 1.207560+6 1.370640+09434 3  4   16
+ 1.233860+6 1.392240+0 1.257300+6 1.409602+0 1.300000+6 1.430023+09434 3  4   17
+ 1.600000+6 1.488453+0 1.800000+6 1.502214+0 2.000000+6 1.509144+09434 3  4   18
+ 2.300000+6 1.509518+0 2.500000+6 1.504204+0 2.700000+6 1.497196+09434 3  4   19
+ 3.000000+6 1.523432+0 3.500000+6 1.517372+0 4.000000+6 1.539403+09434 3  4   20
+ 4.500000+6 1.587921+0 5.000000+6 1.637626+0 5.500000+6 1.563772+09434 3  4   21
+ 6.000000+6 1.310733+0 6.500000+6 1.049671+0 7.000000+6 8.678553-19434 3  4   22
+ 7.500000+6 7.458296-1 8.000000+6 6.683471-1 8.500000+6 6.139419-19434 3  4   23
+ 9.000000+6 5.755651-1 9.500000+6 5.443527-1 1.000000+7 5.186204-19434 3  4   24
+ 1.050000+7 4.959619-1 1.100000+7 4.757263-1 1.150000+7 4.571606-19434 3  4   25
+ 1.200000+7 4.395775-1 1.250000+7 4.233317-1 1.300000+7 4.074960-19434 3  4   26
+ 1.350000+7 3.930762-1 1.400000+7 3.787942-1 1.450000+7 3.658040-19434 3  4   27
+ 1.500000+7 3.530043-1 1.550000+7 3.414589-1 1.600000+7 3.301011-19434 3  4   28
+ 1.650000+7 3.199311-1 1.700000+7 3.100861-1 1.750000+7 3.011746-19434 3  4   29
+ 1.800000+7 2.924320-1 1.850000+7 2.846193-1 1.950000+7 2.700996-19434 3  4   30
+ 2.000000+7 2.633875-1                                            9434 3  4   31
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 16    1
+-6.999880+6-6.999880+6          0          0          1         269434 3 16    2
+         26          2          0          0          0          09434 3 16    3
+ 7.029540+6 0.000000+0 7.500000+6 3.586300-3 8.000000+6 2.301550-29434 3 16    4
+ 8.500000+6 4.417370-2 9.000000+6 5.887600-2 9.500000+6 7.259510-29434 3 16    5
+ 1.000000+7 9.570560-2 1.050000+7 1.080110-1 1.100000+7 1.312030-19434 3 16    6
+ 1.150000+7 1.577140-1 1.200000+7 1.836320-1 1.250000+7 2.121750-19434 3 16    7
+ 1.300000+7 2.407290-1 1.350000+7 2.649770-1 1.400000+7 2.724790-19434 3 16    8
+ 1.450000+7 2.652650-1 1.500000+7 2.463240-1 1.550000+7 2.233050-19434 3 16    9
+ 1.600000+7 1.991160-1 1.650000+7 1.761350-1 1.700000+7 1.537750-19434 3 16   10
+ 1.750000+7 1.359670-1 1.800000+7 1.210750-1 1.850000+7 1.075190-19434 3 16   11
+ 1.950000+7 8.863160-2 2.000000+7 8.239810-2                      9434 3 16   12
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 17    1
+-1.288060+7-1.288060+7          0          0          1         149434 3 17    2
+         14          2          0          0          0          09434 3 17    3
+ 1.293520+7 0.000000+0 1.350000+7 6.585290-6 1.400000+7 1.202220-39434 3 17    4
+ 1.450000+7 5.444020-3 1.500000+7 1.196180-2 1.550000+7 1.931190-29434 3 17    5
+ 1.600000+7 2.931680-2 1.650000+7 3.710320-2 1.700000+7 4.414570-29434 3 17    6
+ 1.750000+7 5.147360-2 1.800000+7 5.890750-2 1.850000+7 6.715000-29434 3 17    7
+ 1.950000+7 8.573300-2 2.000000+7 9.490490-2                      9434 3 17    8
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 18    1
+ 1.974670+8 1.974670+8          0          0          2        1339434 3 18    2
+          4          2        133          5          0          09434 3 18    3
+ 1.000000-5 0.000000+0 2.530000-2 0.000000+0 5.000000+2 0.000000+09434 3 18    4
+ 5.000000+2 1.458000+0 6.000000+2 9.939000-1 7.000000+2 5.146000+09434 3 18    5
+ 8.000000+2 1.754000+0 9.000000+2 2.793000+0 1.000000+3 1.292000+09434 3 18    6
+ 1.250000+3 1.325000+0 1.500000+3 9.624000-1 1.750000+3 1.396000+09434 3 18    7
+ 2.000000+3 1.216000+0 2.350000+3 5.763000-1 2.820000+3 2.449000+09434 3 18    8
+ 3.000000+3 1.900498+0 3.300000+3 1.286000+0 3.700000+3 3.286000-19434 3 18    9
+ 4.100000+3 1.611000+0 4.700000+3 2.941000-1 5.000000+3 5.869021-19434 3 18   10
+ 5.580000+3 1.999000+0 6.500000+3 1.128000+0 7.000000+3 5.936329-19434 3 18   11
+ 7.800000+3 2.325000-1 8.570000+3 1.136000+0 1.000000+4 5.832000-19434 3 18   12
+ 1.500000+4 8.474000-1 2.000000+4 8.368000-1 2.500000+4 6.663000-19434 3 18   13
+ 3.000000+4 7.468000-1 3.500000+4 7.866000-1 4.000000+4 6.996000-19434 3 18   14
+ 4.426280+4 6.847060-1 5.000000+4 6.672000-1 7.000000+4 5.694076-19434 3 18   15
+ 7.500000+4 5.512000-1 1.000000+5 6.250000-1 1.300000+5 6.768369-19434 3 18   16
+ 1.465700+5 7.019514-1 1.500000+5 7.069000-1 1.700000+5 7.291128-19434 3 18   17
+ 2.000000+5 7.590000-1 2.500000+5 8.866000-1 3.000000+5 9.203000-19434 3 18   18
+ 3.046660+5 9.281421-1 4.000000+5 1.078000+0 5.000000+5 1.279000+09434 3 18   19
+ 5.157560+5 1.331769+0 6.000000+5 1.622000+0 6.077040+5 1.632537+09434 3 18   20
+ 6.642020+5 1.707885+0 7.000000+5 1.754000+0 7.664740+5 1.869719+09434 3 18   21
+ 7.767570+5 1.887350+0 8.000000+5 1.926948+0 8.500000+5 2.011000+09434 3 18   22
+ 9.000000+5 2.020455+0 9.454490+5 2.028640+0 9.668600+5 2.032371+09434 3 18   23
+ 9.723020+5 2.033308+0 9.872560+5 2.035856+0 9.896260+5 2.036257+09434 3 18   24
+ 1.000000+6 2.038000+0 1.022920+6 2.044421+0 1.032900+6 2.047179+09434 3 18   25
+ 1.074480+6 2.058425+0 1.084680+6 2.061127+0 1.087150+6 2.061778+09434 3 18   26
+ 1.130530+6 2.073007+0 1.138800+6 2.075105+0 1.179380+6 2.085216+09434 3 18   27
+ 1.207560+6 2.092062+0 1.233860+6 2.098329+0 1.257300+6 2.103817+09434 3 18   28
+ 1.300000+6 2.113594+0 1.337500+6 2.121954+0 1.375000+6 2.130115+09434 3 18   29
+ 1.450000+6 2.145877+0 1.500000+6 2.156000+0 1.600000+6 2.178691+09434 3 18   30
+ 1.700000+6 2.200223+0 1.800000+6 2.220718+0 2.000000+6 2.259000+09434 3 18   31
+ 2.150000+6 2.267716+0 2.300000+6 2.275873+0 2.500000+6 2.286000+09434 3 18   32
+ 2.700000+6 2.280080+0 3.000000+6 2.272000+0 3.250000+6 2.237956+09434 3 18   33
+ 3.500000+6 2.206891+0 3.750000+6 2.178356+0 4.000000+6 2.151999+09434 3 18   34
+ 4.125000+6 2.140774+0 4.250000+6 2.129947+0 4.500000+6 2.109387+09434 3 18   35
+ 4.625000+6 2.099281+0 4.750000+6 2.089700+0 5.000000+6 2.072003+09434 3 18   36
+ 5.125000+6 2.025629+0 5.250000+6 1.982885+0 5.500000+6 1.906997+09434 3 18   37
+ 5.750000+6 1.987271+0 6.000000+6 2.068995+0 6.250000+6 2.239967+09434 3 18   38
+ 6.500000+6 2.419001+0 7.000000+6 2.804000+0 7.500000+6 2.818432+09434 3 18   39
+ 8.000000+6 2.832000+0 8.500000+6 2.823753+0 9.000000+6 2.816000+09434 3 18   40
+ 9.500000+6 2.797468+0 1.000000+7 2.780000+0 1.050000+7 2.751666+09434 3 18   41
+ 1.100000+7 2.724920+0 1.150000+7 2.699173+0 1.200000+7 2.674750+09434 3 18   42
+ 1.250000+7 2.652962+0 1.300000+7 2.632198+0 1.350000+7 2.615745+09434 3 18   43
+ 1.400000+7 2.600001+0 1.450000+7 2.589831+0 1.500000+7 2.580042+09434 3 18   44
+ 1.550000+7 2.575426+0 1.600000+7 2.570973+0 1.650000+7 2.570793+09434 3 18   45
+ 1.700000+7 2.570617+0 1.750000+7 2.573737+0 1.800000+7 2.576778+09434 3 18   46
+ 1.850000+7 2.582105+0 1.900000+7 2.587123+0 1.950000+7 2.593729+09434 3 18   47
+ 2.000000+7 2.599996+0                                            9434 3 18   48
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 19    1
+ 1.974670+8 1.974670+8          0          0          2        1189434 3 19    2
+          4          2        118          5          0          09434 3 19    3
+ 1.000000-5 0.000000+0 2.530000-2 0.000000+0 5.000000+2 0.000000+09434 3 19    4
+ 5.000000+2 1.458000+0 6.000000+2 9.939000-1 7.000000+2 5.146000+09434 3 19    5
+ 8.000000+2 1.754000+0 9.000000+2 2.793000+0 1.000000+3 1.292000+09434 3 19    6
+ 1.250000+3 1.325000+0 1.500000+3 9.624000-1 1.750000+3 1.396000+09434 3 19    7
+ 2.000000+3 1.216000+0 2.350000+3 5.763000-1 2.820000+3 2.449000+09434 3 19    8
+ 3.000000+3 1.900498+0 3.300000+3 1.286000+0 3.700000+3 3.286000-19434 3 19    9
+ 4.100000+3 1.611000+0 4.700000+3 2.941000-1 5.000000+3 5.869021-19434 3 19   10
+ 5.580000+3 1.999000+0 6.500000+3 1.128000+0 7.000000+3 5.936329-19434 3 19   11
+ 7.800000+3 2.325000-1 8.570000+3 1.136000+0 1.000000+4 5.832000-19434 3 19   12
+ 1.500000+4 8.474000-1 2.000000+4 8.368000-1 2.500000+4 6.663000-19434 3 19   13
+ 3.000000+4 7.468000-1 3.500000+4 7.866000-1 4.000000+4 6.996000-19434 3 19   14
+ 4.426280+4 6.847060-1 5.000000+4 6.672000-1 7.000000+4 5.694076-19434 3 19   15
+ 7.500000+4 5.512000-1 1.000000+5 6.250000-1 1.300000+5 6.768369-19434 3 19   16
+ 1.465700+5 7.019514-1 1.500000+5 7.069000-1 1.700000+5 7.291128-19434 3 19   17
+ 2.000000+5 7.590000-1 2.500000+5 8.866000-1 3.000000+5 9.203000-19434 3 19   18
+ 3.046660+5 9.281421-1 4.000000+5 1.078000+0 5.000000+5 1.279000+09434 3 19   19
+ 5.157560+5 1.331769+0 6.000000+5 1.622000+0 6.077040+5 1.632537+09434 3 19   20
+ 6.642020+5 1.707885+0 7.000000+5 1.754000+0 7.664740+5 1.869719+09434 3 19   21
+ 7.767570+5 1.887350+0 8.000000+5 1.926948+0 8.500000+5 2.011000+09434 3 19   22
+ 9.000000+5 2.020455+0 9.454490+5 2.028640+0 9.668600+5 2.032371+09434 3 19   23
+ 9.723020+5 2.033308+0 9.872560+5 2.035856+0 9.896260+5 2.036257+09434 3 19   24
+ 1.000000+6 2.038000+0 1.022920+6 2.044421+0 1.032900+6 2.047179+09434 3 19   25
+ 1.074480+6 2.058425+0 1.084680+6 2.061127+0 1.087150+6 2.061778+09434 3 19   26
+ 1.130530+6 2.073007+0 1.138800+6 2.075105+0 1.179380+6 2.085216+09434 3 19   27
+ 1.207560+6 2.092062+0 1.233860+6 2.098329+0 1.257300+6 2.103817+09434 3 19   28
+ 1.300000+6 2.113594+0 1.500000+6 2.156000+0 1.600000+6 2.178691+09434 3 19   29
+ 1.800000+6 2.220718+0 2.000000+6 2.259000+0 2.300000+6 2.275873+09434 3 19   30
+ 2.500000+6 2.286000+0 2.700000+6 2.280080+0 3.000000+6 2.272000+09434 3 19   31
+ 3.500000+6 2.206890+0 4.000000+6 2.151990+0 4.500000+6 2.108946+09434 3 19   32
+ 5.000000+6 2.055944+0 5.500000+6 1.758288+0 6.000000+6 1.614589+09434 3 19   33
+ 6.500000+6 1.612965+0 7.000000+6 1.665866+0 7.500000+6 1.540555+09434 3 19   34
+ 8.000000+6 1.461048+0 8.500000+6 1.392648+0 9.000000+6 1.335345+09434 3 19   35
+ 9.500000+6 1.281770+0 1.000000+7 1.238656+0 1.050000+7 1.192004+09434 3 19   36
+ 1.100000+7 1.154262+0 1.150000+7 1.121405+0 1.200000+7 1.092336+09434 3 19   37
+ 1.250000+7 1.067484+0 1.300000+7 1.045953+0 1.350000+7 1.025970+09434 3 19   38
+ 1.400000+7 1.001526+0 1.450000+7 9.762554-1 1.500000+7 9.493299-19434 3 19   39
+ 1.550000+7 9.249867-1 1.600000+7 9.024454-1 1.650000+7 8.822909-19434 3 19   40
+ 1.700000+7 8.639516-1 1.750000+7 8.491271-1 1.800000+7 8.364395-19434 3 19   41
+ 1.850000+7 8.259002-1 1.900000+7 8.179028-1 1.950000+7 8.106107-19434 3 19   42
+ 2.000000+7 8.048347-1                                            9434 3 19   43
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 20    1
+ 1.974670+8 1.974670+8          0          0          1         589434 3 20    2
+         58          2          0          0          0          09434 3 20    3
+ 1.300000+6 0.000000+0 1.337500+6 1.84742-14 1.375000+6 3.66965-149434 3 20    4
+ 1.450000+6 7.24351-14 1.500000+6 9.52260-14 1.600000+6 1.41599-139434 3 20    5
+ 1.700000+6 4.33285-13 1.800000+6 7.17391-13 2.000000+6 3.08661-129434 3 20    6
+ 2.150000+6 1.51030-11 2.300000+6 2.68844-11 2.500000+6 1.16127-109434 3 20    7
+ 2.700000+6 5.05567-10 3.000000+6 4.764244-9 3.250000+6 1.051579-79434 3 20    8
+ 3.500000+6 2.027688-7 3.750000+6 4.728051-6 4.000000+6 9.314090-69434 3 20    9
+ 4.125000+6 1.141425-4 4.250000+6 2.210416-4 4.500000+6 4.408132-49434 3 20   10
+ 4.625000+6 4.247835-3 4.750000+6 8.121045-3 5.000000+6 1.605914-29434 3 20   11
+ 5.125000+6 5.132297-2 5.250000+6 8.512354-2 5.500000+6 1.487090-19434 3 20   12
+ 5.750000+6 3.039252-1 6.000000+6 4.544059-1 6.250000+6 6.262066-19434 3 20   13
+ 6.500000+6 8.060356-1 7.000000+6 1.138134+0 7.500000+6 1.277877+09434 3 20   14
+ 8.000000+6 1.370952+0 8.500000+6 1.431105+0 9.000000+6 1.480655+09434 3 20   15
+ 9.500000+6 1.515698+0 1.000000+7 1.541344+0 1.050000+7 1.559663+09434 3 20   16
+ 1.100000+7 1.570658+0 1.150000+7 1.577768+0 1.200000+7 1.582414+09434 3 20   17
+ 1.250000+7 1.585470+0 1.300000+7 1.585620+0 1.350000+7 1.581675+09434 3 20   18
+ 1.400000+7 1.569290+0 1.450000+7 1.552100+0 1.500000+7 1.530534+09434 3 20   19
+ 1.550000+7 1.508639+0 1.600000+7 1.488154+0 1.650000+7 1.469847+09434 3 20   20
+ 1.700000+7 1.453058+0 1.750000+7 1.439821+0 1.800000+7 1.428838+09434 3 20   21
+ 1.850000+7 1.421925+0 1.900000+7 1.417345+0 1.950000+7 1.413405+09434 3 20   22
+ 2.000000+7 1.410727+0                                            9434 3 20   23
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 21    1
+ 1.974670+8 1.974670+8          0          0          1         239434 3 21    2
+         23          2          0          0          0          09434 3 21    3
+ 9.000000+6 0.000000+0 9.500000+6 1.02500-17 1.000000+7 1.20907-159434 3 21    4
+ 1.050000+7 1.13053-13 1.100000+7 9.74446-12 1.150000+7 8.75378-109434 3 21    5
+ 1.200000+7 8.340790-8 1.250000+7 8.201134-6 1.300000+7 6.242914-49434 3 21    6
+ 1.350000+7 8.100465-3 1.400000+7 2.918547-2 1.450000+7 6.147522-29434 3 21    7
+ 1.500000+7 1.001782-1 1.550000+7 1.418005-1 1.600000+7 1.803740-19434 3 21    8
+ 1.650000+7 2.186556-1 1.700000+7 2.536077-1 1.750000+7 2.847893-19434 3 21    9
+ 1.800000+7 3.114959-1 1.850000+7 3.342380-1 1.900000+7 3.513154-19434 3 21   10
+ 1.950000+7 3.686335-1 2.000000+7 3.810256-1                      9434 3 21   11
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 38    1
+ 1.974670+8 1.974670+8          0          0          1         129434 3 38    2
+         12          2          0          0          0          09434 3 38    3
+ 1.450000+7 0.000000+0 1.500000+7 1.42274-14 1.550000+7 3.75159-139434 3 38    4
+ 1.600000+7 8.40261-12 1.650000+7 2.55579-10 1.700000+7 8.175930-99434 3 38    5
+ 1.750000+7 2.465813-7 1.800000+7 4.539934-6 1.850000+7 4.208050-59434 3 38    6
+ 1.900000+7 5.597385-4 1.950000+7 1.079987-3 2.000000+7 3.408300-39434 3 38    7
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 51    1
+ 0.000000+0-4.407600+4          0          0          1         799434 3 51    2
+         79          2          0          0          0          09434 3 51    3
+ 4.426280+4 0.000000+0 5.000000+4 3.118890-2 7.000000+4 1.752300-19434 3 51    4
+ 1.000000+5 3.641600-1 1.300000+5 4.892870-1 1.465700+5 5.477820-19434 3 51    5
+ 1.700000+5 6.177540-1 2.000000+5 7.035070-1 3.000000+5 8.299750-19434 3 51    6
+ 3.046660+5 8.300060-1 4.000000+5 8.284140-1 5.000000+5 8.459960-19434 3 51    7
+ 5.157560+5 8.402830-1 6.000000+5 8.094210-1 6.077040+5 8.069170-19434 3 51    8
+ 6.642020+5 7.773710-1 7.000000+5 7.642270-1 7.664740+5 7.280870-19434 3 51    9
+ 7.767570+5 7.225180-1 8.000000+5 7.105470-1 9.000000+5 6.681470-19434 3 51   10
+ 9.454490+5 6.526160-1 9.668600+5 6.448310-1 9.723020+5 6.419050-19434 3 51   11
+ 9.872560+5 6.345790-1 9.896260+5 6.332480-1 1.000000+6 6.274120-19434 3 51   12
+ 1.022920+6 6.158940-1 1.032900+6 6.109260-1 1.074480+6 5.900300-19434 3 51   13
+ 1.084680+6 5.851420-1 1.087150+6 5.840020-1 1.130530+6 5.658450-19434 3 51   14
+ 1.138800+6 5.627300-1 1.179380+6 5.478360-1 1.207560+6 5.383680-19434 3 51   15
+ 1.233860+6 5.303760-1 1.257300+6 5.236030-1 1.300000+6 5.127440-19434 3 51   16
+ 1.600000+6 4.637140-1 1.800000+6 4.446920-1 2.000000+6 4.309530-19434 3 51   17
+ 2.300000+6 4.154260-1 2.500000+6 4.057540-1 2.700000+6 3.975380-19434 3 51   18
+ 3.000000+6 3.861530-1 3.500000+6 3.650230-1 4.000000+6 3.469690-19434 3 51   19
+ 4.500000+6 3.299170-1 5.000000+6 3.131410-1 5.500000+6 3.028330-19434 3 51   20
+ 6.000000+6 2.925520-1 6.500000+6 2.869600-1 7.000000+6 2.813700-19434 3 51   21
+ 7.500000+6 2.766150-1 8.000000+6 2.718600-1 8.500000+6 2.660410-19434 3 51   22
+ 9.000000+6 2.602210-1 9.500000+6 2.534820-1 1.000000+7 2.467430-19434 3 51   23
+ 1.050000+7 2.397160-1 1.100000+7 2.326900-1 1.150000+7 2.257100-19434 3 51   24
+ 1.200000+7 2.187300-1 1.250000+7 2.120180-1 1.300000+7 2.053060-19434 3 51   25
+ 1.350000+7 1.990750-1 1.400000+7 1.928440-1 1.450000+7 1.872440-19434 3 51   26
+ 1.500000+7 1.816440-1 1.550000+7 1.767340-1 1.600000+7 1.718240-19434 3 51   27
+ 1.650000+7 1.676010-1 1.700000+7 1.633780-1 1.750000+7 1.598000-19434 3 51   28
+ 1.800000+7 1.562220-1 1.850000+7 1.532200-1 1.950000+7 1.477010-19434 3 51   29
+ 2.000000+7 1.451840-1                                            9434 3 51   30
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 52    1
+ 0.000000+0-1.459520+5          0          0          1         749434 3 52    2
+         74          2          0          0          0          09434 3 52    3
+ 1.465700+5 0.000000+0 1.700000+5 5.091210-4 2.000000+5 2.216230-39434 3 52    4
+ 3.000000+5 1.509700-2 3.046660+5 1.603410-2 4.000000+5 3.727750-29434 3 52    5
+ 5.000000+5 6.265140-2 5.157560+5 6.672610-2 6.000000+5 8.948410-29434 3 52    6
+ 6.077040+5 9.163960-2 6.642020+5 1.061430-1 7.000000+5 1.136200-19434 3 52    7
+ 7.664740+5 1.256280-1 7.767570+5 1.275070-1 8.000000+5 1.317250-19434 3 52    8
+ 9.000000+5 1.478920-1 9.454490+5 1.543360-1 9.668600+5 1.572380-19434 3 52    9
+ 9.723020+5 1.578450-1 9.872560+5 1.594300-1 9.896260+5 1.595900-19434 3 52   10
+ 1.000000+6 1.603870-1 1.022920+6 1.616980-1 1.032900+6 1.621220-19434 3 52   11
+ 1.074480+6 1.636110-1 1.084680+6 1.638910-1 1.087150+6 1.639680-19434 3 52   12
+ 1.130530+6 1.647310-1 1.138800+6 1.648620-1 1.179380+6 1.650840-19434 3 52   13
+ 1.207560+6 1.649230-1 1.233860+6 1.642690-1 1.257300+6 1.638100-19434 3 52   14
+ 1.300000+6 1.630610-1 1.600000+6 1.512220-1 1.800000+6 1.371880-19434 3 52   15
+ 2.000000+6 1.220730-1 2.300000+6 1.021580-1 2.500000+6 9.233250-29434 3 52   16
+ 2.700000+6 8.518030-2 3.000000+6 7.808270-2 3.500000+6 7.385820-29434 3 52   17
+ 4.000000+6 7.217460-2 4.500000+6 7.137510-2 5.000000+6 7.084170-29434 3 52   18
+ 5.500000+6 7.003250-2 6.000000+6 6.925200-2 6.500000+6 6.767530-29434 3 52   19
+ 7.000000+6 6.610210-2 7.500000+6 6.368020-2 8.000000+6 6.125890-29434 3 52   20
+ 8.500000+6 5.857670-2 9.000000+6 5.589460-2 9.500000+6 5.336910-29434 3 52   21
+ 1.000000+7 5.084370-2 1.050000+7 4.851570-2 1.100000+7 4.618770-29434 3 52   22
+ 1.150000+7 4.403050-2 1.200000+7 4.187330-2 1.250000+7 3.991630-29434 3 52   23
+ 1.300000+7 3.795920-2 1.350000+7 3.623550-2 1.400000+7 3.451170-29434 3 52   24
+ 1.450000+7 3.301530-2 1.500000+7 3.151890-2 1.550000+7 3.021630-29434 3 52   25
+ 1.600000+7 2.891370-2 1.650000+7 2.777060-2 1.700000+7 2.662750-29434 3 52   26
+ 1.750000+7 2.562150-2 1.800000+7 2.461550-2 1.850000+7 2.373340-29434 3 52   27
+ 1.950000+7 2.208190-2 2.000000+7 2.131240-2                      9434 3 52   28
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 53    1
+ 0.000000+0-3.033800+5          0          0          1         709434 3 53    2
+         70          2          0          0          0          09434 3 53    3
+ 3.046650+5 0.000000+0 4.000000+5 1.682120-5 5.000000+5 1.380630-49434 3 53    4
+ 5.157560+5 1.848540-4 6.000000+5 5.360460-4 6.077040+5 5.780600-49434 3 53    5
+ 6.642020+5 9.394680-4 7.000000+5 1.220610-3 7.664740+5 2.139410-39434 3 53    6
+ 7.767570+5 2.296400-3 8.000000+5 2.668770-3 9.000000+5 4.445860-39434 3 53    7
+ 9.454490+5 5.387160-3 9.668600+5 5.859110-3 9.723020+5 5.982270-39434 3 53    8
+ 9.872560+5 6.320020-3 9.896260+5 6.373740-3 1.000000+6 6.607510-39434 3 53    9
+ 1.022920+6 7.222370-3 1.032900+6 7.485480-3 1.074480+6 8.583470-39434 3 53   10
+ 1.084680+6 8.850690-3 1.087150+6 8.915640-3 1.130530+6 1.011780-29434 3 53   11
+ 1.138800+6 1.035170-2 1.179380+6 1.151900-2 1.207560+6 1.236100-29434 3 53   12
+ 1.233860+6 1.319350-2 1.257300+6 1.395470-2 1.300000+6 1.535380-29434 3 53   13
+ 1.600000+6 2.409670-2 1.800000+6 2.841550-2 2.000000+6 3.114410-29434 3 53   14
+ 2.300000+6 3.294700-2 2.500000+6 3.287470-2 2.700000+6 3.252290-29434 3 53   15
+ 3.000000+6 3.162000-2 3.500000+6 2.854080-2 4.000000+6 2.636750-29434 3 53   16
+ 4.500000+6 2.417670-2 5.000000+6 2.211440-2 5.500000+6 2.083490-29434 3 53   17
+ 6.000000+6 1.957220-2 6.500000+6 1.876060-2 7.000000+6 1.795130-29434 3 53   18
+ 7.500000+6 1.716130-2 8.000000+6 1.637180-2 8.500000+6 1.548090-29434 3 53   19
+ 9.000000+6 1.459010-2 9.500000+6 1.369910-2 1.000000+7 1.280810-29434 3 53   20
+ 1.050000+7 1.201270-2 1.100000+7 1.121730-2 1.150000+7 1.054080-29434 3 53   21
+ 1.200000+7 9.864260-3 1.250000+7 9.297360-3 1.300000+7 8.730450-39434 3 53   22
+ 1.350000+7 8.255960-3 1.400000+7 7.781470-3 1.450000+7 7.381760-39434 3 53   23
+ 1.500000+7 6.982050-3 1.550000+7 6.642110-3 1.600000+7 6.302180-39434 3 53   24
+ 1.650000+7 6.012700-3 1.700000+7 5.723100-3 1.750000+7 5.473230-39434 3 53   25
+ 1.800000+7 5.222390-3 1.850000+7 5.006820-3 1.950000+7 4.607430-39434 3 53   26
+ 2.000000+7 4.425230-3                                            9434 3 53   27
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 54    1
+ 0.000000+0-5.135800+5          0          0          1         679434 3 54    2
+         67          2          0          0          0          09434 3 54    3
+ 5.157560+5 0.000000+0 6.000000+5 1.766400-8 6.077040+5 2.361830-89434 3 54    4
+ 6.642020+5 1.248230-7 7.000000+5 3.502730-7 7.664740+5 2.143640-69434 3 54    5
+ 7.767570+5 2.473930-6 8.000000+5 3.304830-6 9.000000+5 8.535670-69434 3 54    6
+ 9.454490+5 1.222770-5 9.668600+5 1.435610-5 9.723020+5 1.494320-59434 3 54    7
+ 9.872560+5 1.665430-5 9.896260+5 1.693960-5 1.000000+6 1.823290-59434 3 54    8
+ 1.022920+6 2.273170-5 1.032900+6 2.476290-5 1.074480+6 3.405470-59434 3 54    9
+ 1.084680+6 3.654510-5 1.087150+6 3.716250-5 1.130530+6 5.099600-59434 3 54   10
+ 1.138800+6 5.397800-5 1.179380+6 6.966420-5 1.207560+6 8.292850-59434 3 54   11
+ 1.233860+6 9.919610-5 1.257300+6 1.142180-4 1.300000+6 1.431230-49434 3 54   12
+ 1.600000+6 4.645990-4 1.800000+6 8.174380-4 2.000000+6 1.270750-39434 3 54   13
+ 2.300000+6 2.097280-3 2.500000+6 2.711690-3 2.700000+6 3.279490-39434 3 54   14
+ 3.000000+6 4.093890-3 3.500000+6 4.491190-3 4.000000+6 4.954080-39434 3 54   15
+ 4.500000+6 4.809210-3 5.000000+6 4.692540-3 5.500000+6 4.665620-39434 3 54   16
+ 6.000000+6 4.644370-3 6.500000+6 4.513410-3 7.000000+6 4.338940-39434 3 54   17
+ 7.500000+6 4.009340-3 8.000000+6 3.709690-3 8.500000+6 3.370960-39434 3 54   18
+ 9.000000+6 3.004320-3 9.500000+6 2.724450-3 1.000000+7 2.459540-39434 3 54   19
+ 1.050000+7 2.273360-3 1.100000+7 2.104040-3 1.150000+7 1.963010-39434 3 54   20
+ 1.200000+7 1.812680-3 1.250000+7 1.681760-3 1.300000+7 1.545760-39434 3 54   21
+ 1.350000+7 1.430310-3 1.400000+7 1.310350-3 1.450000+7 1.211970-39434 3 54   22
+ 1.500000+7 1.127320-3 1.550000+7 1.059230-3 1.600000+7 9.911360-49434 3 54   23
+ 1.650000+7 9.443040-4 1.700000+7 9.002620-4 1.750000+7 8.616750-49434 3 54   24
+ 1.800000+7 8.210090-4 1.850000+7 7.846010-4 1.950000+7 7.126670-49434 3 54   25
+ 2.000000+7 6.777840-4                                            9434 3 54   26
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 55    1
+ 0.000000+0-6.051400+5          0          0          1         659434 3 55    2
+         65          2          0          0          0          09434 3 55    3
+ 6.077040+5 0.000000+0 6.642020+5 9.140250-2 7.000000+5 1.230310-19434 3 55    4
+ 7.664740+5 1.579140-1 7.767570+5 1.618980-1 8.000000+5 1.699030-19434 3 55    5
+ 9.000000+5 1.852660-1 9.454490+5 1.850380-1 9.668600+5 1.829680-19434 3 55    6
+ 9.723020+5 1.819980-1 9.872560+5 1.796100-1 9.896260+5 1.790800-19434 3 55    7
+ 1.000000+6 1.768890-1 1.022920+6 1.723870-1 1.032900+6 1.703590-19434 3 55    8
+ 1.074480+6 1.616750-1 1.084680+6 1.596310-1 1.087150+6 1.591490-19434 3 55    9
+ 1.130530+6 1.499050-1 1.138800+6 1.480150-1 1.179380+6 1.385910-19434 3 55   10
+ 1.207560+6 1.325390-1 1.233860+6 1.273560-1 1.257300+6 1.226710-19434 3 55   11
+ 1.300000+6 1.151640-1 1.600000+6 6.932270-2 1.800000+6 4.809010-29434 3 55   12
+ 2.000000+6 3.269830-2 2.300000+6 1.775490-2 2.500000+6 1.162570-29434 3 55   13
+ 2.700000+6 7.506430-3 3.000000+6 3.827120-3 3.500000+6 1.253410-39434 3 55   14
+ 4.000000+6 4.290310-4 4.500000+6 1.768960-4 5.000000+6 9.289670-59434 3 55   15
+ 5.500000+6 8.991480-5 6.000000+6 5.405900-5 6.500000+6 6.050220-59434 3 55   16
+ 7.000000+6 7.042170-5 7.500000+6 4.537500-5 8.000000+6 3.455510-59434 3 55   17
+ 8.500000+6 5.917440-5 9.000000+6 6.539330-5 9.500000+6 5.802270-59434 3 55   18
+ 1.000000+7 4.465740-5 1.050000+7 2.767920-5 1.100000+7 2.951860-59434 3 55   19
+ 1.150000+7 4.387300-5 1.200000+7 5.210880-5 1.250000+7 5.550470-59434 3 55   20
+ 1.300000+7 5.543290-5 1.350000+7 5.619070-5 1.400000+7 5.535510-59434 3 55   21
+ 1.450000+7 5.074370-5 1.500000+7 4.325790-5 1.550000+7 3.381660-59434 3 55   22
+ 1.600000+7 2.283710-5 1.650000+7 1.641370-5 1.700000+7 1.449250-59434 3 55   23
+ 1.750000+7 2.114740-5 1.800000+7 2.651080-5 1.850000+7 3.081230-59434 3 55   24
+ 1.950000+7 3.648100-5 2.000000+7 3.825490-5                      9434 3 55   25
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 56    1
+ 0.000000+0-6.614000+5          0          0          1         649434 3 56    2
+         64          2          0          0          0          09434 3 56    3
+ 6.642020+5 0.000000+0 7.000000+5 1.314890-2 7.664740+5 3.581130-29434 3 56    4
+ 7.767570+5 3.877230-2 8.000000+5 4.524870-2 9.000000+5 6.898280-29434 3 56    5
+ 9.454490+5 7.725220-2 9.668600+5 8.074110-2 9.723020+5 8.129090-29434 3 56    6
+ 9.872560+5 8.263750-2 9.896260+5 8.269650-2 1.000000+6 8.323580-29434 3 56    7
+ 1.022920+6 8.434880-2 1.032900+6 8.460970-2 1.074480+6 8.538710-29434 3 56    8
+ 1.084680+6 8.545700-2 1.087150+6 8.549010-2 1.130530+6 8.593010-29434 3 56    9
+ 1.138800+6 8.599410-2 1.179380+6 8.558130-2 1.207560+6 8.431110-29434 3 56   10
+ 1.233860+6 8.306380-2 1.257300+6 8.200610-2 1.300000+6 8.019150-29434 3 56   11
+ 1.600000+6 6.104060-2 1.800000+6 4.732230-2 2.000000+6 3.495260-29434 3 56   12
+ 2.300000+6 2.094510-2 2.500000+6 1.440750-2 2.700000+6 9.699770-39434 3 56   13
+ 3.000000+6 5.345850-3 3.500000+6 1.932610-3 4.000000+6 7.635150-49434 3 56   14
+ 4.500000+6 3.788530-4 5.000000+6 2.412360-4 5.500000+6 1.864030-49434 3 56   15
+ 6.000000+6 1.573200-4 6.500000+6 1.428420-4 7.000000+6 1.319540-49434 3 56   16
+ 7.500000+6 1.224200-4 8.000000+6 1.185910-4 8.500000+6 1.095280-49434 3 56   17
+ 9.000000+6 1.081070-4 9.500000+6 1.084710-4 1.000000+7 1.045300-49434 3 56   18
+ 1.050000+7 9.525470-5 1.100000+7 9.007510-5 1.150000+7 7.990780-59434 3 56   19
+ 1.200000+7 7.357140-5 1.250000+7 8.051900-5 1.300000+7 8.311480-59434 3 56   20
+ 1.350000+7 8.778980-5 1.400000+7 9.116740-5 1.450000+7 8.964530-59434 3 56   21
+ 1.500000+7 8.430430-5 1.550000+7 7.643040-5 1.600000+7 6.651410-59434 3 56   22
+ 1.650000+7 6.006710-5 1.700000+7 5.548040-5 1.750000+7 5.013540-59434 3 56   23
+ 1.800000+7 4.445020-5 1.850000+7 3.887490-5 1.950000+7 4.639870-59434 3 56   24
+ 2.000000+7 4.886590-5                                            9434 3 56   25
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 57    1
+ 0.000000+0-7.632400+5          0          0          1         629434 3 57    2
+         62          2          0          0          0          09434 3 57    3
+ 7.664740+5 0.000000+0 7.767570+5 4.035660-5 8.000000+5 1.849120-49434 3 57    4
+ 9.000000+5 1.472150-3 9.454490+5 2.398460-3 9.668600+5 2.919450-39434 3 57    5
+ 9.723020+5 3.047950-3 9.872560+5 3.411710-3 9.896260+5 3.470880-39434 3 57    6
+ 1.000000+6 3.733520-3 1.022920+6 4.338830-3 1.032900+6 4.609940-39434 3 57    7
+ 1.074480+6 5.768300-3 1.084680+6 6.023510-3 1.087150+6 6.085990-39434 3 57    8
+ 1.130530+6 7.166720-3 1.138800+6 7.367760-3 1.179380+6 8.393060-39434 3 57    9
+ 1.207560+6 9.107840-3 1.233860+6 9.741160-3 1.257300+6 1.032130-29434 3 57   10
+ 1.300000+6 1.115330-2 1.600000+6 1.402690-2 1.800000+6 1.349260-29434 3 57   11
+ 2.000000+6 1.172050-2 2.300000+6 8.483840-3 2.500000+6 6.459660-39434 3 57   12
+ 2.700000+6 4.747210-3 3.000000+6 3.199500-3 3.500000+6 1.458810-39434 3 57   13
+ 4.000000+6 7.520310-4 4.500000+6 4.751530-4 5.000000+6 3.595520-49434 3 57   14
+ 5.500000+6 2.919610-4 6.000000+6 2.711870-4 6.500000+6 2.331370-49434 3 57   15
+ 7.000000+6 2.302160-4 7.500000+6 2.077890-4 8.000000+6 1.905340-49434 3 57   16
+ 8.500000+6 1.921480-4 9.000000+6 1.830570-4 9.500000+6 1.642380-49434 3 57   17
+ 1.000000+7 1.495800-4 1.050000+7 1.517740-4 1.100000+7 1.502910-49434 3 57   18
+ 1.150000+7 1.442700-4 1.200000+7 1.352850-4 1.250000+7 1.237230-49434 3 57   19
+ 1.300000+7 1.108820-4 1.350000+7 1.027570-4 1.400000+7 1.056470-49434 3 57   20
+ 1.450000+7 1.089430-4 1.500000+7 1.085780-4 1.550000+7 1.058500-49434 3 57   21
+ 1.600000+7 1.011640-4 1.650000+7 9.713650-5 1.700000+7 9.346400-59434 3 57   22
+ 1.750000+7 8.895840-5 1.800000+7 8.419640-5 1.850000+7 7.930020-59434 3 57   23
+ 1.950000+7 6.847120-5 2.000000+7 6.303470-5                      9434 3 57   24
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 58    1
+ 0.000000+0-7.734800+5          0          0          1         619434 3 58    2
+         61          2          0          0          0          09434 3 58    3
+ 7.767570+5 0.000000+0 8.000000+5 4.71144-14 9.000000+5 3.73379-119434 3 58    4
+ 9.454490+5 1.46993-10 9.668600+5 2.51552-10 9.723020+5 2.85985-109434 3 58    5
+ 9.872560+5 4.78234-10 9.896260+5 5.04391-10 1.000000+6 6.33206-109434 3 58    6
+ 1.022920+6 1.015950-9 1.032900+6 1.234220-9 1.074480+6 2.603220-99434 3 58    7
+ 1.084680+6 3.077430-9 1.087150+6 3.201940-9 1.130530+6 7.329730-99434 3 58    8
+ 1.138800+6 8.182700-9 1.179380+6 1.365250-8 1.207560+6 1.901450-89434 3 58    9
+ 1.233860+6 2.551580-8 1.257300+6 3.276470-8 1.300000+6 5.128790-89434 3 58   10
+ 1.600000+6 4.535140-7 1.800000+6 1.199870-6 2.000000+6 2.484760-69434 3 58   11
+ 2.300000+6 5.392460-6 2.500000+6 7.696420-6 2.700000+6 9.901610-69434 3 58   12
+ 3.000000+6 7.084740-4 3.500000+6 6.786320-4 4.000000+6 6.277160-49434 3 58   13
+ 4.500000+6 5.715330-4 5.000000+6 5.212460-4 5.500000+6 4.685620-49434 3 58   14
+ 6.000000+6 4.471140-4 6.500000+6 3.953880-4 7.000000+6 3.868150-49434 3 58   15
+ 7.500000+6 3.541840-4 8.000000+6 3.247200-4 8.500000+6 3.236610-49434 3 58   16
+ 9.000000+6 3.103450-4 9.500000+6 2.810820-4 1.000000+7 2.573640-49434 3 58   17
+ 1.050000+7 2.547980-4 1.100000+7 2.527960-4 1.150000+7 2.434120-49434 3 58   18
+ 1.200000+7 2.292260-4 1.250000+7 2.108200-4 1.300000+7 1.903450-49434 3 58   19
+ 1.350000+7 1.770340-4 1.400000+7 1.745480-4 1.450000+7 1.804900-49434 3 58   20
+ 1.500000+7 1.804550-4 1.550000+7 1.765740-4 1.600000+7 1.694980-49434 3 58   21
+ 1.650000+7 1.631810-4 1.700000+7 1.572740-4 1.750000+7 1.499950-49434 3 58   22
+ 1.800000+7 1.423050-4 1.850000+7 1.344070-4 1.950000+7 1.168800-49434 3 58   23
+ 2.000000+7 1.080830-4                                            9434 3 58   24
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 59    1
+ 0.000000+0-9.414600+5          0          0          1         589434 3 59    2
+         58          2          0          0          0          09434 3 59    3
+ 9.454490+5 0.000000+0 9.668600+5 9.514860-3 9.723020+5 1.098000-29434 3 59    4
+ 9.872560+5 1.463980-2 9.896260+5 1.518680-2 1.000000+6 1.742460-29434 3 59    5
+ 1.022920+6 2.174720-2 1.032900+6 2.338620-2 1.074480+6 2.855530-29434 3 59    6
+ 1.084680+6 2.952660-2 1.087150+6 2.974940-2 1.130530+6 3.306990-29434 3 59    7
+ 1.138800+6 3.358520-2 1.179380+6 3.471020-2 1.207560+6 3.509580-29434 3 59    8
+ 1.233860+6 3.528720-2 1.257300+6 3.499640-2 1.300000+6 3.404330-29434 3 59    9
+ 1.600000+6 2.394530-2 1.800000+6 1.703080-2 2.000000+6 1.188550-29434 3 59   10
+ 2.300000+6 6.676820-3 2.500000+6 4.473340-3 2.700000+6 2.942950-39434 3 59   11
+ 3.000000+6 2.996730-3 3.500000+6 1.945020-3 4.000000+6 1.534120-39434 3 59   12
+ 4.500000+6 1.331350-3 5.000000+6 1.204140-3 5.500000+6 1.094980-39434 3 59   13
+ 6.000000+6 1.005200-3 6.500000+6 9.277330-4 7.000000+6 8.653290-49434 3 59   14
+ 7.500000+6 8.073670-4 8.000000+6 7.661320-4 8.500000+6 7.181830-49434 3 59   15
+ 9.000000+6 6.816500-4 9.500000+6 6.460040-4 1.000000+7 6.136890-49434 3 59   16
+ 1.050000+7 5.787370-4 1.100000+7 5.476730-4 1.150000+7 5.188680-49434 3 59   17
+ 1.200000+7 4.934330-4 1.250000+7 4.693780-4 1.300000+7 4.466360-49434 3 59   18
+ 1.350000+7 4.256980-4 1.400000+7 4.069550-4 1.450000+7 3.885730-49434 3 59   19
+ 1.500000+7 3.706980-4 1.550000+7 3.551770-4 1.600000+7 3.412470-49434 3 59   20
+ 1.650000+7 3.287930-4 1.700000+7 3.178590-4 1.750000+7 3.081320-49434 3 59   21
+ 1.800000+7 2.979260-4 1.850000+7 2.875660-4 1.950000+7 2.635850-49434 3 59   22
+ 2.000000+7 2.515850-4                                            9434 3 59   23
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 60    1
+ 0.000000+0-9.627800+5          0          0          1         579434 3 60    2
+         57          2          0          0          0          09434 3 60    3
+ 9.668590+5 0.000000+0 9.723020+5 8.843600-3 9.872560+5 1.837480-29434 3 60    4
+ 9.896260+5 1.960990-2 1.000000+6 2.457700-2 1.022920+6 3.402770-29434 3 60    5
+ 1.032900+6 3.759970-2 1.074480+6 4.926470-2 1.084680+6 5.137020-29434 3 60    6
+ 1.087150+6 5.185700-2 1.130530+6 5.919740-2 1.138800+6 6.036490-29434 3 60    7
+ 1.179380+6 6.444930-2 1.207560+6 6.589190-2 1.233860+6 6.693690-29434 3 60    8
+ 1.257300+6 6.741360-2 1.300000+6 6.696110-2 1.600000+6 5.181300-29434 3 60    9
+ 1.800000+6 3.815850-2 2.000000+6 2.699930-2 2.300000+6 1.510880-29434 3 60   10
+ 2.500000+6 1.007660-2 2.700000+6 6.627680-3 3.000000+6 3.617860-39434 3 60   11
+ 3.500000+6 1.323230-3 4.000000+6 5.575690-4 4.500000+6 3.069800-49434 3 60   12
+ 5.000000+6 2.181250-4 5.500000+6 1.782340-4 6.000000+6 1.562930-49434 3 60   13
+ 6.500000+6 1.418290-4 7.000000+6 1.312580-4 7.500000+6 1.221420-49434 3 60   14
+ 8.000000+6 1.156160-4 8.500000+6 1.085430-4 9.000000+6 1.029270-49434 3 60   15
+ 9.500000+6 9.746530-5 1.000000+7 9.273450-5 1.050000+7 8.747840-59434 3 60   16
+ 1.100000+7 8.275270-5 1.150000+7 7.836910-5 1.200000+7 7.449610-59434 3 60   17
+ 1.250000+7 7.079670-5 1.300000+7 6.747340-5 1.350000+7 6.439380-59434 3 60   18
+ 1.400000+7 6.154680-5 1.450000+7 5.875460-5 1.500000+7 5.603910-59434 3 60   19
+ 1.550000+7 5.368020-5 1.600000+7 5.156200-5 1.650000+7 4.966730-59434 3 60   20
+ 1.700000+7 4.786950-5 1.750000+7 4.619380-5 1.800000+7 4.471560-59434 3 60   21
+ 1.850000+7 4.321680-5 1.950000+7 3.973330-5 2.000000+7 3.799050-59434 3 60   22
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 61    1
+ 0.000000+0-9.682000+5          0          0          1         569434 3 61    2
+         56          2          0          0          0          09434 3 61    3
+ 9.723020+5 0.000000+0 9.872560+5 1.067760-2 9.896260+5 1.171730-29434 3 61    4
+ 1.000000+6 1.591340-2 1.022920+6 2.425480-2 1.032900+6 2.749720-29434 3 61    5
+ 1.074480+6 3.893140-2 1.084680+6 4.107520-2 1.087150+6 4.158000-29434 3 61    6
+ 1.130530+6 4.951330-2 1.138800+6 5.084580-2 1.179380+6 5.630340-29434 3 61    7
+ 1.207560+6 5.861100-2 1.233860+6 6.046130-2 1.257300+6 6.179210-29434 3 61    8
+ 1.300000+6 6.296020-2 1.600000+6 5.497810-2 1.800000+6 4.272630-29434 3 61    9
+ 2.000000+6 3.154460-2 2.300000+6 1.853690-2 2.500000+6 1.268160-29434 3 61   10
+ 2.700000+6 8.520090-3 3.000000+6 4.647430-3 3.500000+6 1.662260-39434 3 61   11
+ 4.000000+6 6.430770-4 4.500000+6 3.080630-4 5.000000+6 1.935150-49434 3 61   12
+ 5.500000+6 1.466880-4 6.000000+6 1.240930-4 6.500000+6 1.108460-49434 3 61   13
+ 7.000000+6 1.018420-4 7.500000+6 9.451900-5 8.000000+6 8.932380-59434 3 61   14
+ 8.500000+6 8.384920-5 9.000000+6 7.947630-5 9.500000+6 7.523610-59434 3 61   15
+ 1.000000+7 7.156760-5 1.050000+7 6.755090-5 1.100000+7 6.389530-59434 3 61   16
+ 1.150000+7 6.050460-5 1.200000+7 5.750860-5 1.250000+7 5.464720-59434 3 61   17
+ 1.300000+7 5.209480-5 1.350000+7 4.973220-5 1.400000+7 4.753120-59434 3 61   18
+ 1.450000+7 4.537270-5 1.500000+7 4.327340-5 1.550000+7 4.144960-59434 3 61   19
+ 1.600000+7 3.981170-5 1.650000+7 3.834640-5 1.700000+7 3.695610-59434 3 61   20
+ 1.750000+7 3.560100-5 1.800000+7 3.447120-5 1.850000+7 3.332600-59434 3 61   21
+ 1.950000+7 3.066160-5 2.000000+7 2.932870-5                      9434 3 61   22
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 62    1
+ 0.000000+0-9.830900+5          0          0          1         559434 3 62    2
+         55          2          0          0          0          09434 3 62    3
+ 9.872560+5 0.000000+0 9.896260+5 3.165180-3 1.000000+6 8.486880-39434 3 62    4
+ 1.022920+6 1.790640-2 1.032900+6 2.173710-2 1.074480+6 3.582460-29434 3 62    5
+ 1.084680+6 3.886810-2 1.087150+6 3.959280-2 1.130530+6 4.963720-29434 3 62    6
+ 1.138800+6 5.133360-2 1.179380+6 5.871910-2 1.207560+6 6.207920-29434 3 62    7
+ 1.233860+6 6.438800-2 1.257300+6 6.612690-2 1.300000+6 6.820850-29434 3 62    8
+ 1.600000+6 5.954890-2 1.800000+6 4.633740-2 2.000000+6 3.439170-29434 3 62    9
+ 2.300000+6 2.051860-2 2.500000+6 1.414520-2 2.700000+6 9.534190-39434 3 62   10
+ 3.000000+6 5.145440-3 3.500000+6 1.782600-3 4.000000+6 6.594420-49434 3 62   11
+ 4.500000+6 2.994000-4 5.000000+6 1.798750-4 5.500000+6 1.326540-49434 3 62   12
+ 6.000000+6 1.109050-4 6.500000+6 9.862420-5 7.000000+6 9.034160-59434 3 62   13
+ 7.500000+6 8.385950-5 8.000000+6 7.916860-5 8.500000+6 7.439970-59434 3 62   14
+ 9.000000+6 7.048760-5 9.500000+6 6.669700-5 1.000000+7 6.341660-59434 3 62   15
+ 1.050000+7 5.995320-5 1.100000+7 5.669660-5 1.150000+7 5.367520-59434 3 62   16
+ 1.200000+7 5.100440-5 1.250000+7 4.845390-5 1.300000+7 4.622060-59434 3 62   17
+ 1.350000+7 4.415900-5 1.400000+7 4.219980-5 1.450000+7 4.027830-59434 3 62   18
+ 1.500000+7 3.840960-5 1.550000+7 3.678540-5 1.600000+7 3.532660-59434 3 62   19
+ 1.650000+7 3.402110-5 1.700000+7 3.278230-5 1.750000+7 3.150090-59434 3 62   20
+ 1.800000+7 3.046320-5 1.850000+7 2.947460-5 1.950000+7 2.716830-59434 3 62   21
+ 2.000000+7 2.601470-5                                            9434 3 62   22
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 63    1
+ 0.000000+0-9.854500+5          0          0          1         549434 3 63    2
+         54          2          0          0          0          09434 3 63    3
+ 9.896260+5 0.000000+0 1.000000+6 8.127470-3 1.022920+6 1.719920-29434 3 63    4
+ 1.032900+6 2.065280-2 1.074480+6 3.286390-2 1.084680+6 3.540560-29434 3 63    5
+ 1.087150+6 3.600760-2 1.130530+6 4.445590-2 1.138800+6 4.585690-29434 3 63    6
+ 1.179380+6 5.186240-2 1.207560+6 5.473900-2 1.233860+6 5.676650-29434 3 63    7
+ 1.257300+6 5.824010-2 1.300000+6 6.022800-2 1.600000+6 5.373380-29434 3 63    8
+ 1.800000+6 4.207690-2 2.000000+6 3.116020-2 2.300000+6 1.834440-29434 3 63    9
+ 2.500000+6 1.256470-2 2.700000+6 8.451260-3 3.000000+6 4.765340-39434 3 63   10
+ 3.500000+6 1.797370-3 4.000000+6 7.763190-4 4.500000+6 4.321800-49434 3 63   11
+ 5.000000+6 3.087300-4 5.500000+6 2.522870-4 6.000000+6 2.213600-49434 3 63   12
+ 6.500000+6 2.010970-4 7.000000+6 1.858470-4 7.500000+6 1.732170-49434 3 63   13
+ 8.000000+6 1.637960-4 8.500000+6 1.540550-4 9.000000+6 1.460240-49434 3 63   14
+ 9.500000+6 1.381870-4 1.000000+7 1.313930-4 1.050000+7 1.242530-49434 3 63   15
+ 1.100000+7 1.175020-4 1.150000+7 1.112380-4 1.200000+7 1.056990-49434 3 63   16
+ 1.250000+7 1.004100-4 1.300000+7 9.578980-5 1.350000+7 9.152980-59434 3 63   17
+ 1.400000+7 8.746740-5 1.450000+7 8.348310-5 1.500000+7 7.960830-59434 3 63   18
+ 1.550000+7 7.624040-5 1.600000+7 7.321520-5 1.650000+7 7.050790-59434 3 63   19
+ 1.700000+7 6.793880-5 1.750000+7 6.528170-5 1.800000+7 6.309680-59434 3 63   20
+ 1.850000+7 6.105660-5 1.950000+7 5.629480-5 2.000000+7 5.391310-59434 3 63   21
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 64    1
+ 0.000000+0-1.018600+6          0          0          1         529434 3 64    2
+         52          2          0          0          0          09434 3 64    3
+ 1.022920+6 0.000000+0 1.032900+6 3.694450-3 1.074480+6 1.283600-29434 3 64    4
+ 1.084680+6 1.491860-2 1.087150+6 1.542370-2 1.130530+6 2.346540-29434 3 64    5
+ 1.138800+6 2.476340-2 1.179380+6 3.068100-2 1.207560+6 3.435340-29434 3 64    6
+ 1.233860+6 3.714560-2 1.257300+6 3.909940-2 1.300000+6 4.228340-29434 3 64    7
+ 1.600000+6 4.494330-2 1.800000+6 3.768230-2 2.000000+6 2.946080-29434 3 64    8
+ 2.300000+6 1.875890-2 2.500000+6 1.336830-2 2.700000+6 9.267900-39434 3 64    9
+ 3.000000+6 5.436880-3 3.500000+6 2.116530-3 4.000000+6 9.476220-49434 3 64   10
+ 4.500000+6 5.454310-4 5.000000+6 3.992580-4 5.500000+6 3.304670-49434 3 64   11
+ 6.000000+6 2.918520-4 6.500000+6 2.659880-4 7.000000+6 2.458010-49434 3 64   12
+ 7.500000+6 2.296610-4 8.000000+6 2.169480-4 8.500000+6 2.037810-49434 3 64   13
+ 9.000000+6 1.937750-4 9.500000+6 1.832340-4 1.000000+7 1.740840-49434 3 64   14
+ 1.050000+7 1.649010-4 1.100000+7 1.560990-4 1.150000+7 1.477110-49434 3 64   15
+ 1.200000+7 1.402880-4 1.250000+7 1.332020-4 1.300000+7 1.270050-49434 3 64   16
+ 1.350000+7 1.217550-4 1.400000+7 1.163250-4 1.450000+7 1.110000-49434 3 64   17
+ 1.500000+7 1.058200-4 1.550000+7 1.013160-4 1.600000+7 9.726750-59434 3 64   18
+ 1.650000+7 9.364270-5 1.700000+7 9.020270-5 1.750000+7 8.664690-59434 3 64   19
+ 1.800000+7 8.339720-5 1.850000+7 8.060200-5 1.950000+7 7.458220-59434 3 64   20
+ 2.000000+7 7.157260-5                                            9434 3 64   21
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 65    1
+ 0.000000+0-1.028540+6          0          0          1         519434 3 65    2
+         51          2          0          0          0          09434 3 65    3
+ 1.032900+6 0.000000+0 1.074480+6 1.775900-2 1.084680+6 2.116660-29434 3 65    4
+ 1.087150+6 2.195720-2 1.130530+6 3.461660-2 1.138800+6 3.660950-29434 3 65    5
+ 1.179380+6 4.496710-2 1.207560+6 4.980910-2 1.233860+6 5.373590-29434 3 65    6
+ 1.257300+6 5.598250-2 1.300000+6 5.934110-2 1.600000+6 5.629200-29434 3 65    7
+ 1.800000+6 4.456280-2 2.000000+6 3.313820-2 2.300000+6 1.991900-29434 3 65    8
+ 2.500000+6 1.377930-2 2.700000+6 9.323000-3 3.000000+6 5.408430-39434 3 65    9
+ 3.500000+6 2.112450-3 4.000000+6 9.866190-4 4.500000+6 6.063160-49434 3 65   10
+ 5.000000+6 4.652740-4 5.500000+6 3.951930-4 6.000000+6 3.531400-49434 3 65   11
+ 6.500000+6 3.233040-4 7.000000+6 2.995950-4 7.500000+6 2.800490-49434 3 65   12
+ 8.000000+6 2.648700-4 8.500000+6 2.487570-4 9.000000+6 2.367660-49434 3 65   13
+ 9.500000+6 2.238490-4 1.000000+7 2.126290-4 1.050000+7 2.013770-49434 3 65   14
+ 1.100000+7 1.908040-4 1.150000+7 1.805290-4 1.200000+7 1.714360-49434 3 65   15
+ 1.250000+7 1.627540-4 1.300000+7 1.551600-4 1.350000+7 1.487930-49434 3 65   16
+ 1.400000+7 1.422290-4 1.450000+7 1.357090-4 1.500000+7 1.293680-49434 3 65   17
+ 1.550000+7 1.238520-4 1.600000+7 1.188940-4 1.650000+7 1.144540-49434 3 65   18
+ 1.700000+7 1.102400-4 1.750000+7 1.058860-4 1.800000+7 1.019050-49434 3 65   19
+ 1.850000+7 9.835560-5 1.950000+7 9.109740-5 2.000000+7 8.746910-59434 3 65   20
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 66    1
+ 0.000000+0-1.069940+6          0          0          1         509434 3 66    2
+         50          2          0          0          0          09434 3 66    3
+ 1.074480+6 0.000000+0 1.084680+6 3.266170-3 1.087150+6 3.780540-39434 3 66    4
+ 1.130530+6 1.226420-2 1.138800+6 1.380340-2 1.179380+6 2.073540-29434 3 66    5
+ 1.207560+6 2.465580-2 1.233860+6 2.797330-2 1.257300+6 3.075860-29434 3 66    6
+ 1.300000+6 3.479810-2 1.600000+6 4.183490-2 1.800000+6 3.583160-29434 3 66    7
+ 2.000000+6 2.803420-2 2.300000+6 1.805280-2 2.500000+6 1.292520-29434 3 66    8
+ 2.700000+6 9.006260-3 3.000000+6 5.453330-3 3.500000+6 2.228410-39434 3 66    9
+ 4.000000+6 1.073030-3 4.500000+6 6.675990-4 5.000000+6 5.140710-49434 3 66   10
+ 5.500000+6 4.369830-4 6.000000+6 3.902560-4 6.500000+6 3.568880-49434 3 66   11
+ 7.000000+6 3.313550-4 7.500000+6 3.090900-4 8.000000+6 2.931590-49434 3 66   12
+ 8.500000+6 2.749450-4 9.000000+6 2.617490-4 9.500000+6 2.479900-49434 3 66   13
+ 1.000000+7 2.353690-4 1.050000+7 2.227510-4 1.100000+7 2.114350-49434 3 66   14
+ 1.150000+7 2.002760-4 1.200000+7 1.900980-4 1.250000+7 1.803820-49434 3 66   15
+ 1.300000+7 1.718750-4 1.350000+7 1.647310-4 1.400000+7 1.578940-49434 3 66   16
+ 1.450000+7 1.507450-4 1.500000+7 1.436650-4 1.550000+7 1.375020-49434 3 66   17
+ 1.600000+7 1.319610-4 1.650000+7 1.269950-4 1.700000+7 1.222830-49434 3 66   18
+ 1.750000+7 1.174150-4 1.800000+7 1.129650-4 1.850000+7 1.089480-49434 3 66   19
+ 1.950000+7 1.008350-4 2.000000+7 9.701300-5                      9434 3 66   20
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 67    1
+ 0.000000+0-1.080100+6          0          0          1         499434 3 67    2
+         49          2          0          0          0          09434 3 67    3
+ 1.084680+6 0.000000+0 1.087150+6 0.000000+0 1.130530+6 0.000000+09434 3 67    4
+ 1.138800+6 4.61913-16 1.179380+6 6.64235-15 1.207560+6 2.36097-149434 3 67    5
+ 1.233860+6 6.16003-14 1.257300+6 1.27934-13 1.300000+6 4.93141-139434 3 67    6
+ 1.600000+6 6.33247-11 1.800000+6 4.00968-10 2.000000+6 1.776380-99434 3 67    7
+ 2.300000+6 7.485490-9 2.500000+6 1.533130-8 2.700000+6 2.726380-89434 3 67    8
+ 3.000000+6 1.367520-4 3.500000+6 1.367210-4 4.000000+6 1.303440-49434 3 67    9
+ 4.500000+6 1.213040-4 5.000000+6 1.126410-4 5.500000+6 1.035830-49434 3 67   10
+ 6.000000+6 9.543950-5 6.500000+6 8.844970-5 7.000000+6 8.259730-59434 3 67   11
+ 7.500000+6 7.718480-5 8.000000+6 7.332230-5 8.500000+6 6.877430-59434 3 67   12
+ 9.000000+6 6.546660-5 9.500000+6 6.207930-5 1.000000+7 5.891140-59434 3 67   13
+ 1.050000+7 5.574530-5 1.100000+7 5.290350-5 1.150000+7 5.015310-59434 3 67   14
+ 1.200000+7 4.759930-5 1.250000+7 4.516180-5 1.300000+7 4.302690-59434 3 67   15
+ 1.350000+7 4.123350-5 1.400000+7 3.951720-5 1.450000+7 3.775990-59434 3 67   16
+ 1.500000+7 3.598440-5 1.550000+7 3.443880-5 1.600000+7 3.304890-59434 3 67   17
+ 1.650000+7 3.180330-5 1.700000+7 3.062110-5 1.750000+7 2.940020-59434 3 67   18
+ 1.800000+7 2.828400-5 1.850000+7 2.727620-5 1.950000+7 2.523870-59434 3 67   19
+ 2.000000+7 2.429270-5                                            9434 3 67   20
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 68    1
+ 0.000000+0-1.082560+6          0          0          1         489434 3 68    2
+         48          2          0          0          0          09434 3 68    3
+ 1.087150+6 0.000000+0 1.130530+6 4.730140-3 1.138800+6 5.363860-39434 3 68    4
+ 1.179380+6 8.198440-3 1.207560+6 9.889400-3 1.233860+6 1.131250-29434 3 68    5
+ 1.257300+6 1.254080-2 1.300000+6 1.458820-2 1.600000+6 2.111820-29434 3 68    6
+ 1.800000+6 1.984920-2 2.000000+6 1.651800-2 2.300000+6 1.141140-29434 3 68    7
+ 2.500000+6 8.478070-3 2.700000+6 6.121570-3 3.000000+6 4.012880-39434 3 68    8
+ 3.500000+6 1.801380-3 4.000000+6 9.341160-4 4.500000+6 6.016290-49434 3 68    9
+ 5.000000+6 4.683050-4 5.500000+6 3.985180-4 6.000000+6 3.555790-49434 3 68   10
+ 6.500000+6 3.250790-4 7.000000+6 3.018500-4 7.500000+6 2.813400-49434 3 68   11
+ 8.000000+6 2.670070-4 8.500000+6 2.503090-4 9.000000+6 2.382040-49434 3 68   12
+ 9.500000+6 2.258990-4 1.000000+7 2.143540-4 1.050000+7 2.028220-49434 3 68   13
+ 1.100000+7 1.924720-4 1.150000+7 1.825010-4 1.200000+7 1.732030-49434 3 68   14
+ 1.250000+7 1.643290-4 1.300000+7 1.565570-4 1.350000+7 1.500270-49434 3 68   15
+ 1.400000+7 1.437790-4 1.450000+7 1.374120-4 1.500000+7 1.309490-49434 3 68   16
+ 1.550000+7 1.253230-4 1.600000+7 1.202630-4 1.650000+7 1.157290-49434 3 68   17
+ 1.700000+7 1.114250-4 1.750000+7 1.069810-4 1.800000+7 1.029170-49434 3 68   18
+ 1.850000+7 9.924860-5 1.950000+7 9.182940-5 2.000000+7 8.839660-59434 3 68   19
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 69    1
+ 0.000000+0-1.125760+6          0          0          1         479434 3 69    2
+         47          2          0          0          0          09434 3 69    3
+ 1.130530+6 0.000000+0 1.138800+6 4.693530-4 1.179380+6 3.262330-39434 3 69    4
+ 1.207560+6 5.476200-3 1.233860+6 7.486500-3 1.257300+6 9.108590-39434 3 69    5
+ 1.300000+6 1.200120-2 1.600000+6 2.169930-2 1.800000+6 2.078830-29434 3 69    6
+ 2.000000+6 1.754350-2 2.300000+6 1.240280-2 2.500000+6 9.320650-39434 3 69    7
+ 2.700000+6 6.776630-3 3.000000+6 4.490720-3 3.500000+6 2.022280-39434 3 69    8
+ 4.000000+6 1.066670-3 4.500000+6 7.065880-4 5.000000+6 5.615390-49434 3 69    9
+ 5.500000+6 4.837810-4 6.000000+6 4.345070-4 6.500000+6 3.988500-49434 3 69   10
+ 7.000000+6 3.703730-4 7.500000+6 3.457970-4 8.000000+6 3.279040-49434 3 69   11
+ 8.500000+6 3.081490-4 9.000000+6 2.929480-4 9.500000+6 2.780170-49434 3 69   12
+ 1.000000+7 2.642410-4 1.050000+7 2.498790-4 1.100000+7 2.369590-49434 3 69   13
+ 1.150000+7 2.249320-4 1.200000+7 2.138180-4 1.250000+7 2.027820-49434 3 69   14
+ 1.300000+7 1.931080-4 1.350000+7 1.849700-4 1.400000+7 1.771840-49434 3 69   15
+ 1.450000+7 1.695020-4 1.500000+7 1.618520-4 1.550000+7 1.548640-49434 3 69   16
+ 1.600000+7 1.485780-4 1.650000+7 1.429420-4 1.700000+7 1.375920-49434 3 69   17
+ 1.750000+7 1.320700-4 1.800000+7 1.270200-4 1.850000+7 1.224590-49434 3 69   18
+ 1.950000+7 1.132360-4 2.000000+7 1.091090-4                      9434 3 69   19
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 70    1
+ 0.000000+0-1.134000+6          0          0          1         469434 3 70    2
+         46          2          0          0          0          09434 3 70    3
+ 1.138800+6 0.000000+0 1.179380+6 7.601660-3 1.207560+6 1.095730-29434 3 70    4
+ 1.233860+6 1.354120-2 1.257300+6 1.527520-2 1.300000+6 1.778210-29434 3 70    5
+ 1.600000+6 1.895870-2 1.800000+6 1.459040-2 2.000000+6 1.034830-29434 3 70    6
+ 2.300000+6 5.948970-3 2.500000+6 4.028050-3 2.700000+6 2.687440-39434 3 70    7
+ 3.000000+6 1.963640-3 3.500000+6 1.026340-3 4.000000+6 6.913890-49434 3 70    8
+ 4.500000+6 5.604800-4 5.000000+6 4.953480-4 5.500000+6 4.479850-49434 3 70    9
+ 6.000000+6 4.107570-4 6.500000+6 3.804980-4 7.000000+6 3.545690-49434 3 70   10
+ 7.500000+6 3.317120-4 8.000000+6 3.147150-4 8.500000+6 2.959970-49434 3 70   11
+ 9.000000+6 2.813920-4 9.500000+6 2.670270-4 1.000000+7 2.539510-49434 3 70   12
+ 1.050000+7 2.401290-4 1.100000+7 2.276870-4 1.150000+7 2.161100-49434 3 70   13
+ 1.200000+7 2.055490-4 1.250000+7 1.949270-4 1.300000+7 1.856140-49434 3 70   14
+ 1.350000+7 1.777780-4 1.400000+7 1.702820-4 1.450000+7 1.628850-49434 3 70   15
+ 1.500000+7 1.556260-4 1.550000+7 1.489010-4 1.600000+7 1.428510-49434 3 70   16
+ 1.650000+7 1.374270-4 1.700000+7 1.322780-4 1.750000+7 1.269630-49434 3 70   17
+ 1.800000+7 1.221040-4 1.850000+7 1.177130-4 1.950000+7 1.088380-49434 3 70   18
+ 2.000000+7 1.048660-4                                            9434 3 70   19
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 71    1
+ 0.000000+0-1.174400+6          0          0          1         459434 3 71    2
+         45          2          0          0          0          09434 3 71    3
+ 1.179380+6 0.000000+0 1.207560+6 8.956170-3 1.233860+6 1.521840-29434 3 71    4
+ 1.257300+6 2.029890-2 1.300000+6 2.798680-2 1.600000+6 4.446570-29434 3 71    5
+ 1.800000+6 3.829970-2 2.000000+6 2.926220-2 2.300000+6 1.803520-29434 3 71    6
+ 2.500000+6 1.258390-2 2.700000+6 8.615300-3 3.000000+6 5.470730-39434 3 71    7
+ 3.500000+6 2.420850-3 4.000000+6 1.330380-3 4.500000+6 9.419650-49434 3 71    8
+ 5.000000+6 7.818060-4 5.500000+6 6.895860-4 6.000000+6 6.264680-49434 3 71    9
+ 6.500000+6 5.771970-4 7.000000+6 5.375080-4 7.500000+6 5.029670-49434 3 71   10
+ 8.000000+6 4.767430-4 8.500000+6 4.484950-4 9.000000+6 4.267010-49434 3 71   11
+ 9.500000+6 4.045970-4 1.000000+7 3.852450-4 1.050000+7 3.645950-49434 3 71   12
+ 1.100000+7 3.455120-4 1.150000+7 3.277910-4 1.200000+7 3.119840-49434 3 71   13
+ 1.250000+7 2.963250-4 1.300000+7 2.820750-4 1.350000+7 2.700720-49434 3 71   14
+ 1.400000+7 2.585940-4 1.450000+7 2.472680-4 1.500000+7 2.362120-49434 3 71   15
+ 1.550000+7 2.265980-4 1.600000+7 2.173540-4 1.650000+7 2.090620-49434 3 71   16
+ 1.700000+7 2.011910-4 1.750000+7 1.930700-4 1.800000+7 1.856430-49434 3 71   17
+ 1.850000+7 1.789310-4 1.950000+7 1.653690-4 2.000000+7 1.592990-49434 3 71   18
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 72    1
+ 0.000000+0-1.202460+6          0          0          1         449434 3 72    2
+         44          2          0          0          0          09434 3 72    3
+ 1.207560+6 0.000000+0 1.233860+6 5.331850-3 1.257300+6 8.418190-39434 3 72    4
+ 1.300000+6 1.334560-2 1.600000+6 2.847160-2 1.800000+6 2.731510-29434 3 72    5
+ 2.000000+6 2.240110-2 2.300000+6 1.468400-2 2.500000+6 1.052250-29434 3 72    6
+ 2.700000+6 7.382780-3 3.000000+6 4.808090-3 3.500000+6 2.179880-39434 3 72    7
+ 4.000000+6 1.184350-3 4.500000+6 8.141670-4 5.000000+6 6.615440-49434 3 72    8
+ 5.500000+6 5.776120-4 6.000000+6 5.219180-4 6.500000+6 4.801280-49434 3 72    9
+ 7.000000+6 4.471320-4 7.500000+6 4.176800-4 8.000000+6 3.963930-49434 3 72   10
+ 8.500000+6 3.725440-4 9.000000+6 3.550020-4 9.500000+6 3.364470-49434 3 72   11
+ 1.000000+7 3.201830-4 1.050000+7 3.035670-4 1.100000+7 2.875810-49434 3 72   12
+ 1.150000+7 2.727530-4 1.200000+7 2.595100-4 1.250000+7 2.468190-49434 3 72   13
+ 1.300000+7 2.349880-4 1.350000+7 2.249410-4 1.400000+7 2.153340-49434 3 72   14
+ 1.450000+7 2.058560-4 1.500000+7 1.966070-4 1.550000+7 1.885640-49434 3 72   15
+ 1.600000+7 1.812060-4 1.650000+7 1.742730-4 1.700000+7 1.676930-49434 3 72   16
+ 1.750000+7 1.609050-4 1.800000+7 1.546960-4 1.850000+7 1.490840-49434 3 72   17
+ 1.950000+7 1.377490-4 2.000000+7 1.326750-4                      9434 3 72   18
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 73    1
+ 0.000000+0-1.228650+6          0          0          1         439434 3 73    2
+         43          2          0          0          0          09434 3 73    3
+ 1.233860+6 0.000000+0 1.257300+6 3.924820-3 1.300000+6 8.085490-39434 3 73    4
+ 1.600000+6 1.592360-2 1.800000+6 1.316010-2 2.000000+6 9.628240-39434 3 73    5
+ 2.300000+6 5.593810-3 2.500000+6 3.804240-3 2.700000+6 2.554010-39434 3 73    6
+ 3.000000+6 1.995390-3 3.500000+6 1.112500-3 4.000000+6 7.878030-49434 3 73    7
+ 4.500000+6 6.554500-4 5.000000+6 5.858340-4 5.500000+6 5.330820-49434 3 73    8
+ 6.000000+6 4.902280-4 6.500000+6 4.545370-4 7.000000+6 4.249930-49434 3 73    9
+ 7.500000+6 3.971110-4 8.000000+6 3.775700-4 8.500000+6 3.546900-49434 3 73   10
+ 9.000000+6 3.383360-4 9.500000+6 3.207020-4 1.000000+7 3.050720-49434 3 73   11
+ 1.050000+7 2.894300-4 1.100000+7 2.743600-4 1.150000+7 2.601510-49434 3 73   12
+ 1.200000+7 2.474470-4 1.250000+7 2.352810-4 1.300000+7 2.243550-49434 3 73   13
+ 1.350000+7 2.147240-4 1.400000+7 2.055160-4 1.450000+7 1.964320-49434 3 73   14
+ 1.500000+7 1.875710-4 1.550000+7 1.798610-4 1.600000+7 1.729300-49434 3 73   15
+ 1.650000+7 1.664780-4 1.700000+7 1.601770-4 1.750000+7 1.536770-49434 3 73   16
+ 1.800000+7 1.477310-4 1.850000+7 1.423560-4 1.950000+7 1.315040-49434 3 73   17
+ 2.000000+7 1.266460-4                                            9434 3 73   18
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 74    1
+ 0.000000+0-1.252000+6          0          0          1         429434 3 74    2
+         42          2          0          0          0          09434 3 74    3
+ 1.257300+6 0.000000+0 1.300000+6 1.592910-6 1.600000+6 8.826880-59434 3 74    4
+ 1.800000+6 2.224430-4 2.000000+6 3.770570-4 2.300000+6 5.633190-49434 3 74    5
+ 2.500000+6 6.136870-4 2.700000+6 6.025160-4 3.000000+6 8.116200-49434 3 74    6
+ 3.500000+6 5.971710-4 4.000000+6 4.429760-4 4.500000+6 3.512710-49434 3 74    7
+ 5.000000+6 3.012730-4 5.500000+6 2.672550-4 6.000000+6 2.426130-49434 3 74    8
+ 6.500000+6 2.235370-4 7.000000+6 2.081680-4 7.500000+6 1.942860-49434 3 74    9
+ 8.000000+6 1.846840-4 8.500000+6 1.733830-4 9.000000+6 1.652680-49434 3 74   10
+ 9.500000+6 1.568450-4 1.000000+7 1.491380-4 1.050000+7 1.414480-49434 3 74   11
+ 1.100000+7 1.342550-4 1.150000+7 1.272760-4 1.200000+7 1.210310-49434 3 74   12
+ 1.250000+7 1.150540-4 1.300000+7 1.098040-4 1.350000+7 1.051210-49434 3 74   13
+ 1.400000+7 1.005980-4 1.450000+7 9.613590-5 1.500000+7 9.178470-59434 3 74   14
+ 1.550000+7 8.799770-5 1.600000+7 8.459280-5 1.650000+7 8.154100-59434 3 74   15
+ 1.700000+7 7.845640-5 1.750000+7 7.526630-5 1.800000+7 7.234820-59434 3 74   16
+ 1.850000+7 6.970990-5 1.950000+7 6.438410-5 2.000000+7 6.200000-59434 3 74   17
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3 91    1
+ 0.000000+0-1.145150+5          0          0          1         769434 3 91    2
+         76          2          0          0          0          09434 3 91    3
+ 1.150000+5 0.000000+0 1.300000+5 8.404680-6 1.465700+5 1.351390-59434 3 91    4
+ 1.700000+5 2.016640-5 2.000000+5 2.196120-5 3.000000+5 1.303610-49434 3 91    5
+ 3.046660+5 1.704800-4 4.000000+5 3.692310-4 5.000000+5 8.153590-49434 3 91    6
+ 5.157560+5 9.603630-4 6.000000+5 1.456810-3 6.077040+5 1.598730-39434 3 91    7
+ 6.642020+5 2.104070-3 7.000000+5 2.273550-3 7.664740+5 3.087770-39434 3 91    8
+ 7.767570+5 3.173920-3 8.000000+5 3.274250-3 9.000000+5 4.527860-39434 3 91    9
+ 9.454490+5 4.984340-3 9.668600+5 5.710160-3 9.723020+5 5.767630-39434 3 91   10
+ 9.872560+5 5.867600-3 9.896260+5 5.872260-3 1.000000+6 5.879970-39434 3 91   11
+ 1.022920+6 6.157430-3 1.032900+6 6.173650-3 1.074480+6 6.947590-39434 3 91   12
+ 1.084680+6 7.003660-3 1.087150+6 7.012270-3 1.130530+6 7.316290-39434 3 91   13
+ 1.138800+6 7.321970-3 1.179380+6 8.206890-3 1.207560+6 8.432460-39434 3 91   14
+ 1.233860+6 8.556330-3 1.257300+6 9.145970-3 1.300000+6 9.597920-39434 3 91   15
+ 1.600000+6 1.667500-1 1.800000+6 3.435630-1 2.000000+6 5.116360-19434 3 91   16
+ 2.300000+6 7.051450-1 2.500000+6 7.946650-1 2.700000+6 8.582980-19434 3 91   17
+ 3.000000+6 9.492400-1 3.500000+6 1.013870+0 4.000000+6 1.072620+09434 3 91   18
+ 4.500000+6 1.146790+0 5.000000+6 1.218170+0 5.500000+6 1.157900+09434 3 91   19
+ 6.000000+6 9.179520-1 6.500000+6 6.655750-1 7.000000+6 4.922950-19434 3 91   20
+ 7.500000+6 3.789860-1 8.000000+6 3.100710-1 8.500000+6 2.656490-19434 3 91   21
+ 9.000000+6 2.372520-1 9.500000+6 2.167360-1 1.000000+7 2.016640-19434 3 91   22
+ 1.050000+7 1.895600-1 1.100000+7 1.798260-1 1.150000+7 1.713920-19434 3 91   23
+ 1.200000+7 1.639430-1 1.250000+7 1.572270-1 1.300000+7 1.509230-19434 3 91   24
+ 1.350000+7 1.451760-1 1.400000+7 1.395470-1 1.450000+7 1.342540-19434 3 91   25
+ 1.500000+7 1.291520-1 1.550000+7 1.243420-1 1.600000+7 1.197200-19434 3 91   26
+ 1.650000+7 1.153500-1 1.700000+7 1.112910-1 1.750000+7 1.073330-19434 3 91   27
+ 1.800000+7 1.035440-1 1.850000+7 9.994180-2 1.950000+7 9.320630-29434 3 91   28
+ 2.000000+7 9.006770-2                                            9434 3 91   29
+                                                                  9434 3  099999
+ 9.423800+4 2.360050+2          0          0          0          09434 3102    1
+ 5.646180+6 5.646180+6          0          0          2         929434 3102    2
+          4          2         92          5          0          09434 3102    3
+ 1.000000-5 0.000000+0 2.530000-2 0.000000+0 5.000000+2 0.000000+09434 3102    4
+ 5.000000+2 7.954940+0 7.000000+2 6.309840+0 1.000000+3 4.926280+09434 3102    5
+ 2.000000+3 3.049910+0 3.000000+3 2.323100+0 5.000000+3 1.683660+09434 3102    6
+ 7.000000+3 1.388720+0 1.000000+4 1.157800+0 2.000000+4 8.604180-19434 3102    7
+ 3.000000+4 7.397140-1 4.426280+4 6.402490-1 5.000000+4 6.038170-19434 3102    8
+ 7.000000+4 5.011150-1 1.000000+5 4.071530-1 1.300000+5 3.415590-19434 3102    9
+ 1.465700+5 3.190330-1 1.700000+5 2.975920-1 2.000000+5 2.802350-19434 3102   10
+ 3.000000+5 2.278150-1 3.046660+5 2.252770-1 4.000000+5 1.929520-19434 3102   11
+ 5.000000+5 1.828420-1 5.157560+5 1.804040-1 6.000000+5 1.725910-19434 3102   12
+ 6.077040+5 1.721840-1 6.642020+5 1.662450-1 7.000000+5 1.639630-19434 3102   13
+ 7.664740+5 1.588740-1 7.767570+5 1.583780-1 8.000000+5 1.574460-19434 3102   14
+ 9.000000+5 1.555730-1 9.454490+5 1.557130-1 9.668600+5 1.551500-19434 3102   15
+ 9.723020+5 1.547360-1 9.872560+5 1.537760-1 9.896260+5 1.535010-19434 3102   16
+ 1.000000+6 1.524250-1 1.022920+6 1.504490-1 1.032900+6 1.494980-19434 3102   17
+ 1.074480+6 1.452590-1 1.084680+6 1.442990-1 1.087150+6 1.440890-19434 3102   18
+ 1.130530+6 1.406640-1 1.138800+6 1.401000-1 1.179380+6 1.370240-19434 3102   19
+ 1.207560+6 1.350920-1 1.233860+6 1.334700-1 1.257300+6 1.318530-19434 3102   20
+ 1.300000+6 1.297850-1 1.600000+6 1.156810-1 1.800000+6 1.040110-19434 3102   21
+ 2.000000+6 9.092010-2 2.300000+6 7.114800-2 2.500000+6 5.908370-29434 3102   22
+ 2.700000+6 4.841840-2 3.000000+6 3.465680-2 3.500000+6 1.957720-29434 3102   23
+ 4.000000+6 1.099170-2 4.500000+6 6.311560-3 5.000000+6 3.859480-39434 3102   24
+ 5.500000+6 2.547760-3 6.000000+6 1.873700-3 6.500000+6 1.502420-39434 3102   25
+ 7.000000+6 1.357830-3 7.500000+6 1.358120-3 8.000000+6 1.370310-39434 3102   26
+ 8.500000+6 1.446330-3 9.000000+6 1.516950-3 9.500000+6 1.606480-39434 3102   27
+ 1.000000+7 1.613650-3 1.050000+7 1.623710-3 1.100000+7 1.595830-39434 3102   28
+ 1.150000+7 1.546040-3 1.200000+7 1.483930-3 1.250000+7 1.408040-39434 3102   29
+ 1.300000+7 1.313430-3 1.350000+7 1.202350-3 1.400000+7 1.083080-39434 3102   30
+ 1.450000+7 9.968910-4 1.500000+7 8.914600-4 1.550000+7 7.987070-49434 3102   31
+ 1.600000+7 7.455240-4 1.650000+7 6.741300-4 1.700000+7 6.377320-49434 3102   32
+ 1.750000+7 5.813540-4 1.800000+7 5.575320-4 1.850000+7 5.110180-49434 3102   33
+ 1.950000+7 4.808690-4 2.000000+7 4.427080-4                      9434 3102   34
+                                                                  9434 3  099999
+                                                                  9434 0  0    0
