@@ -52,28 +52,16 @@ namespace frendy
       Real8 w_x_eff;
       Real8 w_y_eff;
       Real8 w_eff;
+
+      // PosINAC_FRENDY - V
+
       Real8 x_eff;
 
-      // PosINAC_FRENDY - V6
+      // Willian
 
-      Real8 l_max_eff;
-      Real8 m_max_eff;
-      Real8 m_eff;
-      Real8 E0_eff;
+      Real8 Bk_eff;
+      Real8 f1_eff;
 
-      // PosINAC_FRENDY - V8
-
-      Real8 qsi_eff;
-      Real8 fxqsi_eff;
-
-      // PosINAC_FRENDY - V10
-
-      Real8 gtt_eff;
-
-      Real8 smr_gg_eff;
-
-      Real8 chi1_eff;
-   
 
       /////////////////////////////////////////////////////////////////////////////
 
@@ -272,28 +260,17 @@ namespace frendy
       void set_w_x(Real8 real_val);   
       void set_w_y(Real8 real_val);
       void set_w(Real8 real_val);
-      void set_x(Real8 real_val);
 
       // PosINAC_FRENDY - V6
 
-      void set_l_max(Real8 real_val);
-      void set_m_max(Real8 real_val);
-      void set_m(Real8 real_val);
-      void set_E0(Real8 real_val);
+      void set_x(Real8 real_val);
 
-      // PosINAC_FRENDY - V8
+      // Willian
 
-      void set_qsi(Real8 real_val);
-      void set_fxqsi(Real8 real_val);
+      void set_Bk(Real8 real_val);
+      void set_f1(Real8 real_val);
 
-      // PosINAC_FRENDY - V10
 
-      void set_gtt(Real8 real_val);
-
-      void set_smr_gg(Real8 real_val);
-
-      
-      void set_chi1(Real8 real_val);
 
 
       ////////////////////////////////////////////////////////////////////////////////////////
@@ -328,29 +305,20 @@ namespace frendy
       Real8 get_w_x();
       Real8 get_w_y();
       Real8 get_w();
-      Real8 get_x();
 
       // PosINAC_FRENDY - V6
-      
-      Real8 get_l_max();
-      Real8 get_m_max();
-      Real8 get_m();
-      Real8 get_E0();
 
-      // PosINAC_FRENDY - V8
-
-      Real8 get_qsi();
-      Real8 get_fxqsi();
+      Real8 get_x();
 
 
-      // PosINAC_FRENDY - V10
+      // Willian
 
-      Real8 get_gtt();
+      Real8 get_Bk();
+      Real8 get_f1();
+  
 
-      Real8 get_smr_gg();
 
 
-      Real8 get_chi1();
 
 
       ///////////////////////////////////////////////////////////////////////////////////////
