@@ -451,14 +451,14 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
         {
           int k_max = static_cast<int>(ene_data.size());     // k_max e o tamanho do ene_data
           //
-          if( n==2 || n==6 || n==9 || n==10)                   //PosINAC_FRENDY - V9
+          //if( n==2 || n==6 || n==9 || n==10)                   //PosINAC_FRENDY - V9
           //if( n==0 || n==2 || n==4 || n==6 || n==7 || n==8 || n==9 || n==10 || n==11 || n==12 )                   //PosINAC_FRENDY - V9
-          //if( n==2 )        // Fará apenas os calculos para U238    //PosINAC_FRENDY - V8
+          if( n==2 )        // Fará apenas os calculos para Pu238    //PosINAC_FRENDY - V8
           {
             fout << "Single-Level_Breite_Wigner" << endl;
             //for(int t=0; t<6; t++)                           // t define qnts temepraturas serao
             //for(int t=1; t<11; t++)                             // PosINAC_FRENDY - V7
-            for(int t=3; t<6; t++)
+            for(int t=1; t<6; t++)
             {
               /*
               if(n==40785623)           // definindo valores de T partindo de qsi //PosINAC_FRENDY - V10
@@ -512,9 +512,10 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                   //fout << "         qsi           ";         // PosINAC_FRENDY - V8
                   //fout << "        fxqsi          ";         // PosINAC_FRENDY - V8
                   //fout << "    (qsi-fxqsi)/qsi    ";         // PosINAC_FRENDY - V8
-                  //fout << "           x           ";         // PosINAC_FRENDY - V6
+                  fout << "           x           ";         // PosINAC_FRENDY - V6
                   
                   fout << "        smr*gg         ";
+                  fout << "         chi1          ";
                   
 
                   
@@ -545,8 +546,9 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                 //fout << rxs_obj.get_qsi() << " ";          // PosINAC_FRENDY - V8
                 //fout << rxs_obj.get_fxqsi() << " ";        // PosINAC_FRENDY - V8
                 //fout << (rxs_obj.get_qsi() - rxs_obj.get_fxqsi())/rxs_obj.get_qsi() << " "; // PosINAC_FRENDY - V8
-                //fout << rxs_obj.get_x()   << " ";          // PosINAC_FRENDY - V5
+                fout << rxs_obj.get_x()   << " ";          // PosINAC_FRENDY - V5
                 fout << rxs_obj.get_smr_gg() << " ";
+                fout << rxs_obj.get_chi1() << " ";
                 
                
 
@@ -558,7 +560,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                   fout << "______________________ ";     // PosINAC_FRENDY - V3
                   fout << "______________________ ";     // PosINAC_FRENDY - V3
                   fout << "______________________ ";     // PosINAC_FRENDY - V3
-                  //fout << "______________________ ";     // PosINAC_FRENDY - V3
+                  fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "_______________________";     // PosINAC_FRENDY - V5
                   //fout << "_______________________";     // PosINAC_FRENDY - V5

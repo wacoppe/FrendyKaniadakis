@@ -487,7 +487,7 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
         //////////////////////////////////////////////////////
         ///////////IMPLEMENTAÇÃO DE KANI ANALÍTICO////////////
         //////////////////////////////////////////////////////
-        /*
+        
           
         
           Real8  Kappa, Bk, f1, f2, x1, chi1;
@@ -541,12 +541,12 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
 
           psi = real(Sg);
 
-        */
+        
         //////////////////////////////////////////////////////
         ////////FIM DA IMPLEMENTAÇÃO DE KANI ANALÍTICO////////
         //////////////////////////////////////////////////////
 
-        psi *= cerfc_coef;       // deve ser comentado para implementação de KANI ANALITICO
+        //psi *= cerfc_coef;       // deve ser comentado para implementação de KANI ANALITICO
         chi *= cerfc_coef;
         smr  = pifac*gj*gne/(gtt*gtt);
         
@@ -566,9 +566,13 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
           set_qsi(qsi);                                           // PosINAC_FRENDY - V8
           set_fxqsi(fxqsi);                                       // PosINAC_FRENDY - V8
           set_E0((er + 0.5*gn*(sl_er_multi[l][m]-sl)*pl_er_inv));  // PosINAC_FRENDY - V8
-          set_x(ex);              // PosINAC_FRENDY - V
+          set_x(x1);              // PosINAC_FRENDY - V
           set_gtt(gtt);
           set_smr_gg(smr * gg);
+          set_chi1(chi1);
+
+
+        
         }
 
         set_l_max(l_max*1.0);     // PosINAC_FRENDY - V6 
@@ -3491,6 +3495,11 @@ void ResonanceXSCalculator::set_smr_gg(Real8 real_val)    // define o objeto que
   smr_gg_eff           = real_val;                              
 }
 
+void ResonanceXSCalculator::set_chi1(Real8 real_val)    // define o objeto que seta o valor de chi   
+{                                                                               
+  chi1_eff           = real_val;                              
+}
+
 
 
 
@@ -3644,6 +3653,10 @@ Real8 ResonanceXSCalculator::get_smr_gg()       // definição do objeto que ret
   return smr_gg_eff;                                        
 }
 
+Real8 ResonanceXSCalculator::get_chi1()       // definição do objeto que retorna chi1     
+{                                                          
+  return chi1_eff;                                        
+}
 
 
 //////////////////////////////////////////////////////////////////////////
