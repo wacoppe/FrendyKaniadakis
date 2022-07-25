@@ -47,7 +47,7 @@ Supervisor: Prof. Aquilino Senra Martinez
 
 Willian Abreu and his supervisor, Professor Aquilino Senra Martinez, thank [**FAPERJ**](https://www.faperj.br/) for the conceded grant (Pós-doutorado Nota 10). Professor Aquilino Senra Martinez also thank the National Council for Scientific and Technological Development ([CNPq](https://www.gov.br/cnpq/pt-br)).
 
-<img src="http://www.con.ufrj.br/wp-content/uploads/2015/07/logo.gif" width="200"> <img src="https://www.faperj.br/downloads/logomarcas/logo.jpg" width="200" style="text-align:center">  <img src="https://upload.wikimedia.org/wikipedia/pt/1/1e/Logo_COPPE_-_UFRJ.jpg" width="200" style="text-align:center">
+<img src="http://www.con.ufrj.br/wp-content/uploads/2015/07/logo.gif" width="200"> <img src="https://www.faperj.br/downloads/logomarcas/logo.jpg" width="200" style="text-align:center">  <img src="https://upload.wikimedia.org/wikipedia/pt/1/1e/Logo_COPPE_-_UFRJ.jpg" width="200" style="text-align:center"> <img src="[https://upload.wikimedia.org/wikipedia/pt/1/1e/Logo_COPPE_-_UFRJ.jpg](https://www.gov.br/cnpq/pt-br/canais_atendimento/identidade-visual/CNPq_v2017_rgb.png)" width="200" style="text-align:center">
 
 
 
