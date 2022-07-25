@@ -16,21 +16,21 @@ https://rpg.jaea.go.jp/main/en/program_frendy/
 These are the files that will be modified inside FRENDY
 in order to calculating deformed cross-sections using the Kaniadakis distribution
 
-### Utilized folders inside FRENDY:
+#### Utilized folders inside FRENDY:
 
 * _frendy_XXXXXXXX\tests\ReconResonance_ (File ....test.cpp)
 
 * _frendy_XXXXXXXX\frendy\ReconResonance_ (Files .cpp and .hpp)
 
-### Folder to see the results files:
+#### Folder to see the results files:
 
 * _frendy_XXXXXXXX\tests\ReconResonance\comp_njoy_
 
-### Folder to start the compilation (Windows, via 'wsl' command):
+#### Folder to start the compilation (Windows, via 'wsl' command):
 
 * _frendy_XXXXXXXX\tests\ReconResonance_
 
-## About us
+### About us
 
 [Programa de Engenharia Nuclear - COPPE/UFRJ](http://www.con.ufrj.br/) (Brazil)    
 Editors: Willian Abreu (wabreu@coppe.ufrj.br) / João Maciel (joaomarcio.maciel@poli.ufrj.br)    
