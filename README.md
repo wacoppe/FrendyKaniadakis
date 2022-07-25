@@ -16,7 +16,9 @@ frendy_XXXXXXXX\frendy\ReconResonance (Files .cpp and .hpp)
 Warning: it is mandatory the presence of the Faddeeva files in both folders aforementioned
 
 Programa de Engenharia Nuclear - COPPE/UFRJ (Brazil)
+
 Editors: Willian Abreu/João Maciel
+
 Supervisor: Prof. Aquilino Senra Martinez
 
 Agradecimentos: FAPERJ
