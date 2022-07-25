@@ -13,7 +13,15 @@ frendy_XXXXXXXX\tests\ReconResonance
 
 frendy_XXXXXXXX\frendy\ReconResonance
 
-Programa de Engenharia Nuclear - COPPE/UFRJ (Brazil)
+Folder to see the results files:
+
+frendy_XXXXXXXX\tests\ReconResonance\comp_njoy
+
+Folder to start the compilation (Windows, via 'wsl' command):
+
+frendy_XXXXXXXX\tests\ReconResonance
+
+Programa de Engenharia Nuclear - COPPE/UFRJ (Brazil) //
 Editors: Willian Abreu/João Maciel
 Supervisor: Prof. Aquilino Senra Martinez
 
