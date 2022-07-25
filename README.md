@@ -10,23 +10,23 @@ Welcome to our GitHub repository. We are members of the reactors physics laborat
 
 ## How to run
 
-In order to TEST these files it is mandatory to install the FRENDY code in your machine. The following websites explains how to do that:
+In order to TEST these modifications, it is **mandatory** to install the FRENDY code in your machine. The following website explains how to do that:
 https://rpg.jaea.go.jp/main/en/program_frendy/
 
 These are the files that will be modified inside FRENDY
 in order to calculating deformed cross-sections using the Kaniadakis distribution
 
-Utilized folders inside FRENDY:
+### Utilized folders inside FRENDY:
 
 * _frendy_XXXXXXXX\tests\ReconResonance_ (File ....test.cpp)
 
 * _frendy_XXXXXXXX\frendy\ReconResonance_ (Files .cpp and .hpp)
 
-Folder to see the results files:
+### Folder to see the results files:
 
 * _frendy_XXXXXXXX\tests\ReconResonance\comp_njoy_
 
-Folder to start the compilation (Windows, via 'wsl' command):
+### Folder to start the compilation (Windows, via 'wsl' command):
 
 * _frendy_XXXXXXXX\tests\ReconResonance_
 
