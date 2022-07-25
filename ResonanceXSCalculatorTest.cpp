@@ -550,8 +550,8 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                 fout << rxs_obj.get_smr_gg() << " ";
                 fout << rxs_obj.get_chi1() << " ";
                 
-               
-
+                
+                
                 if (k == (k_max-1))                      // PosINAC_FRENDY - V3
                 {
                   fout << endl << endl;                  // PosINAC_FRENDY - V3

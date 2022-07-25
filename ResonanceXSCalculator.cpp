@@ -1,6 +1,10 @@
 #include "ReconResonance/ResonanceXSCalculator.hpp"
 #include <math.h>                                      // PosINAC_FRENDY - V3
 #include "Faddeeva.cc" //adicionei para tentar usar a funcao erro complexa do pacote do MIT 20220622
+#include <complex>
+//#include <complex.h> 
+#include <cmath>
+
 
 using namespace frendy;
 
@@ -489,23 +493,24 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
         //////////////////////////////////////////////////////
         
           
-        
+        if (m==2)
+        {
           Real8  Kappa, Bk, f1, f2, x1, chi1;
 
           chi1 = ay / 0.5 ;
-          x1 = ex * 1.0 ;
+          x1 = ex ;
           Kappa = 0.1  ;
           complex <double> i {0.,1.};
           complex <double> aa, d1, d2, d3, d4, d5, p1, p2, p3, theta, D, om1, om2, f3, omg, Sg, z, p11;
           
-                   
+                
           Bk=(1)*(pow(2*Kappa,1.5))*(1+3*Kappa/2)*tgamma(1/(2*Kappa)+0.75)/tgamma(1/(2*Kappa)-0.75);  //Bk que vou tentar imprimir
           
           f1 = (chi1*(sqrt(M_PI))*Bk)/4; //parte mais à esquerda da função
           
           f2 = exp((pow(chi1,2)-pow(chi1,2)*pow(x1,2))/4); //#Exponencial mais externa da solução
               
-          aa=(-1.*i*pow(chi1,2)*x2);  //#Termos presentes em p1, p2 e p3
+          aa=(-1.*i*pow(chi1,2)*x1);  //#Termos presentes em p1, p2 e p3
           
           d1= pow(chi1,4); //#Termos presentes em p1, p2 e p3
                   
@@ -539,14 +544,17 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
           
           //cerfc_coef = real(Sg);
 
-          psi = real(Sg);
-
-        
+          psi = real(Sg) * 1.0;
+          
+          
+        }
+        else
+        {        
         //////////////////////////////////////////////////////
         ////////FIM DA IMPLEMENTAÇÃO DE KANI ANALÍTICO////////
         //////////////////////////////////////////////////////
-
-        //psi *= cerfc_coef;       // deve ser comentado para implementação de KANI ANALITICO
+        psi *= cerfc_coef;       // deve ser comentado para implementação de KANI ANALITICO
+        }
         chi *= cerfc_coef;
         smr  = pifac*gj*gne/(gtt*gtt);
         
@@ -566,10 +574,10 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
           set_qsi(qsi);                                           // PosINAC_FRENDY - V8
           set_fxqsi(fxqsi);                                       // PosINAC_FRENDY - V8
           set_E0((er + 0.5*gn*(sl_er_multi[l][m]-sl)*pl_er_inv));  // PosINAC_FRENDY - V8
-          set_x(x1);              // PosINAC_FRENDY - V
+          set_x(ex * 1.0 );              // PosINAC_FRENDY - V
           set_gtt(gtt);
           set_smr_gg(smr * gg);
-          set_chi1(chi1);
+          set_chi1(ay / 0.5 );
 
 
         
