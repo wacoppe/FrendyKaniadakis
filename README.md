@@ -18,9 +18,10 @@ in order to calculating deformed cross-sections using the Kaniadakis distributio
 
 #### Utilized folders inside FRENDY:
 
-* _frendy_XXXXXXXX\tests\ReconResonance_ (File "_ResonanceXSCalculatorTest.cpp_")
+* _frendy_XXXXXXXX\tests\ReconResonance_ (File "_ResonanceXSCalculatorTest.cpp_" and Folder "_for_test_" )
 
 * _frendy_XXXXXXXX\frendy\ReconResonance_ (Files "_ResonanceXSCalculator.cpp_" and "_ResonanceXSCalculator.hpp_")
+
 
 #### Folder to see the results files:
 
