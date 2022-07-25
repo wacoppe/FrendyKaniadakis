@@ -38,7 +38,7 @@ Supervisor: Prof. Aquilino Senra Martinez
 
 ## Acknowledgments
 
-The authors thank [**FAPERJ**](https://www.faperj.br/) for the conceded grant. 
+Willian Abreu thank [**FAPERJ**](https://www.faperj.br/) for the conceded grant (Pós-doutorado Nota 10). 
 
 <img src="http://www.con.ufrj.br/wp-content/uploads/2015/07/logo.gif" width="200"> <img src="https://www.faperj.br/downloads/logomarcas/logo.jpg" width="200" style="text-align:center">  <img src="https://upload.wikimedia.org/wikipedia/pt/1/1e/Logo_COPPE_-_UFRJ.jpg" width="200" style="text-align:center">
 
