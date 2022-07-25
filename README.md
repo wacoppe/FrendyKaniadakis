@@ -31,6 +31,12 @@ in order to calculating deformed cross-sections using the Kaniadakis distributio
 
 * _frendy_XXXXXXXX\tests\ReconResonance_
 
+
+## The Fadeeva Package
+
+In order to calculate some important Faddeeva functions inside our analytical solution for the Doppler broadening function, we implemented the Faddeeva Package, devolped by MIT. Consequently, the modifications will only work with the Faddeeva files in both aforementioned folders.
+
+
 ## About us
 
 Programa de Engenharia Nuclear ([PEN - COPPE/UFRJ](http://www.con.ufrj.br/)) (Brazil)    
