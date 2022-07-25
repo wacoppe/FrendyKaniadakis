@@ -30,7 +30,7 @@ in order to calculating deformed cross-sections using the Kaniadakis distributio
 
 * _frendy_XXXXXXXX\tests\ReconResonance_
 
-### About us
+## About us
 
 [Programa de Engenharia Nuclear - COPPE/UFRJ](http://www.con.ufrj.br/) (Brazil)    
 Editors: Willian Abreu (wabreu@coppe.ufrj.br) / João Maciel (joaomarcio.maciel@poli.ufrj.br)    
