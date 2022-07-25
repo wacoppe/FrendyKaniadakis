@@ -9,9 +9,11 @@ in order to calculating deformed cross-sections using the Kaniadakis distributio
 
 Utilized folders inside FRENDY:
 
-frendy_XXXXXXXX\tests\ReconResonance
+frendy_XXXXXXXX\tests\ReconResonance (File ....test.cpp)
 
-frendy_XXXXXXXX\frendy\ReconResonance
+frendy_XXXXXXXX\frendy\ReconResonance (Files .cpp and .hpp)
+
+Warning: it is mandatory the presence of the Faddeeva files in both folders aforementioned
 
 Programa de Engenharia Nuclear - COPPE/UFRJ (Brazil)
 Editors: Willian Abreu/João Maciel
