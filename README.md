@@ -1,5 +1,5 @@
 # FrendyKaniadakis
-:radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: 
+:radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive: :radioactive:  
 
 Hello, 
 
@@ -31,4 +31,4 @@ frendy_XXXXXXXX\tests\ReconResonance
 Editors: Willian Abreu (wabreu@coppe.ufrj.br) / João Maciel (joaomarcio.maciel@poli.ufrj.br)    
 Supervisor: Prof. Aquilino Senra Martinez  
 
-Acknowledgments: The authors thank FAPERJ for the conceded grant. 
+Acknowledgments: The authors thank #FAPERJ for the conceded grant. 
