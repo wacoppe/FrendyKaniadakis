@@ -34,7 +34,7 @@ in order to calculating deformed cross-sections using the Kaniadakis distributio
 
 ## The Fadeeva Package
 
-In order to calculate some critical Faddeeva functions inside our analytical solution for the Doppler broadening function, we implemented the [Faddeeva Package](http://ab-initio.mit.edu/wiki/index.php/Faddeeva_Package), developed by MIT. Consequently, the modifications will only work with the Faddeeva files in both aforementioned folders. We thank Professor [Steven G. Johnson](https://math.mit.edu/~stevenj/) for his incredible work.
+In order to calculate some critical Faddeeva functions inside our analytical solution for the deformed Doppler broadening function, we implemented the [Faddeeva Package](http://ab-initio.mit.edu/wiki/index.php/Faddeeva_Package), developed by the MIT. Consequently, the modifications will only work with the Faddeeva files in both aforementioned folders. We thank Professor [Steven G. Johnson](https://math.mit.edu/~stevenj/) for his incredible work.
 
 
 ## About us
