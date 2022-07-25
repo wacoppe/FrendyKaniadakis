@@ -628,8 +628,8 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
       
       Real8  Kappa, Bk, f1, f2, pi, x1, chi, x2, chi1; // Willian
 
-      chi1 = 0.2669590889291638;
-      x2 = 49.37448656871395;
+      chi1 = 0.5108827632778952;
+      x2 = -47.08146439112053;
       Kappa = 0.1;
       pi = M_PI;
       complex <double> i {0.,1.};
@@ -673,6 +673,24 @@ BOOST_AUTO_TEST_CASE(Coef_check01)
 
       Sg = (f1*f2)*(D+omg); //# Solução geral (Eq. 3.9
 
+      fout << "Bk = " << Bk << endl;
+      fout << "f1 = " << f1 << endl;
+      fout << "f2 = " << f2 << endl;
+      fout << "aa = " << aa << endl;
+      fout << "d1 = " << d1 << endl;
+      fout << "d2 = " << d2 << endl;
+      fout << "d3 = " << d3 << endl;
+      fout << "d4 = " << d4 << endl;
+      fout << "d5 = " << d5 << endl;
+      fout << "p1 = " << p1 << endl;
+      fout << "p2 = " << p2 << endl;
+      fout << "p3 = " << p3 << endl;
+      fout << "theta = " << theta << endl;
+      fout << "D = " << D << endl;
+      fout << "om1 = " << om1 << endl;
+      fout << "om2 = " << om2 << endl;
+      fout << "f3 = " << f3 << endl;
+      fout << "omg = " << omg << endl;
       fout << "Psi = " << real(Sg) << endl;
 
       /*
