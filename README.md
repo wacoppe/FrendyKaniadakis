@@ -17,4 +17,4 @@ Programa de Engenharia Nuclear - COPPE/UFRJ (Brazil)
 Editors: Willian Abreu/João Maciel
 Supervisor: Prof. Aquilino Senra Martinez
 
-Agradecimentos: FAPERJ
+Acknowledgments: FAPERJ
