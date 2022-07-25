@@ -51,7 +51,7 @@ Willian Abreu and his supervisor, Professor Aquilino Senra Martinez, thank [**FA
 
 | Support/funding:     |    |       |   |
 | :---         |     :---:      |          ---: | :---    |
-| <img src="http://www.con.ufrj.br/wp-content/uploads/2015/07/logo.gif" width="200">   | <img src="https://www.faperj.br/downloads/logomarcas/logo.jpg" width="200" style="text-align:center">     | <img src="https://www.gov.br/cnpq/pt-br/canais_atendimento/identidade-visual/CNPq_v2017_rgb.jpg" width="200" > | <img src="https://upload.wikimedia.org/wikipedia/pt/1/1e/Logo_COPPE_-_UFRJ.jpg" width="200" style="text-align:center">
+| <img src="http://www.con.ufrj.br/wp-content/uploads/2015/07/logo.gif" width="200">   | <img src="https://upload.wikimedia.org/wikipedia/pt/1/1e/Logo_COPPE_-_UFRJ.jpg" width="200" style="text-align:center"> | <img src="https://www.faperj.br/downloads/logomarcas/logo.jpg" width="200" style="text-align:center"> | <img src="https://www.gov.br/cnpq/pt-br/canais_atendimento/identidade-visual/CNPq_v2017_rgb.jpg" width="200" > | 
 
 
 
