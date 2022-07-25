@@ -27,7 +27,7 @@ Folder to start the compilation (Windows, via 'wsl' command):
 frendy_XXXXXXXX\tests\ReconResonance
 
 [Programa de Engenharia Nuclear - COPPE/UFRJ](http://www.con.ufrj.br/) (Brazil)    
-Editors: Willian Abreu (wabreu@coppe.ufrj.br) / João Maciel    
+Editors: Willian Abreu (wabreu@coppe.ufrj.br) / João Maciel (joaomarcio.maciel@poli.ufrj.br)    
 Supervisor: Prof. Aquilino Senra Martinez  
 
 Acknowledgments: The authors thank FAPERJ for the conceded grant. 
