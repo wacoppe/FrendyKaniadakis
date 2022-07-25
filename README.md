@@ -40,4 +40,4 @@ Supervisor: Prof. Aquilino Senra Martinez
 
 The authors thank [**FAPERJ**](https://www.faperj.br/) for the conceded grant. 
 
-<img src="https://www.faperj.br/downloads/logomarcas/logo.jpg" width="100">
+<img src="https://www.faperj.br/downloads/logomarcas/logo.jpg" width="300">
