@@ -6,7 +6,7 @@
 Hello, 
 
 
-Welcome to our GitHub repository. We are members of the reactors physics laboratory at the Federal University of Rio de Janeiro (UFRJ/COPPE) and this is our modifications in the nuclear data processing code called FRENDY, developed by the Japan Atomic Energy Agency ([JAEA](https://www.jaea.go.jp/english/). Our primary goal is to generate deformed neutron cross-sections using the Kaniadakis statistics.
+Welcome to our GitHub repository. We are members of the reactors physics laboratory at the Federal University of Rio de Janeiro (UFRJ/COPPE) and this is our modifications in the nuclear data processing code called FRENDY, developed by the Japan Atomic Energy Agency ([JAEA](https://www.jaea.go.jp/english/)). Our primary goal is to generate deformed neutron cross-sections using the Kaniadakis statistics.
 
 ## How to run
 
