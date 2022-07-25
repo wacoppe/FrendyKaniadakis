@@ -32,7 +32,7 @@ in order to calculating deformed cross-sections using the Kaniadakis distributio
 
 ## About us
 
-[Programa de Engenharia Nuclear - COPPE/UFRJ](http://www.con.ufrj.br/) (Brazil)    
+Programa de Engenharia Nuclear ([PEN - COPPE/UFRJ](http://www.con.ufrj.br/)) (Brazil)    
 Editors: Willian Abreu (wabreu@coppe.ufrj.br) / João Maciel (joaomarcio.maciel@poli.ufrj.br)    
 Supervisor: Prof. Aquilino Senra Martinez  
 
