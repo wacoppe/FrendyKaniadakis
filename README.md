@@ -38,4 +38,4 @@ Supervisor: Prof. Aquilino Senra Martinez
 
 ## Acknowledgments
 
-The authors thank #FAPERJ for the conceded grant. 
+The authors thank **FAPERJ** for the conceded grant. 
