@@ -512,10 +512,9 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                   //fout << "         qsi           ";         // PosINAC_FRENDY - V8
                   //fout << "        fxqsi          ";         // PosINAC_FRENDY - V8
                   //fout << "    (qsi-fxqsi)/qsi    ";         // PosINAC_FRENDY - V8
-                  fout << "           x           ";         // PosINAC_FRENDY - V6
-                  
-                  fout << "        smr*gg         ";
-                  fout << "         chi1          ";
+                  //fout << "           x           ";         // PosINAC_FRENDY - V6
+                  //fout << "        smr*gg         ";
+                  //fout << "         chi1          ";
                   
 
                   
@@ -546,9 +545,9 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                 //fout << rxs_obj.get_qsi() << " ";          // PosINAC_FRENDY - V8
                 //fout << rxs_obj.get_fxqsi() << " ";        // PosINAC_FRENDY - V8
                 //fout << (rxs_obj.get_qsi() - rxs_obj.get_fxqsi())/rxs_obj.get_qsi() << " "; // PosINAC_FRENDY - V8
-                fout << rxs_obj.get_x()   << " ";          // PosINAC_FRENDY - V5
-                fout << rxs_obj.get_smr_gg() << " ";
-                fout << rxs_obj.get_chi1() << " ";
+                //fout << rxs_obj.get_x()   << " ";          // PosINAC_FRENDY - V5
+                //fout << rxs_obj.get_smr_gg() << " ";
+                //fout << rxs_obj.get_chi1() << " ";
                 
                 
                 
@@ -559,8 +558,8 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                   fout << "______________________ ";     // PosINAC_FRENDY - V3
                   fout << "______________________ ";     // PosINAC_FRENDY - V3
                   fout << "______________________ ";     // PosINAC_FRENDY - V3
-                  fout << "______________________ ";     // PosINAC_FRENDY - V3
-                  fout << "______________________ ";     // PosINAC_FRENDY - V3
+                  //fout << "______________________ ";     // PosINAC_FRENDY - V3
+                  //fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "_______________________";     // PosINAC_FRENDY - V5
                   //fout << "_______________________";     // PosINAC_FRENDY - V5

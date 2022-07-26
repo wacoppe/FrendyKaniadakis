@@ -495,11 +495,14 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
           
         if (m==2)
         {
+          
+          
+
           Real8  Kappa, Bk, f1, f2, x1, chi1;
 
           chi1 = ay / 0.5 ;
           x1 = ex ;
-          Kappa = 0.1  ;
+          Kappa = 0.1;
           complex <double> i {0.,1.};
           complex <double> aa, d1, d2, d3, d4, d5, p1, p2, p3, theta, D, om1, om2, f3, omg, Sg, z, p11;
           
@@ -545,22 +548,30 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
           //cerfc_coef = real(Sg);
 
           psi = real(Sg) * 1.0;
+
           
+
+          //psi *= cerfc_coef;
+
+          smr  = pifac*gj*gne/(gtt*gtt);
           
+          sig_val[radiation_xs] +=  smr * gg * psi;
         }
-        else
-        {        
+        //else
+        //{      
+
+        
         //////////////////////////////////////////////////////
         ////////FIM DA IMPLEMENTAÇÃO DE KANI ANALÍTICO////////
         //////////////////////////////////////////////////////
-        psi *= cerfc_coef;       // deve ser comentado para implementação de KANI ANALITICO
-        }
+        //psi *= cerfc_coef;       // deve ser comentado para implementação de KANI ANALITICO
+        //}
         chi *= cerfc_coef;
         smr  = pifac*gj*gne/(gtt*gtt);
         
         sig_val[scatter_xs]   +=  smr * ((cos2p*gtt - gx)*psi + sin2p*gtt*chi);
         sig_val[fission_xs]   +=  smr * gf * psi;
-        sig_val[radiation_xs] +=  smr * gg * psi;
+        //sig_val[radiation_xs] +=  smr * gg * psi;
 
         comfac = pifac*gj*gne/(edelt*edelt + gtt*gtt);
         add    = comfac * (gne*cos2p - 2.0*gx*sinsq + edelt*sin2p);
@@ -586,17 +597,18 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
         set_l_max(l_max*1.0);     // PosINAC_FRENDY - V6 
         set_m_max(m_max*1.0);     // PosINAC_FRENDY - V6 
 
-        /*
+        
         // Para plotar variáveis com diferentes valores de m (vairias ressonancias)        
-        int m_ref = int( ( ene_val - 55.5    )/         0.000275        );    // PosINAC_FRENDY - V7
-        /////                     ene_data[0])/(ene_data[1]-ene_data[0]);
+        int m_ref = int( ( ene_val - 9.0    )/     0.002000000000001e+00   );    // PosINAC_FRENDY - V7
+        /////                 ... ene_data[0])/(ene_data[1]-ene_data[0]);
 
         if (m<=m_ref)         //Define em qual iteração as variáveis serão salvas para plot   //  
         {
-          set_m(m*1.0);
-          set_E0((er + 0.5*gn*(sl_er_multi[l][m]-sl)*pl_er_inv));
+          //set_m(m*1.0);
+          //set_E0((er + 0.5*gn*(sl_er_multi[l][m]-sl)*pl_er_inv));
+          //set_psi(psi);
         }
-        */
+        
     
         ////////////////// Fim do Armazenamento de Variaveis //////////////////
       
