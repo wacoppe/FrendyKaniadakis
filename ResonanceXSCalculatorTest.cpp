@@ -312,7 +312,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
 
 
 
-    int h_max = 1000;       // h_max e o numero de pontos              // PosInac_FRENDY-V1
+    int h_max = 10000;       // h_max e o numero de pontos              // PosInac_FRENDY-V1
     //int h_max = 300000;                                             //     PosInac_FRENDY-V7
     ene_data.resize(h_max); // define o numero de vetores de ene_data  // PosInac_FRENDY-V1
     sig_data.resize(h_max); // define o numero de vetores de sig_data  // PosInac_FRENDY-V1
@@ -328,29 +328,32 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
     //ene_data[h_max] = 5*pow(10,3);        //     PosInac_FRENDY-V9
     //ene_data[0] = 54.85246;
     //ene_data[h_max] = 61.66754;
-    ene_data[0] = 9.0;
-    ene_data[h_max] = 11.0; 
+    //ene_data[0] = 9.0;
+    //ene_data[h_max] = 11.0; 
 
-  
+    /*
     
     for ( int h=1 ; h < h_max ; h++ ) // define os outros valores de ene_val // PosInac_FRENDY-V1
     {
       ene_data[h] = ene_data[h-1] + ((ene_data[h_max] - ene_data[0]) / h_max);
     }
-    
+
+    */
+
     //Definição para range de pontos de energias máximo e mínimo muito grande //     PosInac_FRENDY-V10
-    /*
-    ene_data[0] = pow(10,-2);                                                //       PosInac_FRENDY-V10
-    ene_data[1000] = pow(10,-1);                                             //     PosInac_FRENDY-V10
-    ene_data[2000] = pow(10,0);                                              //     PosInac_FRENDY-V10
-    ene_data[3000] = pow(10,1);                                              //     PosInac_FRENDY-V10
-    ene_data[4000] = pow(10,2);                                              //     PosInac_FRENDY-V10    
-    ene_data[5000] = pow(10,3);                                              //     PosInac_FRENDY-V10    
-    ene_data[6000] = pow(10,4);                                              //     PosInac_FRENDY-V10    
-    ene_data[7000] = pow(10,5);                                              //     PosInac_FRENDY-V10
-    ene_data[8000] = pow(10,6);                                              //     PosInac_FRENDY-V10
-    ene_data[9000] = pow(10,7);                                              //     PosInac_FRENDY-V10    
+    
+    ene_data[0]     = pow(10,-2);                                                //       PosInac_FRENDY-V10
+    ene_data[1000]  = pow(10,-1);                                             //     PosInac_FRENDY-V10
+    ene_data[2000]  = pow(10,0);                                              //     PosInac_FRENDY-V10
+    ene_data[3000]  = pow(10,1);                                              //     PosInac_FRENDY-V10
+    ene_data[4000]  = pow(10,2);                                              //     PosInac_FRENDY-V10    
+    ene_data[5000]  = pow(10,3);                                              //     PosInac_FRENDY-V10    
+    ene_data[6000]  = pow(10,4);                                              //     PosInac_FRENDY-V10    
+    ene_data[7000]  = pow(10,5);                                              //     PosInac_FRENDY-V10
+    ene_data[8000]  = pow(10,6);                                              //     PosInac_FRENDY-V10
+    ene_data[9000]  = pow(10,7);                                              //     PosInac_FRENDY-V10    
     ene_data[10000] = pow(10,8);                                             //     PosInac_FRENDY-V10    
+    
     for ( int p=0 ; p<10 ; p++ ) // qual a casa decimal                      //     PosInac_FRENDY-V10
     {
       int k = h_max/10;
@@ -358,9 +361,8 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
       {
         int h = k*p+g;
         ene_data[h] = ene_data[h-1] + ((ene_data[(p+1)*k] - ene_data[p*k]) / k);
-      }
     }
-    */
+    
 
 
   /* não serão necessários
@@ -458,7 +460,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
             fout << "Single-Level_Breite_Wigner" << endl;
             //for(int t=0; t<6; t++)                           // t define qnts temepraturas serao
             //for(int t=1; t<11; t++)                             // PosINAC_FRENDY - V7
-            for(int t=1; t<6; t++)
+            for(int t=2; t<6; t++)
             {
               /*
               if(n==40785623)           // definindo valores de T partindo de qsi //PosINAC_FRENDY - V10
@@ -502,7 +504,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                   //fout << "  sig_val[scatter_xs]  ";         // PosINAC_FRENDY - V3
                   //fout << "  sig_val[fission_xs]  ";         // PosINAC_FRENDY - V3
                   fout << " sig_val[radiation_xs] ";         // PosINAC_FRENDY - V3
-                  fout << "          psi          ";         // PosINAC_FRENDY - V3
+                  //fout << "          psi          ";         // PosINAC_FRENDY - V3
                   //fout << "        w_x (im)       ";         // PosINAC_FRENDY - V5
                   //fout << "       w_y (real)      ";         // PosINAC_FRENDY - V5
                   //fout << "      w (real+im)      ";         // PosINAC_FRENDY - V5
@@ -535,7 +537,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                 }
                 */
 
-                fout << rxs_obj.get_psi() << " ";        // PosINAC_FRENDY - V3
+                //fout << rxs_obj.get_psi() << " ";        // PosINAC_FRENDY - V3
                 //fout << rxs_obj.get_w_x() << " ";        // PosINAC_FRENDY - V5
                 //fout << rxs_obj.get_w_y() << " ";        // PosINAC_FRENDY - V5
                 //fout << rxs_obj.get_w()   << " ";        // PosINAC_FRENDY - V5
@@ -557,7 +559,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                   
                   fout << "______________________ ";     // PosINAC_FRENDY - V3
                   fout << "______________________ ";     // PosINAC_FRENDY - V3
-                  fout << "______________________ ";     // PosINAC_FRENDY - V3
+                  //fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "______________________ ";     // PosINAC_FRENDY - V3
