@@ -362,7 +362,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
         int h = k*p+g;
         ene_data[h] = ene_data[h-1] + ((ene_data[(p+1)*k] - ene_data[p*k]) / k);
     }
-    
+    }
 
 
   /* não serão necessários
