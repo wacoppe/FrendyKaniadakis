@@ -384,6 +384,10 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
     }    
     
     */
+
+
+
+
   /* não serão necessários
   
     ene_data.resize(5);
