@@ -312,7 +312,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
 
 
 
-    int h_max = 10000;       // h_max e o numero de pontos              // PosInac_FRENDY-V1
+    int h_max = 1000;       // h_max e o numero de pontos              // PosInac_FRENDY-V1
     //int h_max = 300000;                                             //     PosInac_FRENDY-V7
     ene_data.resize(h_max); // define o numero de vetores de ene_data  // PosInac_FRENDY-V1
     sig_data.resize(h_max); // define o numero de vetores de sig_data  // PosInac_FRENDY-V1
@@ -329,19 +329,38 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
     //ene_data[0] = 54.85246;
     //ene_data[h_max] = 61.66754;
     //ene_data[0] = 9.0;
-    //ene_data[h_max] = 11.0; 
-
-    /*
+    //ene_data[h_max] = 11.0;
+    //ene_data[0] = 67.0;
+    //ene_data[h_max] = 72.0; 
+    //ene_data[0] = 57.0;
+    //ene_data[h_max] = 62.0;
+    //ene_data[0] = 316.0;
+    //ene_data[h_max] = 324.0;
+    //ene_data[0] = 1.6;
+    //ene_data[h_max] = 4.0;
+    //ene_data[0] = 94.0;
+    //ene_data[h_max] = 98.0;
+    //ene_data[0] = 1.6;
+    //ene_data[h_max] = 4.0;
+    //ene_data[0] = 235.0;
+    //ene_data[h_max] = 243.5;
+    //ene_data[0] = 3.0;
+    //ene_data[h_max] = 8.0;
+    //ene_data[0] = 395.0;
+    //ene_data[h_max] = 404.0;
+    ene_data[0] = 1535.0;
+    ene_data[h_max] = 1562.0;
     
     for ( int h=1 ; h < h_max ; h++ ) // define os outros valores de ene_val // PosInac_FRENDY-V1
     {
       ene_data[h] = ene_data[h-1] + ((ene_data[h_max] - ene_data[0]) / h_max);
     }
-
-    */
+    
+    
 
     //Definição para range de pontos de energias máximo e mínimo muito grande //     PosInac_FRENDY-V10
-    
+    /*
+
     ene_data[0]     = pow(10,-2);                                                //       PosInac_FRENDY-V10
     ene_data[1000]  = pow(10,-1);                                             //     PosInac_FRENDY-V10
     ene_data[2000]  = pow(10,0);                                              //     PosInac_FRENDY-V10
@@ -361,10 +380,10 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
       {
         int h = k*p+g;
         ene_data[h] = ene_data[h-1] + ((ene_data[(p+1)*k] - ene_data[p*k]) / k);
-    }
+      }
+    }    
     
-
-
+    */
   /* não serão necessários
   
     ene_data.resize(5);
@@ -453,14 +472,14 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
         {
           int k_max = static_cast<int>(ene_data.size());     // k_max e o tamanho do ene_data
           //
-          //if( n==2 || n==6 || n==9 || n==10)                   //PosINAC_FRENDY - V9
+          //if( n==2 || n==9 || n==10)                   //PosINAC_FRENDY - V9
           //if( n==0 || n==2 || n==4 || n==6 || n==7 || n==8 || n==9 || n==10 || n==11 || n==12 )                   //PosINAC_FRENDY - V9
-          if( n==2 )        // Fará apenas os calculos para Pu238    //PosINAC_FRENDY - V8
+          if( n==0 )        // Fará apenas os calculos determinado isótopo   //PosINAC_FRENDY - V8
           {
-            fout << "Single-Level_Breite_Wigner" << endl;
+            //fout << "Single-Level_Breite_Wigner" << endl;
             //for(int t=0; t<6; t++)                           // t define qnts temepraturas serao
             //for(int t=1; t<11; t++)                             // PosINAC_FRENDY - V7
-            for(int t=2; t<6; t++)
+            for(int t=1; t<6; t++)
             {
               /*
               if(n==40785623)           // definindo valores de T partindo de qsi //PosINAC_FRENDY - V10
@@ -499,7 +518,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                   //fout << "E0: " << rxs_obj.get_E0() << endl; // PosINAC_FRENDY - V6
                   //fout << "qsi: " << rxs_obj.get_qsi() << endl; // PosINAC_FRENDY - V10
                   fout << endl;
-                  fout << "ene_val                ";         // PosINAC_FRENDY - V3
+                  //fout << "ene_val                ";         // PosINAC_FRENDY - V3
                   //fout << "   sig_val[total_xs]   ";         // PosINAC_FRENDY - V3
                   //fout << "  sig_val[scatter_xs]  ";         // PosINAC_FRENDY - V3
                   //fout << "  sig_val[fission_xs]  ";         // PosINAC_FRENDY - V3
@@ -524,7 +543,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                   fout << endl << endl;
                 }
 
-                fout << ene_data[k] << " ";
+                //fout << ene_data[k] << " ";
                 //fout << sig_data[k][0] << " ";           //plota os valores de sig_val[total_xs] // PosINAC_FRENDY - V7
                 //fout << sig_data[k][1] << " ";           //plota os valores de sig_val[scatter_xs] // PosINAC_FRENDY - V7
                 //fout << sig_data[k][2] << " ";           //plota os valores de sig_val[fission_xs] // PosINAC_FRENDY - V7
@@ -558,7 +577,7 @@ BOOST_AUTO_TEST_CASE(BreitWigner_check03)
                   fout << endl << endl;                  // PosINAC_FRENDY - V3
                   
                   fout << "______________________ ";     // PosINAC_FRENDY - V3
-                  fout << "______________________ ";     // PosINAC_FRENDY - V3
+                  //fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "______________________ ";     // PosINAC_FRENDY - V3
                   //fout << "______________________ ";     // PosINAC_FRENDY - V3

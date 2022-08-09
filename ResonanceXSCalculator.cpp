@@ -493,7 +493,8 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
         //////////////////////////////////////////////////////
         
         
-        if ( fabs((ay / 0.5) *  ex) <= 50.0)
+        
+        if ( (fabs((ay / 0.5) *  ex) <= 10.0) && (ene_val > 0.03))
         {
                   
 
@@ -558,8 +559,10 @@ void ResonanceXSCalculator::calc_reso_xs_bw_single(int i, int j, Real8& ene_val,
         else
         {
           psi *= cerfc_coef;
-        }      
-       
+        }
+
+        
+        
         //////////////////////////////////////////////////////
         ////////FIM DA IMPLEMENTAÇÃO DE KANI ANALÍTICO////////
         //////////////////////////////////////////////////////
